@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Gamify__Quizzlett_Application.Forms
 {
-    public partial class Main_Menu : Form
+    public partial class Menu_Panel : Form
     {
-        public Main_Menu()
+        public Menu_Panel()
         {
             InitializeComponent();
         }

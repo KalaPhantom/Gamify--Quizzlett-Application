@@ -1,6 +1,6 @@
 ﻿namespace Gamify__Quizzlett_Application.Forms
 {
-    partial class Main_Menu
+    partial class Menu_Panel
     {
         /// <summary>
         /// Required designer variable.
@@ -85,10 +85,11 @@
             stats_btn.UseVisualStyleBackColor = true;
             stats_btn.Click += stats_btn_Click;
             // 
-            // Main_Menu
+            // Menu_Panel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(224, 224, 224);
             ClientSize = new Size(1148, 610);
             Controls.Add(stats_btn);
@@ -97,7 +98,7 @@
             Controls.Add(create_quiz_btn);
             Controls.Add(quiz_list_btn);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Main_Menu";
+            Name = "Menu_Panel";
             Text = "Main Menu";
             ResumeLayout(false);
         }
