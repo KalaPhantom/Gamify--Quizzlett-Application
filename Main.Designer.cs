@@ -1,6 +1,6 @@
 ﻿namespace Gamify__Quizzlett_Application
 {
-    partial class Form1
+    partial class Main_Menu
     {
         /// <summary>
         ///  Required designer variable.
@@ -30,13 +30,14 @@
         {
             SuspendLayout();
             // 
-            // Form1
+            // Main_Menu
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(912, 450);
-            Name = "Form1";
-            Text = "Form1";
+            AutoScaleMode = AutoScaleMode.None;
+            BackColor = Color.FromArgb(30, 41, 59);
+            ClientSize = new Size(1261, 586);
+            IsMdiContainer = true;
+            Name = "Main_Menu";
+            Text = "Quizlet-Gamified - Menu";
             ResumeLayout(false);
         }
 

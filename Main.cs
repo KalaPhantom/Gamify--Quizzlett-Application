@@ -1,8 +1,8 @@
 namespace Gamify__Quizzlett_Application
 {
-    public partial class Form1 : Form
+    public partial class Main_Menu : Form
     {
-        public Form1()
+        public Main_Menu()
         {
             InitializeComponent();
         }
