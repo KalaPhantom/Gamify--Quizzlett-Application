@@ -1,9 +1,11 @@
 using Gamify__Quizzlett_Application.Forms;
 using WinFormAnimation_NET5;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace Gamify__Quizzlett_Application
 {
-    public partial class Main_Menu : Form
+    public partial class Main_Menu : MaterialForm
     {
 
         #region Form Objects
@@ -25,6 +27,11 @@ namespace Gamify__Quizzlett_Application
             menu.MdiParent = this;
             menu.Show();
             menu.Dock = DockStyle.Fill;
+
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.Red100, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
 
         }
 

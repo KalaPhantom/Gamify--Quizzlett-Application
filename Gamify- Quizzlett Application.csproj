@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MaterialSkin.2" Version="2.3.1" />
     <PackageReference Include="WinFormAnimation-NET5" Version="2.0.0" />
   </ItemGroup>
 
