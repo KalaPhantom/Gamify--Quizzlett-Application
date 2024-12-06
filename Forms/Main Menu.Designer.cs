@@ -37,12 +37,15 @@
             button_pannel = new Panel();
             pictureBox1 = new PictureBox();
             materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             button_pannel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // quiz_list_btn
             // 
+            quiz_list_btn.FlatStyle = FlatStyle.System;
+            quiz_list_btn.Font = new Font("White On Black", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             quiz_list_btn.Location = new Point(14, 3);
             quiz_list_btn.Name = "quiz_list_btn";
             quiz_list_btn.Size = new Size(349, 105);
@@ -118,7 +121,7 @@
             // 
             // materialCard1
             // 
-            materialCard1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            materialCard1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             materialCard1.AutoSize = true;
             materialCard1.BackColor = Color.FromArgb(255, 255, 255);
             materialCard1.Depth = 0;
@@ -131,6 +134,17 @@
             materialCard1.Size = new Size(715, 621);
             materialCard1.TabIndex = 7;
             // 
+            // materialDivider1
+            // 
+            materialDivider1.BackColor = Color.FromArgb(30, 0, 0, 0);
+            materialDivider1.Depth = 0;
+            materialDivider1.Location = new Point(486, 78);
+            materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
+            materialDivider1.Name = "materialDivider1";
+            materialDivider1.Size = new Size(94, 31);
+            materialDivider1.TabIndex = 8;
+            materialDivider1.Text = "materialDivider1";
+            // 
             // Menu_Panel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -138,6 +152,7 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(24, 24, 27);
             ClientSize = new Size(1396, 717);
+            Controls.Add(materialDivider1);
             Controls.Add(materialCard1);
             Controls.Add(pictureBox1);
             Controls.Add(button_pannel);
@@ -161,5 +176,6 @@
         private Panel button_pannel;
         private PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialCard materialCard1;
+        private MaterialSkin.Controls.MaterialDivider materialDivider1;
     }
 }
