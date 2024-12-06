@@ -21,7 +21,7 @@ namespace Gamify__Quizzlett_Application
             InitializeComponent();
 
             // Initialize the main menu panel in the MDI container
-            menu = new Menu_Panel();
+            menu = new Menu_Panel(this);
             menu.MdiParent = this;
             menu.Show();
             menu.Dock = DockStyle.Fill;

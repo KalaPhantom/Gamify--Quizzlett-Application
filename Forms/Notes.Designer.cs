@@ -40,6 +40,7 @@
             return_btn.TabIndex = 0;
             return_btn.Text = "Return to menu ";
             return_btn.UseVisualStyleBackColor = true;
+            return_btn.Click += return_btn_Click;
             // 
             // notes_lbl
             // 

@@ -16,5 +16,11 @@ namespace Gamify__Quizzlett_Application.Forms
         {
             InitializeComponent();
         }
+
+        private void return_btn_Click(object sender, EventArgs e)
+        {
+            // TODO: Implement a destructor
+            this.Close();
+        }
     }
 }
