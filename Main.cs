@@ -31,7 +31,7 @@ namespace Gamify__Quizzlett_Application
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.Red100, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.Grey50, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.BLACK);
 
         }
 

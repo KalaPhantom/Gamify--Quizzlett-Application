@@ -34,6 +34,7 @@
             settings_btn = new Button();
             stats_btn = new Button();
             button_pannel = new Panel();
+            materialProgressBar1 = new MaterialSkin.Controls.MaterialProgressBar();
             button_pannel.SuspendLayout();
             SuspendLayout();
             // 
@@ -101,6 +102,15 @@
             button_pannel.Size = new Size(557, 333);
             button_pannel.TabIndex = 5;
             // 
+            // materialProgressBar1
+            // 
+            materialProgressBar1.Depth = 0;
+            materialProgressBar1.Location = new Point(737, 117);
+            materialProgressBar1.MouseState = MaterialSkin.MouseState.HOVER;
+            materialProgressBar1.Name = "materialProgressBar1";
+            materialProgressBar1.Size = new Size(570, 5);
+            materialProgressBar1.TabIndex = 6;
+            // 
             // Menu_Panel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -108,6 +118,7 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(24, 24, 27);
             ClientSize = new Size(1396, 717);
+            Controls.Add(materialProgressBar1);
             Controls.Add(button_pannel);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Menu_Panel";
@@ -126,5 +137,6 @@
         private Button settings_btn;
         private Button stats_btn;
         private Panel button_pannel;
+        private MaterialSkin.Controls.MaterialProgressBar materialProgressBar1;
     }
 }
