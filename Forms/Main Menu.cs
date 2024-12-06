@@ -12,6 +12,13 @@ namespace Gamify__Quizzlett_Application.Forms
 {
     public partial class Menu_Panel : Form
     {
+
+        // Form object instance in button events
+        Create_Quiz create_Quiz;
+        Quiz_list Quiz_list;
+        Statistics statistics;
+        Settings settings;
+
         public Menu_Panel()
         {
             InitializeComponent();
@@ -19,12 +26,16 @@ namespace Gamify__Quizzlett_Application.Forms
 
 
         #region Button Events
-       
+
         // Quiz list button event
         private void quiz_list_btn_Click(object sender, EventArgs e)
         {
 
         }
+
+        // Form closing event
+        // This event will be triggered if the obeject is terminated or closed
+
 
         // Create quiz button
         private void create_quiz_btn_Click(object sender, EventArgs e)
@@ -51,5 +62,10 @@ namespace Gamify__Quizzlett_Application.Forms
         }
 
         #endregion
+
+        private void Menu_Panel_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

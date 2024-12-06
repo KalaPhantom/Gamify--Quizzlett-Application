@@ -33,11 +33,12 @@
             // Main_Menu
             // 
             AutoScaleMode = AutoScaleMode.None;
-            BackColor = Color.FromArgb(30, 41, 59);
-            ClientSize = new Size(1261, 586);
+            BackColor = Color.FromArgb(24, 24, 27);
+            ClientSize = new Size(1378, 670);
             IsMdiContainer = true;
             Name = "Main_Menu";
             Text = "Quizlet-Gamified - Menu";
+            Load += Main_Menu_Load;
             ResumeLayout(false);
         }
 

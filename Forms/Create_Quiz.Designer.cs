@@ -57,6 +57,7 @@
             ClientSize = new Size(883, 450);
             Controls.Add(label1);
             Controls.Add(return_btn);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Create_Quiz";
             Text = "Create Quiz";
             ResumeLayout(false);
