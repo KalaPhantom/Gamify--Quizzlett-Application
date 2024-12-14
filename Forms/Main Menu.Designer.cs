@@ -36,8 +36,8 @@
             stats_btn = new Button();
             button_pannel = new Panel();
             pictureBox1 = new PictureBox();
-            materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
+            MainMenu_flp = new FlowLayoutPanel();
+            about_btn = new MaterialSkin.Controls.MaterialButton();
             button_pannel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -119,31 +119,33 @@
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
             // 
-            // materialCard1
+            // MainMenu_flp
             // 
-            materialCard1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            materialCard1.AutoSize = true;
-            materialCard1.BackColor = Color.FromArgb(255, 255, 255);
-            materialCard1.Depth = 0;
-            materialCard1.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard1.Location = new Point(644, 24);
-            materialCard1.Margin = new Padding(14);
-            materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
-            materialCard1.Name = "materialCard1";
-            materialCard1.Padding = new Padding(14);
-            materialCard1.Size = new Size(715, 621);
-            materialCard1.TabIndex = 7;
+            MainMenu_flp.BackColor = Color.FromArgb(41, 37, 36);
+            MainMenu_flp.FlowDirection = FlowDirection.TopDown;
+            MainMenu_flp.Location = new Point(673, 54);
+            MainMenu_flp.Name = "MainMenu_flp";
+            MainMenu_flp.Size = new Size(692, 673);
+            MainMenu_flp.TabIndex = 9;
             // 
-            // materialDivider1
+            // about_btn
             // 
-            materialDivider1.BackColor = Color.FromArgb(30, 0, 0, 0);
-            materialDivider1.Depth = 0;
-            materialDivider1.Location = new Point(486, 78);
-            materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
-            materialDivider1.Name = "materialDivider1";
-            materialDivider1.Size = new Size(94, 31);
-            materialDivider1.TabIndex = 8;
-            materialDivider1.Text = "materialDivider1";
+            about_btn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            about_btn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            about_btn.Depth = 0;
+            about_btn.HighEmphasis = true;
+            about_btn.Icon = null;
+            about_btn.Location = new Point(273, 549);
+            about_btn.Margin = new Padding(4, 6, 4, 6);
+            about_btn.MouseState = MaterialSkin.MouseState.HOVER;
+            about_btn.Name = "about_btn";
+            about_btn.NoAccentTextColor = Color.Empty;
+            about_btn.Size = new Size(69, 36);
+            about_btn.TabIndex = 10;
+            about_btn.Text = "About";
+            about_btn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            about_btn.UseAccentColor = false;
+            about_btn.UseVisualStyleBackColor = false;
             // 
             // Menu_Panel
             // 
@@ -152,8 +154,8 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(24, 24, 27);
             ClientSize = new Size(1396, 717);
-            Controls.Add(materialDivider1);
-            Controls.Add(materialCard1);
+            Controls.Add(about_btn);
+            Controls.Add(MainMenu_flp);
             Controls.Add(pictureBox1);
             Controls.Add(button_pannel);
             FormBorderStyle = FormBorderStyle.None;
@@ -175,7 +177,7 @@
         private Button stats_btn;
         private Panel button_pannel;
         private PictureBox pictureBox1;
-        private MaterialSkin.Controls.MaterialCard materialCard1;
-        private MaterialSkin.Controls.MaterialDivider materialDivider1;
+        private FlowLayoutPanel MainMenu_flp;
+        private MaterialSkin.Controls.MaterialButton about_btn;
     }
 }
