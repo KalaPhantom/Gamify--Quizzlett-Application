@@ -7,6 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FluentTransitions;
+using MaterialSkin.Animations;
+using System.Runtime.CompilerServices;
+using System.Reflection.Emit;
+using FluentTransitions.Methods;
 
 namespace Gamify__Quizzlett_Application.Forms
 {
@@ -20,6 +25,11 @@ namespace Gamify__Quizzlett_Application.Forms
         Settings settings;
         Notes notes;
 
+
+
+
+
+
         // Reference Object
         Main_Menu mdiContainer;
 
@@ -27,6 +37,46 @@ namespace Gamify__Quizzlett_Application.Forms
         {
             InitializeComponent();
             this.mdiContainer = mdiContainer;
+
+
+            // Take the original positions for animations
+            int ql_1 = quiz_list_btn.Left;
+            int ql_2 = create_quiz_btn.Top;
+            int ql_3 = notes_btn.Left;
+            int ql_4 = settings_btn.Top;
+            int ql_5 = stats_btn.Left;
+
+            // Reset Random
+            quiz_list_btn.Left = 200;
+            create_quiz_btn.Top = 200;
+            notes_btn.Left = -200;
+            settings_btn.Top = 200;
+            stats_btn.Left = 300;
+            
+
+
+
+
+            Transition
+                .With(quiz_list_btn, nameof(Left), ql_1 )
+                .With(create_quiz_btn, nameof(Top), ql_2)
+                .With(notes_btn, nameof(Left), ql_3)
+                .With(settings_btn, nameof(Top), ql_4)
+                .With(stats_btn, nameof(Left), ql_5)
+                .EaseInEaseOut(TimeSpan.FromSeconds(1));
+
+           
+
+
+
+
+
+
+
+
+
+
+
         }
 
 
@@ -35,6 +85,7 @@ namespace Gamify__Quizzlett_Application.Forms
         // Quiz list button event
         private void quiz_list_btn_Click(object sender, EventArgs e)
         {
+
             Quiz_list = new Quiz_list();
             Quiz_list.MdiParent = mdiContainer;
             Quiz_list.FormClosed += Quiz_list_FormClosed;
@@ -45,6 +96,8 @@ namespace Gamify__Quizzlett_Application.Forms
         private void Quiz_list_FormClosed(object? sender, FormClosedEventArgs e)
         {
             Quiz_list = null;
+            
+           
         }
 
         // Create quiz button
@@ -66,7 +119,7 @@ namespace Gamify__Quizzlett_Application.Forms
         // Notes button
         private void notes_btn_Click(object sender, EventArgs e)
         {
-            notes = new Notes();    
+            notes = new Notes();
             notes.MdiParent = mdiContainer;
             notes.FormClosed += Notes_FormClosed;
             notes.Show();
@@ -86,7 +139,7 @@ namespace Gamify__Quizzlett_Application.Forms
             settings.MdiParent = mdiContainer;
             settings.FormClosed += Settings_FormClosed;
             settings.Show();
-            settings.Dock = DockStyle.Fill; 
+            settings.Dock = DockStyle.Fill;
         }
 
         private void Settings_FormClosed(object? sender, FormClosedEventArgs e)
@@ -106,7 +159,7 @@ namespace Gamify__Quizzlett_Application.Forms
 
         private void Statistics_FormClosed(object? sender, FormClosedEventArgs e)
         {
-            statistics = null; 
+            statistics = null;
         }
 
         #endregion
@@ -115,5 +168,7 @@ namespace Gamify__Quizzlett_Application.Forms
         {
 
         }
+
+    
     }
 }

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Quizlett_Prototype.Additional_Forms
+namespace Gamify__Quizzlett_Application.User_Control.Quiz_cards
 {
-    public partial class CreateForm : Form
+    public partial class Quiz_Card_List : UserControl
     {
-        public CreateForm()
+        public Quiz_Card_List()
         {
             InitializeComponent();
         }

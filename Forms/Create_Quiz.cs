@@ -15,6 +15,7 @@ namespace Gamify__Quizzlett_Application.Forms
         public Create_Quiz()
         {
             InitializeComponent();
+          
         }
 
         private void return_btn_Click(object sender, EventArgs e)

@@ -23,6 +23,8 @@ namespace Quizlett_Prototype.Additional_Forms.Functions
         public string quiz_name { get; set; }
         public string type { get; set;  }
         public string quiz_id { get; set; }
+        public string quis_description {get; set;}
+        public string Subject { get ; set;}
 
 
         // Constructor
