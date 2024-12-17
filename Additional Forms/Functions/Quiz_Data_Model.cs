@@ -18,25 +18,31 @@ namespace Quizlett_Prototype.Additional_Forms.Functions
 {
 
  
-    internal class Quiz_Data_Model
+    public class Quiz_Data_Model
     {
+        
         public string quiz_name { get; set; }
         public string type { get; set;  }
-        public string quiz_id { get; set; }
-        public string quis_description {get; set;}
-        public string Subject { get ; set;}
+        public string quiz_id { get; set; } // TDOD: Might not be implemented due to complexity
+        public string? quiz_description {get; set;} // nullable
+        public string? Subject { get ; set;} // nullable
+        public Image? imageProfile { get; set; } // nullable
 
 
         // Constructor
         public Quiz_Data_Model() {
             this.quiz_name = "Untitled Quiz Game";
             this.type = "Multiple Choices";
-            this.quiz_name = null;
-        
+            this.quiz_description = "Untitled Quiz";
+            this.Subject = "Not Set";
         }
 
         // Implementation of LinkList as question objects collection
         public LinkedList<QuestionModel> collections_Questions = new LinkedList<QuestionModel>();
+
+        
+    
+     
 
     }
 
@@ -64,10 +70,17 @@ namespace Quizlett_Prototype.Additional_Forms.Functions
 
 
     // Optional QuizMode
+    // This function is under the Beta Model and may not  be included as the main function
     public class QuestionModel_FillBlanks : QuestionModel {
     
     }
 
 
     #endregion
+
+    
+    
+       public static Stack<Quiz_Data_Model> quiz_list = new Stack<Quiz_Data_Model>();
+
+    }
 }

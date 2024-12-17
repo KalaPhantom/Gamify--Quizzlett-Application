@@ -31,15 +31,7 @@ namespace Gamify__Quizzlett_Application.Custom_Controls
         }
 
         // Object Instannce
-        Create_Quiz create_quiz_form;
-
-        private void create_btn_Click(object sender, EventArgs e)
-        {
-            create_quiz_form = new Create_Quiz();
-            create_quiz_form.MdiParent = mdiContainer;
-            create_quiz_form.Show();
-            create_quiz_form.Dock = DockStyle.Fill;
-        }
+     
         #endregion
     }
 }

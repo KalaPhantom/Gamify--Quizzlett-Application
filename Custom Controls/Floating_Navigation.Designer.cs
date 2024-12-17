@@ -50,7 +50,7 @@
             create_btn.TabIndex = 1;
             create_btn.Text = "Create";
             create_btn.UseVisualStyleBackColor = true;
-            create_btn.Click += create_btn_Click;
+          
             // 
             // Floating_Navigation
             // 

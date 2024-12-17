@@ -53,29 +53,16 @@ namespace Gamify__Quizzlett_Application.Forms
             settings_btn.Top = 200;
             stats_btn.Left = 300;
             
-
-
-
-
+            // Animations
             Transition
                 .With(quiz_list_btn, nameof(Left), ql_1 )
                 .With(create_quiz_btn, nameof(Top), ql_2)
                 .With(notes_btn, nameof(Left), ql_3)
                 .With(settings_btn, nameof(Top), ql_4)
                 .With(stats_btn, nameof(Left), ql_5)
-                .EaseInEaseOut(TimeSpan.FromSeconds(1));
+                .EaseInEaseOut(TimeSpan.FromSeconds(1.5));
 
-           
-
-
-
-
-
-
-
-
-
-
+       
 
         }
 
@@ -103,7 +90,7 @@ namespace Gamify__Quizzlett_Application.Forms
         // Create quiz button
         private void create_quiz_btn_Click(object sender, EventArgs e)
         {
-            create_Quiz = new Create_Quiz();
+            create_Quiz = new Create_Quiz(mdiContainer);
             create_Quiz.MdiParent = mdiContainer;
             create_Quiz.FormClosed += Create_Quiz_FormClosed;
             create_Quiz.Show();
