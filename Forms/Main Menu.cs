@@ -25,11 +25,6 @@ namespace Gamify__Quizzlett_Application.Forms
         Settings settings;
         Notes notes;
 
-
-
-
-
-
         // Reference Object
         Main_Menu mdiContainer;
 
@@ -61,9 +56,6 @@ namespace Gamify__Quizzlett_Application.Forms
                 .With(settings_btn, nameof(Top), ql_4)
                 .With(stats_btn, nameof(Left), ql_5)
                 .EaseInEaseOut(TimeSpan.FromSeconds(1.5));
-
-       
-
         }
 
 

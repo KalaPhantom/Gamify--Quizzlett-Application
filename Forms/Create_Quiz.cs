@@ -50,6 +50,7 @@ namespace Gamify__Quizzlett_Application.Forms
         #endregion
 
 
+        #region Hover events in the properties
         // Hover event for property info display
         private void inv_groupBox_MouseHover(object sender, EventArgs e)
         {
@@ -60,7 +61,7 @@ namespace Gamify__Quizzlett_Application.Forms
         {
             property_txbx.Text = "Drag and Drop image here or select an image file";
         }
-
+        #endregion
 
 
         #region Mode Navigation Pane
@@ -209,15 +210,18 @@ namespace Gamify__Quizzlett_Application.Forms
         #region create event
         public void create_btn_Click(object sender, EventArgs e)
         {
-            // Create instance of the quiz object
+
+
+            // Create instance of the quiz object 
             Quiz_Data_Model? quiz = new Quiz_Data_Model()
             {
                 quiz_name = this.quizName_txbx.Text,
                 Subject = this.subject_txbx.Text,
-
-
+                type = this.quizMode
             };
 
+            // Create instance of the new form "Modify form"
+            // Pass the existing instance of the MDI parent form 
             modify_form = new Modify_Quiz_form(this, quiz);
             modify_form.MdiParent = this.MdiParent;
             modify_form.FormClosed += Modify_form_FormClosed;
@@ -227,7 +231,7 @@ namespace Gamify__Quizzlett_Application.Forms
 
         private void Modify_form_FormClosed(object? sender, FormClosedEventArgs e)
         {
-            // destro the instance of the object
+            // destroy the instance of the object
             modify_form = null;
         }
         #endregion
