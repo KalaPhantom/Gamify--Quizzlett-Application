@@ -16,13 +16,19 @@ namespace Gamify__Quizzlett_Application.Forms
     public partial class Modify_Quiz_form : Form
     {
 
+        private int q_count = 1; // question count 
+
         // Properties -- as nullable
+        // Most of the properties is set as nullable as the may contain values of a null type
         private string? type;
+        private string? quizName;
+        private string? quizDescription; // unused
+        private Image? image;
 
-        // class reference
-        Create_Quiz base_instance;
-        Quiz_Data_Model quiz;
-
+        #region Class reference
+        Create_Quiz base_instance; // Previous class instnace 
+        Quiz_Data_Model quiz; // base data model
+        #endregion
 
 
         public Modify_Quiz_form(Create_Quiz base_instance, Quiz_Data_Model? quiz)
@@ -33,19 +39,23 @@ namespace Gamify__Quizzlett_Application.Forms
             // copy the attributes on create
             this.base_instance = base_instance;
             this.quiz = quiz;
-            this.type = quiz?.type;
 
-            // Implent switch cases to identify the quiz mode from the other form
-            // Create instances of the question models
-            // Statement with a nullable type
-            // This cases will be implemented for initialization purposes
-            switch (quiz?.type) { 
+            // copy attributes in this instance 
+            this.type = quiz?.type;
+            this.quizName = quiz?.quiz_name;
+            this.image = quiz?.imageProfile;
+
+
+            // Switch case for initializing the modifiable interfaces
+            switch (quiz?.type)
+            {
 
                 case "MC":
-                    Modifiable_MC mod = new Modifiable_MC(); 
-                    card_panel.Controls.Add(mod);
-                    mod.Dock = DockStyle.Fill;
 
+                    // Create the instance of the interface
+                    Modifiable_MC mod = new Modifiable_MC();
+                    card_panel.Controls.Add(mod);
+                    
                     break;
 
                 case "ID":
@@ -55,9 +65,9 @@ namespace Gamify__Quizzlett_Application.Forms
                     break;
 
                 default: // if the value is null
-                    
-                break;
-            
+
+                    break;
+
             }
 
 
@@ -69,14 +79,43 @@ namespace Gamify__Quizzlett_Application.Forms
         {
             this.Close();
             quiz = null;
-            // TODO: Implement additional function
+         
         }
 
 
-        #region
+        #region Add button for adding new instance of an object
         private void Add_btn_Click(object sender, EventArgs e)
         {
+            // Switch case for quiz type verification
+            // This will be used interchangebly for the type of quiz model to be necessarily used in various instances
+            // this will be mainly used in creating another instances of an object in the flowlayout panel
+            switch (type)
+            {
+                case "MC":
+                    Modifiable_MC mod = new Modifiable_MC();
+                    card_panel.Controls.Add(mod);
+                    
+                    break;
 
+                case "ID":
+                    break;
+
+                case "FB":
+                    break;
+
+                default: break;
+            }
+
+
+        }
+        #endregion
+
+        #region save and exit event
+        private void SaveExit_btn_Click(object sender, EventArgs e)
+        {
+            // close the active form 
+            this.Close();
+           
         }
         #endregion
     }

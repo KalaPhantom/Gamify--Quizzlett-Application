@@ -48,6 +48,9 @@ namespace Quizlett_Prototype.Additional_Forms.Functions
         public string Question { get; set; }
         public string correct_Answer { get; set; }
 
+        public int question_number { get; set; }
+
+        // Default Constructor 
         public QuestionModel() {
             this.Question = "Oppps, Looks like we've made some mistakes!! -- Nothing to see here";
             this.correct_Answer = "None";
