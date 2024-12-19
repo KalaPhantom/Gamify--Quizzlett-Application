@@ -210,7 +210,8 @@ namespace Gamify__Quizzlett_Application.Forms
         #region create event
         public void create_btn_Click(object sender, EventArgs e)
         {
-
+          
+            validate_data();
 
             // Create instance of the quiz object 
             Quiz_Data_Model? quiz = new Quiz_Data_Model()
@@ -233,6 +234,18 @@ namespace Gamify__Quizzlett_Application.Forms
         {
             // destroy the instance of the object
             modify_form = null;
+        }
+
+        private void validate_data() {
+
+            if (string.IsNullOrEmpty(quizName_txbx.Text)) {
+                quizName_txbx.Text = "Untitled Quiz";
+            }
+
+            if (string.IsNullOrEmpty(subject_txbx.Text)) {
+                subject_txbx.Text = "Not set";
+            }
+        
         }
         #endregion
     }

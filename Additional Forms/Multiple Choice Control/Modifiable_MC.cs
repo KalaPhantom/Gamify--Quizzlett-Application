@@ -22,9 +22,12 @@ namespace Gamify__Quizzlett_Application.Additional_Forms.Multiple_Choice_Control
 
 
         #endregion
-        public Modifiable_MC()
+        public Modifiable_MC(int count)
         {
+
             InitializeComponent();
+            question_number = count;
+            count_lbl.Text = count.ToString();
             update_correct_Selection();
         }
 
@@ -113,5 +116,12 @@ namespace Gamify__Quizzlett_Application.Additional_Forms.Multiple_Choice_Control
         }
         #endregion
 
+
+        #region Drag and Drop event
+        private void main_pb_DragDrop(object sender, DragEventArgs e)
+        {
+            image_lbl.Visible = false;
+        }
+        #endregion
     }
 }

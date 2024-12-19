@@ -38,6 +38,7 @@
             Modify_lbl = new Label();
             browsw_file = new FolderBrowserDialog();
             groupBox1 = new GroupBox();
+            image_lbl = new Label();
             count_lbl = new Label();
             label1 = new Label();
             groupBox2 = new GroupBox();
@@ -72,6 +73,7 @@
             main_pb.Size = new Size(305, 276);
             main_pb.TabIndex = 12;
             main_pb.TabStop = false;
+            main_pb.DragDrop += main_pb_DragDrop;
             // 
             // Question_holder_txbx
             // 
@@ -134,12 +136,24 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(image_lbl);
             groupBox1.Controls.Add(main_pb);
             groupBox1.Location = new Point(90, 36);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(317, 305);
             groupBox1.TabIndex = 17;
             groupBox1.TabStop = false;
+            // 
+            // image_lbl
+            // 
+            image_lbl.AutoSize = true;
+            image_lbl.Font = new Font("Architects Daughter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            image_lbl.ForeColor = SystemColors.ButtonHighlight;
+            image_lbl.Location = new Point(105, 187);
+            image_lbl.Name = "image_lbl";
+            image_lbl.Size = new Size(113, 20);
+            image_lbl.TabIndex = 13;
+            image_lbl.Text = "add image here";
             // 
             // count_lbl
             // 
@@ -231,6 +245,7 @@
             Size = new Size(1054, 497);
             ((System.ComponentModel.ISupportInitialize)main_pb).EndInit();
             groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ResumeLayout(false);
@@ -254,5 +269,6 @@
         private Label Selected;
         private Button rightSelector_btn;
         private Button leftSelector_btn;
+        private Label image_lbl;
     }
 }

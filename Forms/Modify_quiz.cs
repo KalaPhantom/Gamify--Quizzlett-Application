@@ -36,6 +36,7 @@ namespace Gamify__Quizzlett_Application.Forms
             InitializeComponent();
 
 
+
             // copy the attributes on create
             this.base_instance = base_instance;
             this.quiz = quiz;
@@ -53,8 +54,9 @@ namespace Gamify__Quizzlett_Application.Forms
                 case "MC":
 
                     // Create the instance of the interface
-                    Modifiable_MC mod = new Modifiable_MC();
+                    Modifiable_MC mod = new Modifiable_MC(q_count);
                     card_panel.Controls.Add(mod);
+                    q_count++;
                     
                     break;
 
@@ -69,6 +71,9 @@ namespace Gamify__Quizzlett_Application.Forms
                     break;
 
             }
+
+            // Update on-form displays
+            name_lbl_display.Text = "Quiz Name: " +  quiz.quiz_name;
 
 
         }
@@ -92,8 +97,9 @@ namespace Gamify__Quizzlett_Application.Forms
             switch (type)
             {
                 case "MC":
-                    Modifiable_MC mod = new Modifiable_MC();
+                    Modifiable_MC mod = new Modifiable_MC(q_count);
                     card_panel.Controls.Add(mod);
+                    q_count++;
                     
                     break;
 
@@ -114,9 +120,34 @@ namespace Gamify__Quizzlett_Application.Forms
         private void SaveExit_btn_Click(object sender, EventArgs e)
         {
             // close the active form 
+            save_all_question_model();
             this.Close();
+
            
         }
+
+        private void save_all_question_model() {
+
+           
+
+            foreach (Modifiable_MC MC_Control in card_panel.Controls) {
+                QuestionModel_MultipleChoice MC = new QuestionModel_MultipleChoice()
+                {
+                    Question = MC_Control.question,
+                    correct_Answer = MC_Control.correct_answer,
+                    question_number = MC_Control.question_number,
+                    choices_Collection = MC_Control.answers
+
+                };
+
+                quiz.collection_Questions.AddLast(MC);
+
+            }
+        
+        
+        }
+
+
         #endregion
     }
 }

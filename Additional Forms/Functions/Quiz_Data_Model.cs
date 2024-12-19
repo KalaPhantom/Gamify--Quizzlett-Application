@@ -38,7 +38,7 @@ namespace Quizlett_Prototype.Additional_Forms.Functions
         }
 
         // Implementation of LinkList as question objects collection
-        public LinkedList<QuestionModel> collections_Questions = new LinkedList<QuestionModel>();
+        public LinkedList<QuestionModel> collection_Questions = new LinkedList<QuestionModel>();
 
     }
 
@@ -62,7 +62,7 @@ namespace Quizlett_Prototype.Additional_Forms.Functions
     public class QuestionModel_MultipleChoice : QuestionModel {
 
         // Serve as a collection of choices
-        public Queue<string> choices_Collection = new Queue<string>();
+        public string[] choices_Collection = new string[4];
 
     }
 

@@ -35,13 +35,16 @@
             Actions = new Label();
             SaveExit_btn = new Button();
             right_panel = new Panel();
+            groupBox1 = new GroupBox();
             panel1 = new Panel();
             color_panel2 = new Panel();
             card_panel = new FlowLayoutPanel();
             color_panel = new Panel();
+            name_lbl_display = new Label();
             statusStrip1.SuspendLayout();
             right_panel.SuspendLayout();
             panel1.SuspendLayout();
+            color_panel.SuspendLayout();
             SuspendLayout();
             // 
             // return_btn
@@ -62,10 +65,10 @@
             Add_btn.FlatStyle = FlatStyle.Flat;
             Add_btn.Font = new Font("Architects Daughter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Add_btn.ForeColor = SystemColors.ButtonHighlight;
-            Add_btn.Location = new Point(44, 110);
+            Add_btn.Location = new Point(22, 118);
             Add_btn.Margin = new Padding(3, 2, 3, 2);
             Add_btn.Name = "Add_btn";
-            Add_btn.Size = new Size(108, 41);
+            Add_btn.Size = new Size(137, 41);
             Add_btn.TabIndex = 3;
             Add_btn.Text = "Add";
             Add_btn.UseVisualStyleBackColor = true;
@@ -93,7 +96,7 @@
             Actions.AutoSize = true;
             Actions.Font = new Font("Architects Daughter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Actions.ForeColor = Color.Transparent;
-            Actions.Location = new Point(44, 76);
+            Actions.Location = new Point(22, 88);
             Actions.Name = "Actions";
             Actions.Size = new Size(58, 20);
             Actions.TabIndex = 7;
@@ -105,10 +108,10 @@
             SaveExit_btn.FlatStyle = FlatStyle.Flat;
             SaveExit_btn.Font = new Font("Architects Daughter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SaveExit_btn.ForeColor = SystemColors.ButtonHighlight;
-            SaveExit_btn.Location = new Point(44, 438);
+            SaveExit_btn.Location = new Point(22, 411);
             SaveExit_btn.Margin = new Padding(3, 2, 3, 2);
             SaveExit_btn.Name = "SaveExit_btn";
-            SaveExit_btn.Size = new Size(108, 63);
+            SaveExit_btn.Size = new Size(137, 63);
             SaveExit_btn.TabIndex = 8;
             SaveExit_btn.Text = "Save and Exit";
             SaveExit_btn.UseVisualStyleBackColor = true;
@@ -117,6 +120,7 @@
             // right_panel
             // 
             right_panel.BackColor = Color.FromArgb(23, 23, 23);
+            right_panel.Controls.Add(groupBox1);
             right_panel.Controls.Add(return_btn);
             right_panel.Controls.Add(SaveExit_btn);
             right_panel.Controls.Add(Add_btn);
@@ -126,6 +130,14 @@
             right_panel.Name = "right_panel";
             right_panel.Size = new Size(181, 556);
             right_panel.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Location = new Point(22, 156);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(137, 250);
+            groupBox1.TabIndex = 11;
+            groupBox1.TabStop = false;
             // 
             // panel1
             // 
@@ -162,11 +174,22 @@
             // 
             color_panel.AutoScroll = true;
             color_panel.BackColor = Color.FromArgb(63, 63, 70);
+            color_panel.Controls.Add(name_lbl_display);
             color_panel.Dock = DockStyle.Top;
             color_panel.Location = new Point(0, 0);
             color_panel.Name = "color_panel";
             color_panel.Size = new Size(1329, 57);
             color_panel.TabIndex = 1;
+            // 
+            // name_lbl_display
+            // 
+            name_lbl_display.Font = new Font("Architects Daughter", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            name_lbl_display.ForeColor = Color.Transparent;
+            name_lbl_display.Location = new Point(205, 16);
+            name_lbl_display.Name = "name_lbl_display";
+            name_lbl_display.Size = new Size(565, 23);
+            name_lbl_display.TabIndex = 0;
+            name_lbl_display.Text = "Name";
             // 
             // Modify_Quiz_form
             // 
@@ -186,6 +209,7 @@
             right_panel.ResumeLayout(false);
             right_panel.PerformLayout();
             panel1.ResumeLayout(false);
+            color_panel.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -203,5 +227,7 @@
         private FlowLayoutPanel card_panel;
         private Panel color_panel;
         private Panel color_panel2;
+        private Label name_lbl_display;
+        private GroupBox groupBox1;
     }
 }
