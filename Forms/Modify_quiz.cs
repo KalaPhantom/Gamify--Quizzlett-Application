@@ -1,4 +1,5 @@
 ﻿using Gamify__Quizzlett_Application.Additional_Forms.Multiple_Choice_Control;
+using Gamify__Quizzlett_Application.User_Control.Quiz_cards;
 using Quizlett_Prototype.Additional_Forms.Functions;
 using System;
 using System.Collections.Generic;
@@ -24,14 +25,17 @@ namespace Gamify__Quizzlett_Application.Forms
         private string? quizName;
         private string? quizDescription; // unused
         private Image? image;
+        private string? subject; 
 
         #region Class reference
         Create_Quiz base_instance; // Previous class instnace 
-        Quiz_Data_Model quiz; // base data model
+        Quiz_Data_Model? quiz; // base data model
+        FlowLayoutPanel menu_panel;
+        Main_Menu menu;
         #endregion
 
 
-        public Modify_Quiz_form(Create_Quiz base_instance, Quiz_Data_Model? quiz)
+        public Modify_Quiz_form(Create_Quiz base_instance, Quiz_Data_Model? quiz, FlowLayoutPanel menu_panel, Main_Menu menu)
         {
             InitializeComponent();
 
@@ -40,11 +44,16 @@ namespace Gamify__Quizzlett_Application.Forms
             // copy the attributes on create
             this.base_instance = base_instance;
             this.quiz = quiz;
+            this.menu_panel = menu_panel;
+            this.menu = menu;
+
+           
 
             // copy attributes in this instance 
             this.type = quiz?.type;
             this.quizName = quiz?.quiz_name;
             this.image = quiz?.imageProfile;
+            this.subject = quiz?.Subject;
 
 
             // Switch case for initializing the modifiable interfaces
@@ -73,7 +82,7 @@ namespace Gamify__Quizzlett_Application.Forms
             }
 
             // Update on-form displays
-            name_lbl_display.Text = "Quiz Name: " +  quiz.quiz_name;
+            name_lbl_display.Text = "Quiz Name: " +  quiz?.quiz_name;
 
 
         }
@@ -83,7 +92,7 @@ namespace Gamify__Quizzlett_Application.Forms
         private void return_btn_Click(object sender, EventArgs e)
         {
             this.Close();
-            quiz = null;
+            //quiz = null;
          
         }
 
@@ -121,30 +130,70 @@ namespace Gamify__Quizzlett_Application.Forms
         {
             // close the active form 
             save_all_question_model();
+
+            // Add an interface to represent the new quiz instance
+
+
+            base_instance.Close();
             this.Close();
 
            
         }
 
+
+        /// <summary>
+        /// Gather all instances of question models and parse in a link list collection
+        /// </summary>
         private void save_all_question_model() {
 
-           
 
+            // TODO: Implement sorter using switch statement
+
+
+            
+
+            // The use of itterator to gather all instances of controls in the flow layout panel (card_panel)
+            // And pass all properties of all instances in the collection of question 'objects' in the base class
             foreach (Modifiable_MC MC_Control in card_panel.Controls) {
-                QuestionModel_MultipleChoice MC = new QuestionModel_MultipleChoice()
+                QuestionModel MC = new QuestionModel_MultipleChoice()
                 {
                     Question = MC_Control.question,
                     correct_Answer = MC_Control.correct_answer,
                     question_number = MC_Control.question_number,
+
+                    // Change log -- 00n1
+                    // Wil 
                     choices_Collection = MC_Control.answers
 
                 };
 
+                // Add all elements 
                 quiz.collection_Questions.AddLast(MC);
 
+                
+                
+
             }
-        
-        
+
+            // Create an interface
+            // Pass the quiz base instance
+            Quiz_Card_List card = new Quiz_Card_List(quiz, menu) {
+
+                quiz_name = quizName,
+                quiz_subject = this.subject,
+                quiz_type = this.type
+
+
+
+            };
+
+            // Add the controls
+            menu_panel.Controls.Add(card);
+
+
+
+
+
         }
 
 

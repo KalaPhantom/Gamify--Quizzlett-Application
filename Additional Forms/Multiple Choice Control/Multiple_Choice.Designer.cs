@@ -28,80 +28,97 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            textBox1 = new TextBox();
+            Option_C_btn = new Button();
+            Option_D_btn = new Button();
+            Option_B_btn = new Button();
+            Option_A_btn = new Button();
+            Question_txbx = new TextBox();
+            nextOrSkip_button = new Button();
             SuspendLayout();
             // 
-            // button1
+            // Option_C_btn
             // 
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Architects Daughter", 10.8F);
-            button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(65, 538);
-            button1.Name = "button1";
-            button1.Size = new Size(504, 61);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            Option_C_btn.FlatStyle = FlatStyle.Flat;
+            Option_C_btn.Font = new Font("Architects Daughter", 10.8F);
+            Option_C_btn.ForeColor = SystemColors.ButtonFace;
+            Option_C_btn.Location = new Point(85, 486);
+            Option_C_btn.Name = "Option_C_btn";
+            Option_C_btn.Size = new Size(504, 61);
+            Option_C_btn.TabIndex = 0;
+            Option_C_btn.Text = "Option C";
+            Option_C_btn.UseVisualStyleBackColor = true;
+            Option_C_btn.Click += Option_C_btn_Click;
             // 
-            // button2
+            // Option_D_btn
             // 
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Architects Daughter", 10.8F);
-            button2.ForeColor = SystemColors.ButtonFace;
-            button2.Location = new Point(595, 538);
-            button2.Name = "button2";
-            button2.Size = new Size(496, 61);
-            button2.TabIndex = 1;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            Option_D_btn.FlatStyle = FlatStyle.Flat;
+            Option_D_btn.Font = new Font("Architects Daughter", 10.8F);
+            Option_D_btn.ForeColor = SystemColors.ButtonFace;
+            Option_D_btn.Location = new Point(595, 486);
+            Option_D_btn.Name = "Option_D_btn";
+            Option_D_btn.Size = new Size(496, 61);
+            Option_D_btn.TabIndex = 1;
+            Option_D_btn.Text = "Option D";
+            Option_D_btn.UseVisualStyleBackColor = true;
+            Option_D_btn.Click += Option_D_btn_Click;
             // 
-            // button3
+            // Option_B_btn
             // 
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Architects Daughter", 10.8F);
-            button3.ForeColor = SystemColors.ButtonFace;
-            button3.Location = new Point(595, 470);
-            button3.Name = "button3";
-            button3.Size = new Size(496, 61);
-            button3.TabIndex = 2;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            Option_B_btn.FlatStyle = FlatStyle.Flat;
+            Option_B_btn.Font = new Font("Architects Daughter", 10.8F);
+            Option_B_btn.ForeColor = SystemColors.ButtonFace;
+            Option_B_btn.Location = new Point(595, 418);
+            Option_B_btn.Name = "Option_B_btn";
+            Option_B_btn.Size = new Size(496, 61);
+            Option_B_btn.TabIndex = 2;
+            Option_B_btn.Text = "Option B";
+            Option_B_btn.UseVisualStyleBackColor = true;
+            Option_B_btn.Click += Option_B_btn_Click;
             // 
-            // button4
+            // Option_A_btn
             // 
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Architects Daughter", 10.8F);
-            button4.ForeColor = SystemColors.ButtonFace;
-            button4.Location = new Point(65, 470);
-            button4.Name = "button4";
-            button4.Size = new Size(504, 61);
-            button4.TabIndex = 3;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
+            Option_A_btn.FlatStyle = FlatStyle.Flat;
+            Option_A_btn.Font = new Font("Architects Daughter", 10.8F);
+            Option_A_btn.ForeColor = SystemColors.ButtonFace;
+            Option_A_btn.Location = new Point(85, 418);
+            Option_A_btn.Name = "Option_A_btn";
+            Option_A_btn.Size = new Size(504, 61);
+            Option_A_btn.TabIndex = 3;
+            Option_A_btn.Text = "Option A";
+            Option_A_btn.UseVisualStyleBackColor = true;
+            Option_A_btn.Click += Option_A_btn_Click;
             // 
-            // textBox1
+            // Question_txbx
             // 
-            textBox1.Font = new Font("Architects Daughter", 10.8F);
-            textBox1.Location = new Point(65, 63);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(1026, 392);
-            textBox1.TabIndex = 4;
+            Question_txbx.Font = new Font("Architects Daughter", 10.8F);
+            Question_txbx.Location = new Point(77, 63);
+            Question_txbx.Multiline = true;
+            Question_txbx.Name = "Question_txbx";
+            Question_txbx.Size = new Size(1026, 349);
+            Question_txbx.TabIndex = 4;
+            Question_txbx.TextAlign = HorizontalAlignment.Center;
+            // 
+            // nextOrSkip_button
+            // 
+            nextOrSkip_button.Font = new Font("Architects Daughter", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            nextOrSkip_button.Location = new Point(542, 584);
+            nextOrSkip_button.Name = "nextOrSkip_button";
+            nextOrSkip_button.Size = new Size(121, 40);
+            nextOrSkip_button.TabIndex = 5;
+            nextOrSkip_button.Text = "Next";
+            nextOrSkip_button.UseVisualStyleBackColor = true;
             // 
             // Multiple_Choice
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(4, 47, 46);
-            Controls.Add(textBox1);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(nextOrSkip_button);
+            Controls.Add(Question_txbx);
+            Controls.Add(Option_A_btn);
+            Controls.Add(Option_B_btn);
+            Controls.Add(Option_D_btn);
+            Controls.Add(Option_C_btn);
             Name = "Multiple_Choice";
             Size = new Size(1205, 663);
             ResumeLayout(false);
@@ -110,10 +127,11 @@
 
         #endregion
 
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private TextBox textBox1;
+        private Button Option_C_btn;
+        private Button Option_D_btn;
+        private Button Option_B_btn;
+        private Button Option_A_btn;
+        private TextBox Question_txbx;
+        private Button nextOrSkip_button;
     }
 }

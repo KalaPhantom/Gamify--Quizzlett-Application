@@ -39,8 +39,10 @@
             about_btn = new MaterialSkin.Controls.MaterialButton();
             MainMenu_flp = new FlowLayoutPanel();
             panel1 = new Panel();
+            panel2 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // quiz_list_btn
@@ -147,13 +149,12 @@
             // 
             // MainMenu_flp
             // 
+            MainMenu_flp.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             MainMenu_flp.BackColor = Color.FromArgb(41, 37, 36);
-            MainMenu_flp.Dock = DockStyle.Right;
             MainMenu_flp.FlowDirection = FlowDirection.TopDown;
-            MainMenu_flp.Location = new Point(570, 0);
-            MainMenu_flp.Margin = new Padding(3, 2, 3, 2);
+            MainMenu_flp.Location = new Point(650, 0);
             MainMenu_flp.Name = "MainMenu_flp";
-            MainMenu_flp.Size = new Size(652, 538);
+            MainMenu_flp.Size = new Size(746, 717);
             MainMenu_flp.TabIndex = 9;
             // 
             // panel1
@@ -172,15 +173,23 @@
             panel1.Size = new Size(570, 538);
             panel1.TabIndex = 11;
             // 
+            // panel2
+            // 
+            panel2.Controls.Add(MainMenu_flp);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(652, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(744, 717);
+            panel2.TabIndex = 11;
+            // 
             // Menu_Panel
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(24, 24, 27);
-            ClientSize = new Size(1222, 538);
+            ClientSize = new Size(1396, 717);
             Controls.Add(panel1);
-            Controls.Add(MainMenu_flp);
             Controls.Add(button_pannel);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 2, 3, 2);
@@ -190,6 +199,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -206,5 +216,6 @@
         private MaterialSkin.Controls.MaterialButton about_btn;
         private FlowLayoutPanel MainMenu_flp;
         private Panel panel1;
+        private Panel panel2;
     }
 }
