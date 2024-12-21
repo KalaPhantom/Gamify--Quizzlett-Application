@@ -107,6 +107,7 @@
             nextOrSkip_button.TabIndex = 5;
             nextOrSkip_button.Text = "Next";
             nextOrSkip_button.UseVisualStyleBackColor = true;
+            nextOrSkip_button.Click += nextOrSkip_button_Click;
             // 
             // Multiple_Choice
             // 
