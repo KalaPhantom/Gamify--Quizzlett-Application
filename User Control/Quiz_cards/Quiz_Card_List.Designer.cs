@@ -28,22 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Quiz_Card_List));
             title_lbl = new Label();
             subject_lbl = new Label();
             panel1 = new Panel();
-            status_color_pnl = new Panel();
             test_lunch_btn = new Button();
+            status_color_pnl = new Panel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // title_lbl
             // 
             title_lbl.AutoSize = true;
-            title_lbl.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            title_lbl.Font = new Font("Architects Daughter", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             title_lbl.ForeColor = SystemColors.ButtonHighlight;
-            title_lbl.Location = new Point(50, 23);
+            title_lbl.Location = new Point(38, 14);
             title_lbl.Name = "title_lbl";
-            title_lbl.Size = new Size(53, 27);
+            title_lbl.Size = new Size(69, 38);
             title_lbl.TabIndex = 0;
             title_lbl.Text = "title";
             // 
@@ -51,7 +52,7 @@
             // 
             subject_lbl.AutoSize = true;
             subject_lbl.ForeColor = SystemColors.ButtonHighlight;
-            subject_lbl.Location = new Point(48, 62);
+            subject_lbl.Location = new Point(38, 52);
             subject_lbl.Name = "subject_lbl";
             subject_lbl.Size = new Size(56, 20);
             subject_lbl.TabIndex = 1;
@@ -66,6 +67,19 @@
             panel1.Size = new Size(266, 128);
             panel1.TabIndex = 2;
             // 
+            // test_lunch_btn
+            // 
+            test_lunch_btn.BackgroundImage = (Image)resources.GetObject("test_lunch_btn.BackgroundImage");
+            test_lunch_btn.BackgroundImageLayout = ImageLayout.Center;
+            test_lunch_btn.FlatStyle = FlatStyle.Flat;
+            test_lunch_btn.ForeColor = Color.Transparent;
+            test_lunch_btn.Location = new Point(34, 14);
+            test_lunch_btn.Name = "test_lunch_btn";
+            test_lunch_btn.Size = new Size(208, 95);
+            test_lunch_btn.TabIndex = 0;
+            test_lunch_btn.UseVisualStyleBackColor = true;
+            test_lunch_btn.Click += test_lunch_btn_Click;
+            // 
             // status_color_pnl
             // 
             status_color_pnl.BackColor = Color.FromArgb(45, 212, 191);
@@ -73,16 +87,6 @@
             status_color_pnl.Name = "status_color_pnl";
             status_color_pnl.Size = new Size(13, 125);
             status_color_pnl.TabIndex = 3;
-            // 
-            // test_lunch_btn
-            // 
-            test_lunch_btn.Location = new Point(87, 58);
-            test_lunch_btn.Name = "test_lunch_btn";
-            test_lunch_btn.Size = new Size(94, 29);
-            test_lunch_btn.TabIndex = 0;
-            test_lunch_btn.Text = "test Button";
-            test_lunch_btn.UseVisualStyleBackColor = true;
-            test_lunch_btn.Click += test_lunch_btn_Click;
             // 
             // Quiz_Card_List
             // 
