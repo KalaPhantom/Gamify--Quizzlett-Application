@@ -18,6 +18,7 @@ namespace Gamify__Quizzlett_Application.Forms
 
         // Object instance from the main menu
         Main_Menu menu;
+        FlowLayoutPanel menu_panel;
 
         // New instance of the linked object
         Modify_Quiz_form modify_form;
@@ -28,11 +29,19 @@ namespace Gamify__Quizzlett_Application.Forms
 
 
 
-        public Create_Quiz(Main_Menu menu)
+        public Create_Quiz(Main_Menu menu, FlowLayoutPanel menu_panel )
         {
-            this.menu = menu;
+            
             InitializeComponent();
             mode_indexUpdate();
+
+
+            // Pass an object reference on the local properties
+            this.menu = menu;
+            this.menu_panel = menu_panel;
+
+            // Set constructors in the local properties
+            // TODO NOTE: Fix this code below as it may cause some logical errors later on the project
             isTimerenabled = false;
             timer_lbl.Text = "false";
             showAnswer = false;
@@ -223,7 +232,7 @@ namespace Gamify__Quizzlett_Application.Forms
 
             // Create instance of the new form "Modify form"
             // Pass the existing instance of the MDI parent form 
-            modify_form = new Modify_Quiz_form(this, quiz);
+            modify_form = new Modify_Quiz_form(this, quiz, menu_panel,menu);
             modify_form.MdiParent = this.MdiParent;
             modify_form.FormClosed += Modify_form_FormClosed;
             modify_form.Show();

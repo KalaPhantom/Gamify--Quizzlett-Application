@@ -28,6 +28,9 @@ namespace Gamify__Quizzlett_Application.Forms
         // Reference Object
         Main_Menu mdiContainer;
 
+        // Control references
+        FlowLayoutPanel main_list;
+
         public Menu_Panel(Main_Menu mdiContainer)
         {
             InitializeComponent();
@@ -47,6 +50,8 @@ namespace Gamify__Quizzlett_Application.Forms
             notes_btn.Left = -200;
             settings_btn.Top = 200;
             stats_btn.Left = 300;
+
+            main_list = MainMenu_flp; 
             
             // Animations
             Transition
@@ -82,7 +87,7 @@ namespace Gamify__Quizzlett_Application.Forms
         // Create quiz button
         private void create_quiz_btn_Click(object sender, EventArgs e)
         {
-            create_Quiz = new Create_Quiz(mdiContainer);
+            create_Quiz = new Create_Quiz(mdiContainer, MainMenu_flp);
             create_Quiz.MdiParent = mdiContainer;
             create_Quiz.FormClosed += Create_Quiz_FormClosed;
             create_Quiz.Show();

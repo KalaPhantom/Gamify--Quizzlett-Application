@@ -62,7 +62,7 @@ namespace Quizlett_Prototype.Additional_Forms.Functions
     public class QuestionModel_MultipleChoice : QuestionModel {
 
         // Serve as a collection of choices
-        public string[] choices_Collection = new string[4];
+        public string[]? choices_Collection = new string[4];
 
     }
 

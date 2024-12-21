@@ -32,8 +32,7 @@ namespace Gamify__Quizzlett_Application
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Green50, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.BLACK);
- 
-
+            //Font a = new Font("Architecs Daughter", 14, FontStyle.Bold);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

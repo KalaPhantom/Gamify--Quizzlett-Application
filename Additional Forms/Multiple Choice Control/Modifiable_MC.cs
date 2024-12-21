@@ -78,6 +78,7 @@ namespace Gamify__Quizzlett_Application.Additional_Forms.Multiple_Choice_Control
                     correct_answer = answers?[3];
                     Selected.Text = "Option D";
                     break;
+
                 default:
                     correct_answer = answers?[1];
                     Selected.Text = "Option A";
@@ -92,21 +93,25 @@ namespace Gamify__Quizzlett_Application.Additional_Forms.Multiple_Choice_Control
         private void Opt_A_txbx_TextChanged(object sender, EventArgs e)
         {
             answers[0] = Opt_A_txbx.Text;
+            update_correct_Selection();
         }
 
         private void Opt_B_txbx_TextChanged(object sender, EventArgs e)
         {
             answers[1] = Opt_B_txbx.Text;
+            update_correct_Selection();
         }
 
         private void Opt_C_txbx_TextChanged(object sender, EventArgs e)
         {
             answers[2] = Opt_C_txbx.Text;
+            update_correct_Selection();
         }
 
         private void Opt_D_txbx_TextChanged(object sender, EventArgs e)
         {
             answers[3] = Opt_D_txbx.Text;
+            update_correct_Selection();
         }
 
         // Questions
