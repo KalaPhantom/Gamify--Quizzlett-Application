@@ -53,7 +53,7 @@ namespace Gamify__Quizzlett_Application.User_Control.Quiz_cards
             this.quiz = quiz;   
             this.menu = menu;
 
-            CheckObject();
+        
         }
 
 
@@ -61,7 +61,7 @@ namespace Gamify__Quizzlett_Application.User_Control.Quiz_cards
         // TODO: Implement better controls in this point 
         private void test_lunch_btn_Click(object sender, EventArgs e)
         {
-            CheckObject();
+          
             session = new Quiz_Session(menu, quiz);
             session.MdiParent = menu;
             session.FormClosed += Session_FormClosed;
@@ -77,14 +77,14 @@ namespace Gamify__Quizzlett_Application.User_Control.Quiz_cards
         }
 
 
-
+        // TODO: Get rid of this method once all debugging duties are all accomplished
         #region object Debugging methods
         private void CheckObject (){
 
             MessageBox.Show($"""""
 
-                {quiz.quiz_name} \n
-                {quiz.Subject}\n
+                {quiz.quiz_name} 
+                {quiz.Subject}
                 
                 
                 """""
