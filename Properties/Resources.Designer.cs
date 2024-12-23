@@ -103,6 +103,46 @@ namespace Gamify__Quizzlett_Application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap plus_small {
+            get {
+                object obj = ResourceManager.GetObject("plus-small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus_small1 {
+            get {
+                object obj = ResourceManager.GetObject("plus-small1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus_small2 {
+            get {
+                object obj = ResourceManager.GetObject("plus-small2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus_small3 {
+            get {
+                object obj = ResourceManager.GetObject("plus-small3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap png_0q6s6 {
             get {
                 object obj = ResourceManager.GetObject("png_0q6s6", resourceCulture);
@@ -163,6 +203,16 @@ namespace Gamify__Quizzlett_Application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ripple1 {
+            get {
+                object obj = ResourceManager.GetObject("ripple1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Side_Border___18_pp {
             get {
                 object obj = ResourceManager.GetObject("Side Border - 18 pp", resourceCulture);
@@ -173,9 +223,29 @@ namespace Gamify__Quizzlett_Application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Side_Border___18_pp1 {
+            get {
+                object obj = ResourceManager.GetObject("Side Border - 18 pp1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Side_Border_1 {
             get {
                 object obj = ResourceManager.GetObject("Side_Border_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Side_Border_11 {
+            get {
+                object obj = ResourceManager.GetObject("Side_Border_11", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

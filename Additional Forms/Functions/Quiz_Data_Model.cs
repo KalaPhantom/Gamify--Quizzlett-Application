@@ -17,7 +17,6 @@ using System.Collections.Generic;
 namespace Quizlett_Prototype.Additional_Forms.Functions
 {
 
-
     public class Quiz_Data_Model
     {
 
@@ -28,6 +27,13 @@ namespace Quizlett_Prototype.Additional_Forms.Functions
         public string? Subject { get; set; } // nullable
         public Image? imageProfile { get; set; } // nullable
 
+        // Implementation of LinkList as question objects collection
+        public LinkedList<QuestionModel> collection_Questions = new LinkedList<QuestionModel>();
+
+        // Base score property 
+        public double? score = 0;
+       
+
 
         // Constructor
         public Quiz_Data_Model() {
@@ -37,8 +43,7 @@ namespace Quizlett_Prototype.Additional_Forms.Functions
             this.Subject = "Not Set";
         }
 
-        // Implementation of LinkList as question objects collection
-        public LinkedList<QuestionModel> collection_Questions = new LinkedList<QuestionModel>();
+      
 
     }
 
@@ -49,6 +54,8 @@ namespace Quizlett_Prototype.Additional_Forms.Functions
         public string correct_Answer { get; set; }
 
         public int question_number { get; set; }
+
+        public Image? image { get; set; }    
 
         // Default Constructor 
         public QuestionModel() {
@@ -64,6 +71,10 @@ namespace Quizlett_Prototype.Additional_Forms.Functions
         // Serve as a collection of choices
         public string[]? choices_Collection = new string[4];
 
+    }
+
+    public class QuestionModel_Identification : QuestionModel { 
+        
     }
 
 

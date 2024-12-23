@@ -56,6 +56,7 @@
             return_btn.Size = new Size(39, 40);
             return_btn.TabIndex = 6;
             return_btn.UseVisualStyleBackColor = true;
+            return_btn.Click += return_btn_Click;
             // 
             // Timer_Progress
             // 

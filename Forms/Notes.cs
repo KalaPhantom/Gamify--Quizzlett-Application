@@ -113,9 +113,18 @@ namespace Gamify__Quizzlett_Application.Forms
         {
             if (dgvpreviousNotes.CurrentCell != null)
             {
-                textboxtitle.Text = notes.Rows[dgvpreviousNotes.CurrentCell.RowIndex].ItemArray[0].ToString();
-                rtbTexEditor.Rtf = notes.Rows[dgvpreviousNotes.CurrentCell.RowIndex].ItemArray[1].ToString();
-                editing = true;
+
+                // Implemented fixes
+                try
+                {
+                    textboxtitle.Text = notes.Rows[dgvpreviousNotes.CurrentCell.RowIndex].ItemArray[0].ToString();
+                    rtbTexEditor.Rtf = notes.Rows[dgvpreviousNotes.CurrentCell.RowIndex].ItemArray[1].ToString();
+                    editing = true;
+                }
+                catch (Exception ex)
+                {
+                    // Just do nothing
+                }
             }
         }
 

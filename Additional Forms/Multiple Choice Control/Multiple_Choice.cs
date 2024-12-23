@@ -36,29 +36,34 @@ namespace Gamify__Quizzlett_Application.Additional_Forms
         #endregion
 
         #region Object Reference
+
         QuestionModel_MultipleChoice model;
+        FlowLayoutPanel card_container;
+        Quiz_Data_Model quiz; 
         #endregion
 
 
-        public Multiple_Choice(QuestionModel_MultipleChoice model)
+        public Multiple_Choice(QuestionModel_MultipleChoice model, FlowLayoutPanel card_container, Quiz_Data_Model quiz)
         {
             InitializeComponent();
 
 
             // instance the object 
             this.model = model;
+            this.quiz = quiz;
 
             // Initialize all data here
             this.question = model.Question;
             this.correct_answer = model.correct_Answer;
             this.answer_multiple = model.choices_Collection;
+            this.card_container = card_container;   
 
             // Intialize Options on buttons
             Option_A_btn.Text = answer_multiple[0];
             Option_B_btn.Text = answer_multiple[1];
             Option_C_btn.Text = answer_multiple[2];
             Option_D_btn.Text = answer_multiple[3];
-
+            this.card_container = card_container;   
         }
 
 
@@ -76,6 +81,7 @@ namespace Gamify__Quizzlett_Application.Additional_Forms
 
             isAnswerCorrect = Option_A_btn.Text == correct_answer ? true : false;
             c_ans = 'A';
+            UpdateScore();
             Updatecontrols();
         }
 
@@ -84,6 +90,7 @@ namespace Gamify__Quizzlett_Application.Additional_Forms
         {
             isAnswerCorrect = Option_B_btn.Text == correct_answer ? true : false;
             c_ans = 'B';
+            UpdateScore();
             Updatecontrols();
         }
 
@@ -92,6 +99,7 @@ namespace Gamify__Quizzlett_Application.Additional_Forms
         {
             isAnswerCorrect = Option_C_btn.Text == correct_answer ? true : false;
             c_ans = 'C';
+            UpdateScore();
             Updatecontrols();
         }
 
@@ -100,6 +108,7 @@ namespace Gamify__Quizzlett_Application.Additional_Forms
         {
             isAnswerCorrect = Option_D_btn.Text == correct_answer ? true : false;
             c_ans = 'D';
+            UpdateScore();
             Updatecontrols();
         }
 
@@ -114,7 +123,7 @@ namespace Gamify__Quizzlett_Application.Additional_Forms
             Option_C_btn.Enabled = false;
             Option_D_btn.Enabled = false;
 
-            // Update back colors
+            // Update back colors (Overwrite)
             Option_A_btn.BackColor = Option_A_btn.Text == correct_answer ? Color.Blue : Color.Red;
             Option_B_btn.BackColor = Option_B_btn.Text == correct_answer ? Color.Blue : Color.Red;
             Option_C_btn.BackColor = Option_C_btn.Text == correct_answer ? Color.Blue : Color.Red;
@@ -140,40 +149,51 @@ namespace Gamify__Quizzlett_Application.Additional_Forms
 
             switch (c_ans) {
                 case 'A':
-                    Option_A_btn.BackColor = Color.DarkOrange;
-                    Option_A_btn.BackColor = Option_A_btn.Text == correct_answer ? Color.Blue : Color.Red;
+                    
+                    Option_A_btn.BackColor = Option_A_btn.Text == correct_answer ? Color.Blue : Color.Orange;
                     break;
 
                 case 'B':
-                    Option_B_btn.BackColor = Color.DarkOrange;
-                    Option_B_btn.BackColor = Option_B_btn.Text == correct_answer ? Color.Blue : Color.Red;
+                   
+                    Option_B_btn.BackColor = Option_B_btn.Text == correct_answer ? Color.Blue : Color.Orange;
                     break;
 
                 case 'C':
-                    Option_C_btn.BackColor = Color.DarkOrange;
-                    Option_C_btn.BackColor = Option_C_btn.Text == correct_answer ? Color.Blue : Color.Red;
+                   
+                    Option_C_btn.BackColor = Option_C_btn.Text == correct_answer ? Color.Blue : Color.Orange;
                     break;
 
                 case 'D':
-                    Option_D_btn.BackColor = Color.DarkOrange;
-                    Option_D_btn.BackColor = Option_D_btn.Text == correct_answer ? Color.Blue : Color.Red;
+                    
+                    Option_D_btn.BackColor = Option_D_btn.Text == correct_answer ? Color.Blue : Color.Orange;
                     break;
 
-
             }
-        
-        
+
         }
-    
+
+        // Update score 
+
+        private void UpdateScore() {
+            if (isAnswerCorrect == true) {
+                quiz.score++;
+            }
+        }
+
+
+
 
         #endregion
 
 
-        #region 
+        #region Next or skip button Event
         private void nextOrSkip_button_Click(object sender, EventArgs e)
         {
-            this.Hide();
+
+            card_container.Controls.Remove(this);
+            Dispose(); // Clean the object
         }
+
         #endregion
     }
 }

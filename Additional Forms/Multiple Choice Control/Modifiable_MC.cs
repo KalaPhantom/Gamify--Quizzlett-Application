@@ -20,6 +20,8 @@ namespace Gamify__Quizzlett_Application.Additional_Forms.Multiple_Choice_Control
 
         public string[]? answers = new string[4]; // answer container
 
+        public Image image { get; set; }
+
 
         #endregion
         public Modifiable_MC(int count)
@@ -122,11 +124,61 @@ namespace Gamify__Quizzlett_Application.Additional_Forms.Multiple_Choice_Control
         #endregion
 
 
-        #region Drag and Drop event
-        private void main_pb_DragDrop(object sender, DragEventArgs e)
+        #region Image drag and drop event
+        private void panel_image_pn_DragDrop(object sender, DragEventArgs e)
         {
-            image_lbl.Visible = false;
+            // Get the file(s) from the drag event
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+            // Load the first valid image file into the PictureBox
+            if (files.Length > 0 && IsImageFile(files[0]))
+            {
+                panel_image_pn.BackgroundImage = Image.FromFile(files[0]);
+                image = panel_image_pn.BackgroundImage; // pass am image
+
+            }
+}
+
+        private void panel_image_pn_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+                // Validate if the file is an image
+                if (files.Length > 0 && IsImageFile(files[0]))
+                {
+                    e.Effect = DragDropEffects.Copy; // Allow drop
+                }
+                else
+                {
+                    e.Effect = DragDropEffects.None; // Deny drop
+                }
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
         }
+
+        private bool IsImageFile(string filePath)
+        {
+            try
+            {
+                using (Image img = Image.FromFile(filePath))
+                {
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
+
+
         #endregion
     }
 }

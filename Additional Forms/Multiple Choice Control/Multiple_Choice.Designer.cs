@@ -133,6 +133,6 @@
         private Button Option_B_btn;
         private Button Option_A_btn;
         private TextBox Question_txbx;
-        private Button nextOrSkip_button;
+        public Button nextOrSkip_button;
     }
 }

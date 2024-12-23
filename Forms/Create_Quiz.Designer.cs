@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Create_Quiz));
             return_btn = new Button();
             panel1 = new Panel();
             groupBox1 = new GroupBox();
@@ -52,15 +51,16 @@
             quizName_txbx = new MaterialSkin.Controls.MaterialTextBox();
             quiz_name_lbl = new Label();
             inv_groupBox = new GroupBox();
+            image_holder_pn = new Panel();
             label2 = new Label();
-            pictureBox1 = new PictureBox();
+            plus_icon = new Panel();
             label1 = new Label();
             materialScrollBar1 = new MaterialSkin.Controls.MaterialScrollBar();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             panel2.SuspendLayout();
             inv_groupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            image_holder_pn.SuspendLayout();
             SuspendLayout();
             // 
             // return_btn
@@ -77,13 +77,14 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.None;
             panel1.BackColor = Color.FromArgb(120, 113, 108);
             panel1.Controls.Add(groupBox1);
             panel1.Controls.Add(create_btn);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(inv_groupBox);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(279, 40);
+            panel1.Location = new Point(360, 23);
             panel1.Name = "panel1";
             panel1.Size = new Size(927, 732);
             panel1.TabIndex = 1;
@@ -326,7 +327,7 @@
             quizName_txbx.BackColor = Color.FromArgb(120, 113, 108);
             quizName_txbx.BorderStyle = BorderStyle.None;
             quizName_txbx.Depth = 0;
-            quizName_txbx.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            quizName_txbx.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             quizName_txbx.ForeColor = SystemColors.InactiveBorder;
             quizName_txbx.Hint = "Enter you quiz name here";
             quizName_txbx.LeadingIcon = null;
@@ -353,14 +354,27 @@
             // 
             // inv_groupBox
             // 
+            inv_groupBox.Controls.Add(image_holder_pn);
             inv_groupBox.Controls.Add(label2);
-            inv_groupBox.Controls.Add(pictureBox1);
             inv_groupBox.Location = new Point(60, 86);
             inv_groupBox.Name = "inv_groupBox";
             inv_groupBox.Size = new Size(376, 278);
             inv_groupBox.TabIndex = 3;
             inv_groupBox.TabStop = false;
             inv_groupBox.MouseHover += inv_groupBox_MouseHover;
+            // 
+            // image_holder_pn
+            // 
+            image_holder_pn.AllowDrop = true;
+            image_holder_pn.BackColor = Color.FromArgb(120, 113, 108);
+            image_holder_pn.BackgroundImageLayout = ImageLayout.Stretch;
+            image_holder_pn.Controls.Add(plus_icon);
+            image_holder_pn.Location = new Point(6, 28);
+            image_holder_pn.Name = "image_holder_pn";
+            image_holder_pn.Size = new Size(364, 219);
+            image_holder_pn.TabIndex = 6;
+            image_holder_pn.DragDrop += image_holder_pn_DragDrop;
+            image_holder_pn.DragEnter += image_holder_pn_DragEnter;
             // 
             // label2
             // 
@@ -373,17 +387,15 @@
             label2.TabIndex = 5;
             label2.Text = "Add Picture Quiz Profile";
             // 
-            // pictureBox1
+            // plus_icon
             // 
-            pictureBox1.BackgroundImageLayout = ImageLayout.Center;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(32, 38);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(320, 192);
-            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
-            pictureBox1.MouseEnter += pictureBox1_MouseEnter;
+            plus_icon.AllowDrop = true;
+            plus_icon.BackgroundImage = Properties.Resources.plus_small3;
+            plus_icon.BackgroundImageLayout = ImageLayout.Center;
+            plus_icon.Location = new Point(148, 76);
+            plus_icon.Name = "plus_icon";
+            plus_icon.Size = new Size(63, 61);
+            plus_icon.TabIndex = 7;
             // 
             // label1
             // 
@@ -413,7 +425,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(41, 37, 36);
-            ClientSize = new Size(1519, 771);
+            ClientSize = new Size(1564, 804);
             Controls.Add(panel1);
             Controls.Add(materialScrollBar1);
             Controls.Add(return_btn);
@@ -428,7 +440,7 @@
             panel2.PerformLayout();
             inv_groupBox.ResumeLayout(false);
             inv_groupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            image_holder_pn.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -439,7 +451,6 @@
         private MaterialSkin.Controls.MaterialScrollBar materialScrollBar1;
         private Label label1;
         private MaterialSkin.Controls.MaterialTextBox quizName_txbx;
-        private PictureBox pictureBox1;
         private Label quiz_name_lbl;
         private GroupBox inv_groupBox;
         private Label label2;
@@ -461,5 +472,7 @@
         private Label showAnswer_lbl;
         private Button showAnswer_R_btn;
         private Button timer_R_btn;
+        private Panel image_holder_pn;
+        private Panel plus_icon;
     }
 }

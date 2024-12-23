@@ -26,14 +26,18 @@ namespace Gamify__Quizzlett_Application.Forms
         public string quizMode { get; set; }
         public bool isTimerenabled { get; set; }
         public bool showAnswer { get; set; }
+        public Image? image { get; set; }
 
 
 
-        public Create_Quiz(Main_Menu menu, FlowLayoutPanel menu_panel )
+        public Create_Quiz(Main_Menu menu, FlowLayoutPanel menu_panel)
         {
-            
+
             InitializeComponent();
             mode_indexUpdate();
+
+            // set the allow drop property of a panel
+
 
 
             // Pass an object reference on the local properties
@@ -93,9 +97,6 @@ namespace Gamify__Quizzlett_Application.Forms
         {
 
             ModeCount = (ModeCount == 1) ? 3 : ModeCount - 1;
-
-
-
             mode_indexUpdate();
 
         }
@@ -219,24 +220,11 @@ namespace Gamify__Quizzlett_Application.Forms
         #region create event
         public void create_btn_Click(object sender, EventArgs e)
         {
-          
+
             validate_data();
+            initializeObject();
 
-            // Create instance of the quiz object 
-            Quiz_Data_Model? quiz = new Quiz_Data_Model()
-            {
-                quiz_name = this.quizName_txbx.Text,
-                Subject = this.subject_txbx.Text,
-                type = this.quizMode
-            };
 
-            // Create instance of the new form "Modify form"
-            // Pass the existing instance of the MDI parent form 
-            modify_form = new Modify_Quiz_form(this, quiz, menu_panel,menu);
-            modify_form.MdiParent = this.MdiParent;
-            modify_form.FormClosed += Modify_form_FormClosed;
-            modify_form.Show();
-            modify_form.Dock = DockStyle.Fill;
         }
 
         private void Modify_form_FormClosed(object? sender, FormClosedEventArgs e)
@@ -245,17 +233,118 @@ namespace Gamify__Quizzlett_Application.Forms
             modify_form = null;
         }
 
-        private void validate_data() {
 
-            if (string.IsNullOrEmpty(quizName_txbx.Text)) {
+        /// <summary>
+        /// validate_data()
+        /// 
+        /// validates if the all the strings came from texboxes are empty
+        /// assigns new values
+        /// </summary>
+        private void validate_data()
+        {
+
+
+
+            if (string.IsNullOrEmpty(quizName_txbx.Text))
+            {
                 quizName_txbx.Text = "Untitled Quiz";
             }
 
-            if (string.IsNullOrEmpty(subject_txbx.Text)) {
+            if (string.IsNullOrEmpty(subject_txbx.Text))
+            {
                 subject_txbx.Text = "Not set";
             }
-        
+
         }
+
+        // initialize objects base on the mode assignments
+        private void initializeObject()
+        {
+
+            // Create instance of the quiz object 
+            Quiz_Data_Model? quiz = new Quiz_Data_Model()
+            {
+                quiz_name = this.quizName_txbx.Text,
+                Subject = this.subject_txbx.Text,
+                type = this.quizMode,
+                imageProfile = this.image
+
+            };
+
+            // Create instance of the new form "Modify form"
+            // Pass the existing instance of the MDI parent form 
+            modify_form = new Modify_Quiz_form(this, quiz, menu_panel, menu);
+            modify_form.MdiParent = this.MdiParent;
+            modify_form.FormClosed += Modify_form_FormClosed;
+            modify_form.Show();
+            modify_form.Dock = DockStyle.Fill;
+
+
+        }
+
+        #endregion
+
+        #region image drag and drop event
+        private void image_holder_pn_DragDrop(object sender, DragEventArgs e)
+        {
+            // Get the file(s) from the drag event
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+            // Load the first valid image file into the PictureBox
+            if (files.Length > 0 && IsImageFile(files[0]))
+            {
+                image_holder_pn.BackgroundImage = Image.FromFile(files[0]);
+                image = panel1.BackgroundImage; // pass am image
+                plus_icon.Visible = false;
+
+
+            }
+        }
+        
+
+        private void image_holder_pn_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+                // Validate if the file is an image
+                if (files.Length > 0 && IsImageFile(files[0]))
+                {
+                    e.Effect = DragDropEffects.Copy; // Allow drop
+                    plus_icon.Visible = false;
+                }
+                else
+                {
+                    e.Effect = DragDropEffects.None; // Deny drop
+                }
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+
+        /// <summary>
+        /// Check the image format
+        /// </summary>
+      
+        private bool IsImageFile(string filePath)
+        {
+            try
+            {
+                using (Image img = Image.FromFile(filePath))
+                {
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         #endregion
     }
 
