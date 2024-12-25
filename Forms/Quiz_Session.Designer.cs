@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Center_panel = new Panel();
             return_btn = new Button();
             Timer_Progress = new MaterialSkin.Controls.MaterialProgressBar();
             QuizCards_flp = new FlowLayoutPanel();
+            quiz_timer = new System.Windows.Forms.Timer(components);
             Center_panel.SuspendLayout();
             SuspendLayout();
             // 
@@ -51,7 +53,7 @@
             return_btn.BackgroundImage = Properties.Resources.log_in__5_;
             return_btn.BackgroundImageLayout = ImageLayout.Center;
             return_btn.FlatStyle = FlatStyle.Popup;
-            return_btn.Location = new Point(42, 18);
+            return_btn.Location = new Point(12, 12);
             return_btn.Name = "return_btn";
             return_btn.Size = new Size(39, 40);
             return_btn.TabIndex = 6;
@@ -60,17 +62,19 @@
             // 
             // Timer_Progress
             // 
+            Timer_Progress.Anchor = AnchorStyles.None;
             Timer_Progress.Depth = 0;
-            Timer_Progress.Location = new Point(342, 32);
+            Timer_Progress.Location = new Point(162, 27);
             Timer_Progress.MouseState = MaterialSkin.MouseState.HOVER;
             Timer_Progress.Name = "Timer_Progress";
-            Timer_Progress.Size = new Size(898, 5);
+            Timer_Progress.Size = new Size(1205, 5);
             Timer_Progress.TabIndex = 5;
             Timer_Progress.Value = 100;
             // 
             // QuizCards_flp
             // 
-            QuizCards_flp.Location = new Point(177, 43);
+            QuizCards_flp.Anchor = AnchorStyles.None;
+            QuizCards_flp.Location = new Point(162, 43);
             QuizCards_flp.Name = "QuizCards_flp";
             QuizCards_flp.Size = new Size(1205, 663);
             QuizCards_flp.TabIndex = 4;
@@ -94,5 +98,6 @@
         private Button return_btn;
         private MaterialSkin.Controls.MaterialProgressBar Timer_Progress;
         private FlowLayoutPanel QuizCards_flp;
+        private System.Windows.Forms.Timer quiz_timer;
     }
 }

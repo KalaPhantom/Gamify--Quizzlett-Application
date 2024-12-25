@@ -1,4 +1,5 @@
-﻿using Gamify__Quizzlett_Application.Additional_Forms.Identification_Controls;
+﻿using Gamify__Quizzlett_Application.Additional_Forms.Fill_In_the_Blanks_Controls;
+using Gamify__Quizzlett_Application.Additional_Forms.Identification_Controls;
 using Gamify__Quizzlett_Application.Additional_Forms.Multiple_Choice_Control;
 using Gamify__Quizzlett_Application.User_Control.Quiz_cards;
 using Quizlett_Prototype.Additional_Forms.Functions;
@@ -25,7 +26,7 @@ namespace Gamify__Quizzlett_Application.Forms
         private string? type;
         private string? quizName;
         private string? quizDescription; // unused
-        private Image? image;
+        private Bitmap? image;
         private string? subject; 
 
         #region Class reference
@@ -107,6 +108,9 @@ namespace Gamify__Quizzlett_Application.Forms
                     break;
 
                 case "FB":
+                    Fill_IB_Modifiable mod_IB = new Fill_IB_Modifiable(q_count);
+                    card_panel.Controls.Add(mod_IB);
+                    q_count++;
                     break;
 
                 default: break;
@@ -119,6 +123,9 @@ namespace Gamify__Quizzlett_Application.Forms
         #region save and exit event
         private void SaveExit_btn_Click(object sender, EventArgs e)
         {
+
+          
+
             // close the active form 
             save_all_question_model();
 
@@ -135,7 +142,6 @@ namespace Gamify__Quizzlett_Application.Forms
         /// </summary>
         private void save_all_question_model() {
 
-
             // TODO: Implement sorter using switch statement
 
             switch (type)
@@ -151,23 +157,21 @@ namespace Gamify__Quizzlett_Application.Forms
                     
 
                 case "FB":
+                    saveAll_FB();
                     break;
 
                 default: break;
             }
 
 
-           
-           
-
+       
             // Create an interface
             // Pass the quiz base instance
-            Quiz_Card_List card = new Quiz_Card_List(quiz, menu) {
+            Quiz_Card_List card = new Quiz_Card_List(quiz, menu,menu_panel) {
 
                 quiz_name = quizName,
                 quiz_subject = this.subject,
                 quiz_type = this.type
-
 
 
             };
@@ -175,7 +179,15 @@ namespace Gamify__Quizzlett_Application.Forms
             // Add the controls
             menu_panel.Controls.Add(card);
 
+     
 
+            if (Data_Storage.quiz_list.Contains(quiz))
+            {
+                // Do nothing as it only modifies the instance
+            }
+            else { 
+                Data_Storage.quiz_list.AddLast(quiz);
+            }
 
 
 
@@ -196,7 +208,7 @@ namespace Gamify__Quizzlett_Application.Forms
                     correct_Answer = MC_Control.correct_answer,
                     question_number = MC_Control.question_number,
                     choices_Collection = MC_Control.answers,
-                    image = MC_Control.image,
+                    image = (Bitmap)MC_Control.image,
                     
 
                 };
@@ -227,7 +239,7 @@ namespace Gamify__Quizzlett_Application.Forms
                     Question = MC_Control.Question,
                     correct_Answer = MC_Control.correctAnswer,
                     question_number = MC_Control.question_number,
-                    image = MC_Control.image,
+                    image = (Bitmap)MC_Control.image,
 
                     // TODO: Implement Images transfer 
 
@@ -242,10 +254,32 @@ namespace Gamify__Quizzlett_Application.Forms
 
         
 
-
+        /// <summary>
+        /// Save all instance of the Fill in the blanks modifiables
+        /// </summary>
         private void saveAll_FB()
         {
+            foreach (Fill_IB_Modifiable MC_Control in card_panel.Controls)
+            {
 
+
+
+                validateDataProperties(MC_Control);
+                QuestionModel MC = new QuestionModel_FillBlanks()
+                {
+                    Question = MC_Control.question,
+                    correct_Answer = MC_Control.correct_answer,
+                    question_number = MC_Control.question_count,
+                    image = MC_Control.image,
+
+                    // TODO: Implement Images transfer 
+
+                };
+
+                // Add all elements 
+                quiz.collection_Questions.AddLast(MC);
+
+            }
 
         }
 
@@ -254,6 +288,15 @@ namespace Gamify__Quizzlett_Application.Forms
             
             MC_Control.Question = MC_Control.Question == null? "Oppsss. Looks like the creator of the quiz forget to add a question....": MC_Control.Question;
             MC_Control.correctAnswer = MC_Control.correctAnswer == null? " ": MC_Control.correctAnswer;
+
+        }
+
+        // For Fill in the Blanks
+        private void validateDataProperties(Fill_IB_Modifiable MC_Control)
+        {
+
+            MC_Control.question = MC_Control.question == null ? "Oppsss. Looks like the creator of the quiz forget to add a question...." : MC_Control.question;
+            MC_Control.correct_answer = MC_Control.correct_answer == null ? " " : MC_Control.correct_answer;
 
         }
 

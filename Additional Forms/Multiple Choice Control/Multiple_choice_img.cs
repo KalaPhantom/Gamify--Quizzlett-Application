@@ -190,7 +190,7 @@ namespace Gamify__Quizzlett_Application.Additional_Forms.Multiple_Choice_Control
         private void nextOrSkip_button_Click(object sender, EventArgs e)
         {
             card_container.Controls.Remove(this);
-            Dispose(); // Clean the object
+            this.Dispose(); // Clean the object
         }
         #endregion
     }

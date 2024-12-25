@@ -52,8 +52,8 @@
             quiz_name_lbl = new Label();
             inv_groupBox = new GroupBox();
             image_holder_pn = new Panel();
-            label2 = new Label();
             plus_icon = new Panel();
+            label2 = new Label();
             label1 = new Label();
             materialScrollBar1 = new MaterialSkin.Controls.MaterialScrollBar();
             panel1.SuspendLayout();
@@ -84,7 +84,7 @@
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(inv_groupBox);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(360, 23);
+            panel1.Location = new Point(345, 23);
             panel1.Name = "panel1";
             panel1.Size = new Size(927, 732);
             panel1.TabIndex = 1;
@@ -201,14 +201,14 @@
             // 
             // showAnswer_lbl
             // 
-            showAnswer_lbl.AutoSize = true;
             showAnswer_lbl.Font = new Font("Architects Daughter", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             showAnswer_lbl.ForeColor = SystemColors.ButtonHighlight;
-            showAnswer_lbl.Location = new Point(172, 457);
+            showAnswer_lbl.Location = new Point(118, 457);
             showAnswer_lbl.Name = "showAnswer_lbl";
-            showAnswer_lbl.Size = new Size(67, 29);
+            showAnswer_lbl.Size = new Size(192, 29);
             showAnswer_lbl.TabIndex = 16;
             showAnswer_lbl.Text = "Mode";
+            showAnswer_lbl.TextAlign = ContentAlignment.TopCenter;
             // 
             // label9
             // 
@@ -223,14 +223,14 @@
             // 
             // timer_lbl
             // 
-            timer_lbl.AutoSize = true;
             timer_lbl.Font = new Font("Architects Daughter", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             timer_lbl.ForeColor = SystemColors.ButtonHighlight;
-            timer_lbl.Location = new Point(172, 368);
+            timer_lbl.Location = new Point(118, 368);
             timer_lbl.Name = "timer_lbl";
-            timer_lbl.Size = new Size(67, 29);
+            timer_lbl.Size = new Size(192, 29);
             timer_lbl.TabIndex = 12;
             timer_lbl.Text = "Mode";
+            timer_lbl.TextAlign = ContentAlignment.TopCenter;
             // 
             // label7
             // 
@@ -269,12 +269,11 @@
             // 
             // mode_lbl
             // 
-            mode_lbl.AutoSize = true;
             mode_lbl.Font = new Font("Architects Daughter", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             mode_lbl.ForeColor = SystemColors.ButtonHighlight;
-            mode_lbl.Location = new Point(138, 286);
+            mode_lbl.Location = new Point(107, 284);
             mode_lbl.Name = "mode_lbl";
-            mode_lbl.Size = new Size(67, 29);
+            mode_lbl.Size = new Size(203, 29);
             mode_lbl.TabIndex = 8;
             mode_lbl.Text = "Mode";
             mode_lbl.TextAlign = ContentAlignment.TopCenter;
@@ -376,6 +375,16 @@
             image_holder_pn.DragDrop += image_holder_pn_DragDrop;
             image_holder_pn.DragEnter += image_holder_pn_DragEnter;
             // 
+            // plus_icon
+            // 
+            plus_icon.AllowDrop = true;
+            plus_icon.BackgroundImage = Properties.Resources.plus_small3;
+            plus_icon.BackgroundImageLayout = ImageLayout.Center;
+            plus_icon.Location = new Point(148, 76);
+            plus_icon.Name = "plus_icon";
+            plus_icon.Size = new Size(63, 61);
+            plus_icon.TabIndex = 7;
+            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -386,16 +395,6 @@
             label2.Size = new Size(221, 25);
             label2.TabIndex = 5;
             label2.Text = "Add Picture Quiz Profile";
-            // 
-            // plus_icon
-            // 
-            plus_icon.AllowDrop = true;
-            plus_icon.BackgroundImage = Properties.Resources.plus_small3;
-            plus_icon.BackgroundImageLayout = ImageLayout.Center;
-            plus_icon.Location = new Point(148, 76);
-            plus_icon.Name = "plus_icon";
-            plus_icon.Size = new Size(63, 61);
-            plus_icon.TabIndex = 7;
             // 
             // label1
             // 

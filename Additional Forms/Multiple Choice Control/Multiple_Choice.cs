@@ -191,7 +191,7 @@ namespace Gamify__Quizzlett_Application.Additional_Forms
         {
 
             card_container.Controls.Remove(this);
-            Dispose(); // Clean the object
+            Dispose();
         }
 
         #endregion

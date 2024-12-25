@@ -33,11 +33,17 @@
             // Main_Menu
             // 
             AutoScaleMode = AutoScaleMode.None;
-            BackColor = Color.FromArgb(24, 24, 27);
-            ClientSize = new Size(1488, 832);
+            BackColor = Color.FromArgb(17, 17, 17);
+            ClientSize = new Size(1609, 893);
+            DisplayHeader = false;
             IsMdiContainer = true;
             Name = "Main_Menu";
+            Padding = new Padding(20, 30, 20, 20);
+            Style = MetroFramework.MetroColorStyle.Yellow;
             Text = "Quizlet-Gamified - Menu";
+            Theme = MetroFramework.MetroThemeStyle.Dark;
+            TransparencyKey = Color.Empty;
+            FormClosing += Main_Menu_FormClosing;
             Load += Main_Menu_Load;
             ResumeLayout(false);
         }

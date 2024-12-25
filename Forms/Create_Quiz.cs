@@ -26,7 +26,7 @@ namespace Gamify__Quizzlett_Application.Forms
         public string quizMode { get; set; }
         public bool isTimerenabled { get; set; }
         public bool showAnswer { get; set; }
-        public Image? image { get; set; }
+        public Bitmap? image { get; set; }
 
 
 
@@ -255,6 +255,12 @@ namespace Gamify__Quizzlett_Application.Forms
                 subject_txbx.Text = "Not set";
             }
 
+
+            // Default data constructors
+            if (isTimerenabled == null) { 
+            
+                isTimerenabled = true;
+            }
         }
 
         // initialize objects base on the mode assignments
@@ -267,7 +273,8 @@ namespace Gamify__Quizzlett_Application.Forms
                 quiz_name = this.quizName_txbx.Text,
                 Subject = this.subject_txbx.Text,
                 type = this.quizMode,
-                imageProfile = this.image
+                imageProfile = this.image,
+                isTimerEnabled = this.isTimerenabled,
 
             };
 
@@ -294,7 +301,7 @@ namespace Gamify__Quizzlett_Application.Forms
             if (files.Length > 0 && IsImageFile(files[0]))
             {
                 image_holder_pn.BackgroundImage = Image.FromFile(files[0]);
-                image = panel1.BackgroundImage; // pass am image
+                image = (Bitmap)panel1.BackgroundImage; // pass am image
                 plus_icon.Visible = false;
 
 

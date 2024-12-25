@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2024-12-21T09:12:25.360Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.4.0 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="dXk1V8sioiDWRd-p5eyP" version="24.4.0" type="device">
+<mxfile host="Electron" modified="2024-12-23T13:14:38.900Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.4.0 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="89ogUJvibjghmnk24TXX" version="24.4.0" type="device">
   <diagram name="Page-1" id="TaZ-4-7sLBusDEYuBqp-">
-    <mxGraphModel dx="2126" dy="1064" grid="1" gridSize="8" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="7510" dy="3800" grid="1" gridSize="8" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -544,7 +544,7 @@
         <mxCell id="R8fx5Zu19Ki5702qJOZY-169" value="QUESTION PANEL&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" parent="R8fx5Zu19Ki5702qJOZY-159" vertex="1">
           <mxGeometry width="790" height="235" as="geometry" />
         </mxCell>
-        <mxCell id="R8fx5Zu19Ki5702qJOZY-170" value="ANSWER:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;__S_ _____ __T__ ______ ____ _____ _____&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" parent="R8fx5Zu19Ki5702qJOZY-159" vertex="1">
+        <mxCell id="R8fx5Zu19Ki5702qJOZY-170" value="ANSWER:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;__S_ _____ __T__ ______ ____ _____ _____&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Type your answer:&amp;nbsp;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" parent="R8fx5Zu19Ki5702qJOZY-159" vertex="1">
           <mxGeometry y="255" width="790" height="110" as="geometry" />
         </mxCell>
         <mxCell id="R8fx5Zu19Ki5702qJOZY-171" value="PICTURE BOX" style="whiteSpace=wrap;html=1;aspect=fixed;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" parent="R8fx5Zu19Ki5702qJOZY-159" vertex="1">
@@ -652,7 +652,7 @@
         <mxCell id="R8fx5Zu19Ki5702qJOZY-227" value="PLAYER STATISTICS" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" parent="1" vertex="1">
           <mxGeometry x="425" y="1944" width="383" height="296" as="geometry" />
         </mxCell>
-        <mxCell id="R8fx5Zu19Ki5702qJOZY-228" value="&lt;font size=&quot;1&quot; style=&quot;&quot;&gt;&lt;b style=&quot;font-size: 41px;&quot;&gt;QUIZ LET - APPLICATION WIREFRAME&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;1&quot; style=&quot;&quot;&gt;&lt;b style=&quot;font-size: 41px;&quot;&gt;AND OBJECT BUILDER NOTATIONS&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;align=center;" parent="1" vertex="1">
+        <mxCell id="R8fx5Zu19Ki5702qJOZY-228" value="&lt;font size=&quot;1&quot; style=&quot;&quot;&gt;&lt;b style=&quot;font-size: 41px;&quot;&gt;QUIZLLET - APPLICATION WIREFRAME&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;1&quot; style=&quot;&quot;&gt;&lt;b style=&quot;font-size: 41px;&quot;&gt;AND OBJECT BUILDER NOTATIONS&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;align=center;" parent="1" vertex="1">
           <mxGeometry x="3728" width="2216" height="208" as="geometry" />
         </mxCell>
         <mxCell id="R8fx5Zu19Ki5702qJOZY-229" value="CHANNEL" style="text;strokeColor=none;fillColor=none;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;rotation=-88;" parent="1" vertex="1">
@@ -745,9 +745,6 @@
         </mxCell>
         <mxCell id="aj6fK9-gVfHXRp-1RMIY-17" value="Repeat the Cycle" style="text;strokeColor=none;fillColor=none;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" parent="1" vertex="1">
           <mxGeometry x="1168" y="3608" width="60" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="XftsJAZZYylvr2j4Lb2K-2" value="Text" style="text;strokeColor=none;fillColor=none;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" vertex="1" parent="1">
-          <mxGeometry x="1928" y="3625" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

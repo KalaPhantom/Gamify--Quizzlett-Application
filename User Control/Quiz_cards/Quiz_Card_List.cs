@@ -9,6 +9,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Timers;
+using System.Threading;
+using System.Diagnostics.Metrics;
+using MetroFramework;
+
 
 
 
@@ -38,22 +43,24 @@ namespace Gamify__Quizzlett_Application.User_Control.Quiz_cards
 
         #region Base class references
         Quiz_Data_Model quiz;
-        Main_Menu menu; 
-        Quiz_Session session;
+        Main_Menu menu;
+        FlowLayoutPanel main_panel;
+
         #endregion
 
         /// <summary>
         /// This constructor will recieve the whole instance of the quiz base instance
         /// </summary>
-        public Quiz_Card_List(Quiz_Data_Model quiz, Main_Menu menu)
+        public Quiz_Card_List(Quiz_Data_Model quiz, Main_Menu menu, FlowLayoutPanel main_panel)
         {
             InitializeComponent();
 
             // Copy arguments in the e
-            this.quiz = quiz;   
+            this.quiz = quiz;
             this.menu = menu;
+            this.main_panel = main_panel;
 
-        
+
         }
 
 
@@ -61,38 +68,52 @@ namespace Gamify__Quizzlett_Application.User_Control.Quiz_cards
         // TODO: Implement better controls in this point 
         private void test_lunch_btn_Click(object sender, EventArgs e)
         {
-          
-            session = new Quiz_Session(menu, quiz);
-            session.MdiParent = menu;
-            session.FormClosed += Session_FormClosed;
-            session.Dock = DockStyle.Fill;
-            session.Show();
-            
-            
+
+            CountDown cd = new CountDown(menu, quiz);
+            cd.MdiParent = menu;
+            cd.FormClosed += Cd_FormClosed;
+            cd.Dock = DockStyle.Fill;
+            cd.Show();
+
+
+
+
         }
 
-        private void Session_FormClosed(object? sender, FormClosedEventArgs e)
+        private void Cd_FormClosed(object? sender, FormClosedEventArgs e)
         {
-            session = null; 
+            // for future functions
         }
 
 
-        // TODO: Get rid of this method once all debugging duties are all accomplished
-        #region object Debugging methods
-        private void CheckObject (){
 
-            MessageBox.Show($"""""
 
-                {quiz.quiz_name} 
-                {quiz.Subject}
-                
-                
-                """""
-                );
-        
-        
-        
-        
+       
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+
+        #region Delete Current
+        private void Delete_btn_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to delete this Quiz?", "Confirm Delete", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+
+                Data_Storage.quiz_list.Remove(quiz);
+                main_panel.Controls.Remove(this);
+                this.Dispose();
+            }
+            else { 
+            
+                // Do nothing here 
+                // Implement future functionalities
+            }
+          
         }
         #endregion
     }

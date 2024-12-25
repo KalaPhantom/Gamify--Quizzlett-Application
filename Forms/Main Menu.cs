@@ -12,6 +12,8 @@ using MaterialSkin.Animations;
 using System.Runtime.CompilerServices;
 using System.Reflection.Emit;
 using FluentTransitions.Methods;
+using Quizlett_Prototype.Additional_Forms.Functions;
+using Gamify__Quizzlett_Application.User_Control.Quiz_cards;
 
 namespace Gamify__Quizzlett_Application.Forms
 {
@@ -36,6 +38,8 @@ namespace Gamify__Quizzlett_Application.Forms
             InitializeComponent();
             this.mdiContainer = mdiContainer;
 
+            JsonMethods.Deserialize();
+            LoadCardsfromJson();
 
             // Take the original positions for animations
             int ql_1 = quiz_list_btn.Left;
@@ -51,16 +55,18 @@ namespace Gamify__Quizzlett_Application.Forms
             settings_btn.Top = 200;
             stats_btn.Left = 300;
 
-            main_list = MainMenu_flp; 
-            
+            main_list = MainMenu_flp;
+
             // Animations
             Transition
-                .With(quiz_list_btn, nameof(Left), ql_1 )
+                .With(quiz_list_btn, nameof(Left), ql_1)
                 .With(create_quiz_btn, nameof(Top), ql_2)
                 .With(notes_btn, nameof(Left), ql_3)
                 .With(settings_btn, nameof(Top), ql_4)
                 .With(stats_btn, nameof(Left), ql_5)
                 .EaseInEaseOut(TimeSpan.FromSeconds(1.5));
+
+           
         }
 
 
@@ -80,8 +86,8 @@ namespace Gamify__Quizzlett_Application.Forms
         private void Quiz_list_FormClosed(object? sender, FormClosedEventArgs e)
         {
             Quiz_list = null;
-            
-           
+
+
         }
 
         // Create quiz button
@@ -153,6 +159,35 @@ namespace Gamify__Quizzlett_Application.Forms
 
         }
 
-    
+        #region Load Data fromo Json
+        private void LoadCardsfromJson()
+        {
+
+
+            if (Data_Storage.quiz_list != null) {
+
+                foreach (Quiz_Data_Model model in Data_Storage.quiz_list)
+                {
+
+
+
+                    // Create an interface
+                    // Pass the quiz base instance
+                    Quiz_Card_List card = new Quiz_Card_List(model, mdiContainer,MainMenu_flp)
+                    {
+                        quiz_name = model.quiz_name,
+                        quiz_subject = model.Subject,
+                        quiz_type = model.type,
+
+                    };
+
+                    // Add the controls
+                    MainMenu_flp.Controls.Add(card);
+                }
+
+            }
+
+        }
+        #endregion
     }
 }

@@ -20,7 +20,7 @@ namespace Gamify__Quizzlett_Application.Additional_Forms.Multiple_Choice_Control
 
         public string[]? answers = new string[4]; // answer container
 
-        public Image image { get; set; }
+        public Bitmap image { get; set; }
 
 
         #endregion
@@ -134,8 +134,8 @@ namespace Gamify__Quizzlett_Application.Additional_Forms.Multiple_Choice_Control
             if (files.Length > 0 && IsImageFile(files[0]))
             {
                 panel_image_pn.BackgroundImage = Image.FromFile(files[0]);
-                image = panel_image_pn.BackgroundImage; // pass am image
-
+                image = (Bitmap)panel_image_pn.BackgroundImage; // pass am image
+                panel_image_pn.BackgroundImageLayout = ImageLayout.Stretch;
             }
 }
 

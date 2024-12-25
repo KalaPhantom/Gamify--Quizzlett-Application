@@ -164,15 +164,14 @@
         }
 
         #endregion
-
-        private TextBox question_txbx;
         private TextBox answer_txbx;
-        private Label question_dsp_lbl;
-        private Label question_number_lbl;
         private Label label1;
         private Label hidden_ans_lbl;
         private Label hidden_msg_lbl;
         private Button submit_btn;
         public Button skipOrNext_btn;
+        public TextBox question_txbx;
+        public Label question_dsp_lbl;
+        public Label question_number_lbl;
     }
 }

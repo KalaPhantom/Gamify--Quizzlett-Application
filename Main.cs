@@ -1,11 +1,14 @@
 using Gamify__Quizzlett_Application.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using Quizlett_Prototype.Additional_Forms.Functions;
+using MetroFramework;
+using MetroFramework.Forms;
 
 
 namespace Gamify__Quizzlett_Application
 {
-    public partial class Main_Menu : MaterialForm
+    public partial class Main_Menu : MetroForm
     {
 
         #region Form Objects
@@ -29,7 +32,7 @@ namespace Gamify__Quizzlett_Application
             menu.Dock = DockStyle.Fill;
 
             var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
+            //materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Green50, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.BLACK);
             //Font a = new Font("Architecs Daughter", 14, FontStyle.Bold);
@@ -39,11 +42,18 @@ namespace Gamify__Quizzlett_Application
         {
 
         }
-       
+
         // Main menu load function
         private void Main_Menu_Load(object sender, EventArgs e)
         {
-
+           
         }
+
+        #region On Main Application Closing 
+        private void Main_Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JsonMethods.Serialize();
+        }
+        #endregion
     }
 }

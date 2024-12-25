@@ -67,9 +67,9 @@ namespace Gamify__Quizzlett_Application.Additional_Forms.Identification_Controls
         #region Skip or Next Button event 
         private void skipOrNext_btn_Click(object sender, EventArgs e)
         {
-
             // Remove and Dispose the object from the panel
-            card_container.Controls.Remove(this);
+           
+            //card_container.Controls.Remove(this);
             Dispose();
         }
         #endregion
