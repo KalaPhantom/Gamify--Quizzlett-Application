@@ -36,6 +36,7 @@
             question_number_lbl = new Label();
             question_dsp_lbl = new Label();
             message_lbl = new Label();
+            highlight_1 = new Panel();
             SuspendLayout();
             // 
             // image_panel
@@ -126,11 +127,20 @@
             message_lbl.Text = "Type your answer carefully!!";
             message_lbl.TextAlign = ContentAlignment.TopCenter;
             // 
+            // highlight_1
+            // 
+            highlight_1.Dock = DockStyle.Top;
+            highlight_1.Location = new Point(0, 0);
+            highlight_1.Name = "highlight_1";
+            highlight_1.Size = new Size(1205, 19);
+            highlight_1.TabIndex = 12;
+            // 
             // Fill_IB
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(26, 46, 5);
+            Controls.Add(highlight_1);
             Controls.Add(message_lbl);
             Controls.Add(question_number_lbl);
             Controls.Add(question_dsp_lbl);
@@ -155,5 +165,6 @@
         private Label question_number_lbl;
         private Label question_dsp_lbl;
         private Label message_lbl;
+        private Panel highlight_1;
     }
 }

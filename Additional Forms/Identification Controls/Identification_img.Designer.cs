@@ -37,6 +37,7 @@
             question_number_lbl = new Label();
             question_dsp_lbl = new Label();
             image_panel = new Panel();
+            highlight_1 = new Panel();
             SuspendLayout();
             // 
             // submit_btn
@@ -135,16 +136,26 @@
             // image_panel
             // 
             image_panel.AllowDrop = true;
+            image_panel.BackgroundImageLayout = ImageLayout.Stretch;
             image_panel.Location = new Point(102, 75);
             image_panel.Name = "image_panel";
             image_panel.Size = new Size(406, 280);
             image_panel.TabIndex = 17;
+            // 
+            // highlight_1
+            // 
+            highlight_1.Dock = DockStyle.Top;
+            highlight_1.Location = new Point(0, 0);
+            highlight_1.Name = "highlight_1";
+            highlight_1.Size = new Size(1205, 10);
+            highlight_1.TabIndex = 18;
             // 
             // Identification_img
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 16, 101);
+            Controls.Add(highlight_1);
             Controls.Add(image_panel);
             Controls.Add(question_number_lbl);
             Controls.Add(question_dsp_lbl);
@@ -171,5 +182,6 @@
         private Label question_number_lbl;
         private Label question_dsp_lbl;
         private Panel image_panel;
+        private Panel highlight_1;
     }
 }

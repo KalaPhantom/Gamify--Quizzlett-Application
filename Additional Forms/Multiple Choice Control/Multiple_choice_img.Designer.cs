@@ -35,6 +35,7 @@
             option_C_btn = new Button();
             image_holder_pnl = new Panel();
             nextOrSkip_button = new Button();
+            highlight_1 = new Panel();
             SuspendLayout();
             // 
             // question_holder_txbx
@@ -121,11 +122,20 @@
             nextOrSkip_button.UseVisualStyleBackColor = true;
             nextOrSkip_button.Click += nextOrSkip_button_Click;
             // 
+            // highlight_1
+            // 
+            highlight_1.Dock = DockStyle.Top;
+            highlight_1.Location = new Point(0, 0);
+            highlight_1.Name = "highlight_1";
+            highlight_1.Size = new Size(1205, 16);
+            highlight_1.TabIndex = 12;
+            // 
             // Multiple_choice_img
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(113, 63, 18);
+            Controls.Add(highlight_1);
             Controls.Add(nextOrSkip_button);
             Controls.Add(image_holder_pnl);
             Controls.Add(question_holder_txbx);
@@ -148,5 +158,6 @@
         private Button option_C_btn;
         private Panel image_holder_pnl;
         public Button nextOrSkip_button;
+        private Panel highlight_1;
     }
 }

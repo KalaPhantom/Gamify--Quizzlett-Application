@@ -34,6 +34,7 @@
             Option_A_btn = new Button();
             Question_txbx = new TextBox();
             nextOrSkip_button = new Button();
+            hightlight_1 = new Panel();
             SuspendLayout();
             // 
             // Option_C_btn
@@ -109,11 +110,20 @@
             nextOrSkip_button.UseVisualStyleBackColor = true;
             nextOrSkip_button.Click += nextOrSkip_button_Click;
             // 
+            // hightlight_1
+            // 
+            hightlight_1.Dock = DockStyle.Top;
+            hightlight_1.Location = new Point(0, 0);
+            hightlight_1.Name = "hightlight_1";
+            hightlight_1.Size = new Size(1205, 16);
+            hightlight_1.TabIndex = 6;
+            // 
             // Multiple_Choice
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(4, 47, 46);
+            Controls.Add(hightlight_1);
             Controls.Add(nextOrSkip_button);
             Controls.Add(Question_txbx);
             Controls.Add(Option_A_btn);
@@ -134,5 +144,6 @@
         private Button Option_A_btn;
         private TextBox Question_txbx;
         public Button nextOrSkip_button;
+        private Panel hightlight_1;
     }
 }

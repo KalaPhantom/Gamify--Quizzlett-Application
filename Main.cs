@@ -17,7 +17,7 @@ namespace Gamify__Quizzlett_Application
         Create_Quiz create_Quiz;
         Quiz_list Quiz_list;
         Statistics statistics;
-        Settings settings;
+        About settings;
         #endregion
 
 

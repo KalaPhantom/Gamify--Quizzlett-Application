@@ -44,6 +44,8 @@
             Selected = new Label();
             rightSelector_btn = new Button();
             leftSelector_btn = new Button();
+            delete_card_btn = new Button();
+            highlight_1 = new Panel();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -109,7 +111,7 @@
             Modify_lbl.AutoSize = true;
             Modify_lbl.Font = new Font("Architects Daughter", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Modify_lbl.ForeColor = SystemColors.Control;
-            Modify_lbl.Location = new Point(14, 11);
+            Modify_lbl.Location = new Point(15, 21);
             Modify_lbl.Name = "Modify_lbl";
             Modify_lbl.Size = new Size(225, 29);
             Modify_lbl.TabIndex = 16;
@@ -155,7 +157,7 @@
             count_lbl.AutoSize = true;
             count_lbl.Font = new Font("Architects Daughter", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             count_lbl.ForeColor = SystemColors.ButtonHighlight;
-            count_lbl.Location = new Point(237, 11);
+            count_lbl.Location = new Point(237, 23);
             count_lbl.Name = "count_lbl";
             count_lbl.Size = new Size(16, 29);
             count_lbl.TabIndex = 18;
@@ -225,11 +227,34 @@
             leftSelector_btn.UseVisualStyleBackColor = true;
             leftSelector_btn.Click += leftSelector_btn_Click;
             // 
+            // delete_card_btn
+            // 
+            delete_card_btn.BackgroundImage = Properties.Resources.delete__1_;
+            delete_card_btn.BackgroundImageLayout = ImageLayout.Center;
+            delete_card_btn.FlatStyle = FlatStyle.Flat;
+            delete_card_btn.ForeColor = SystemColors.ButtonHighlight;
+            delete_card_btn.Location = new Point(1018, 18);
+            delete_card_btn.Name = "delete_card_btn";
+            delete_card_btn.Size = new Size(94, 40);
+            delete_card_btn.TabIndex = 22;
+            delete_card_btn.UseVisualStyleBackColor = true;
+            delete_card_btn.Click += delete_card_btn_Click;
+            // 
+            // highlight_1
+            // 
+            highlight_1.Dock = DockStyle.Top;
+            highlight_1.Location = new Point(0, 0);
+            highlight_1.Name = "highlight_1";
+            highlight_1.Size = new Size(1205, 12);
+            highlight_1.TabIndex = 23;
+            // 
             // Modifiable_MC
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(49, 46, 129);
+            Controls.Add(highlight_1);
+            Controls.Add(delete_card_btn);
             Controls.Add(groupBox2);
             Controls.Add(count_lbl);
             Controls.Add(groupBox1);
@@ -250,12 +275,6 @@
         }
 
         #endregion
-
-        private TextBox Opt_A_txbx;
-        private TextBox Question_holder_txbx;
-        private TextBox Opt_C_txbx;
-        private TextBox Opt_B_txbx;
-        private TextBox Opt_D_txbx;
         private Label Modify_lbl;
         private FolderBrowserDialog browsw_file;
         private GroupBox groupBox1;
@@ -267,5 +286,12 @@
         private Button leftSelector_btn;
         private Label image_lbl;
         private Panel panel_image_pn;
+        private Button delete_card_btn;
+        public TextBox Opt_A_txbx;
+        public TextBox Question_holder_txbx;
+        public TextBox Opt_C_txbx;
+        public TextBox Opt_B_txbx;
+        public TextBox Opt_D_txbx;
+        private Panel highlight_1;
     }
 }

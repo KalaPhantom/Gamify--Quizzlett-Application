@@ -37,6 +37,7 @@
             hidden_msg_lbl = new Label();
             skipOrNext_btn = new Button();
             submit_btn = new Button();
+            highlight_1 = new Panel();
             SuspendLayout();
             // 
             // question_txbx
@@ -143,11 +144,20 @@
             submit_btn.UseVisualStyleBackColor = true;
             submit_btn.Click += submit_btn_Click;
             // 
+            // highlight_1
+            // 
+            highlight_1.Dock = DockStyle.Top;
+            highlight_1.Location = new Point(0, 0);
+            highlight_1.Name = "highlight_1";
+            highlight_1.Size = new Size(1205, 19);
+            highlight_1.TabIndex = 9;
+            // 
             // Identification
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(4, 47, 46);
+            Controls.Add(highlight_1);
             Controls.Add(submit_btn);
             Controls.Add(skipOrNext_btn);
             Controls.Add(hidden_msg_lbl);
@@ -173,5 +183,6 @@
         public TextBox question_txbx;
         public Label question_dsp_lbl;
         public Label question_number_lbl;
+        private Panel highlight_1;
     }
 }

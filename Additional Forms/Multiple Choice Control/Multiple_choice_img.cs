@@ -1,4 +1,5 @@
-﻿using Quizlett_Prototype.Additional_Forms.Functions;
+﻿using Gamify__Quizzlett_Application.Additional_Forms.Functions;
+using Quizlett_Prototype.Additional_Forms.Functions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -58,7 +59,19 @@ namespace Gamify__Quizzlett_Application.Additional_Forms.Multiple_Choice_Control
             this.correct_answer = model.correct_Answer;
             this.answer_multiple = model.choices_Collection;
             this.card_container = card_container;
-            this.image = model.image;
+
+            // Validate if the current file from Json exist
+            try
+            {
+                this.image = Image.FromFile(model.ImagePath);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"The image file from {model.ImagePath} has been moved to another path or deleted \n Please modify this on the menu");
+                model.ImagePath = null;
+
+            }
 
             // Intialize Options on buttons
             option_A_btn.Text = answer_multiple[0];
@@ -67,6 +80,8 @@ namespace Gamify__Quizzlett_Application.Additional_Forms.Multiple_Choice_Control
             option_D_btn.Text = answer_multiple[3];
             this.card_container = card_container;
 
+            // Color Arch Color Randomizer
+            ColorSchematics.ColorArch(highlight_1, this);
 
         }
 

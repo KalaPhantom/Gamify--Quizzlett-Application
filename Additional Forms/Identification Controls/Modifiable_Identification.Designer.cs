@@ -36,6 +36,8 @@
             image_panel = new Panel();
             image_lbl = new Label();
             count_lbl = new Label();
+            delete_card_btn = new Button();
+            highlight_1 = new Panel();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -128,11 +130,34 @@
             count_lbl.TabIndex = 20;
             count_lbl.Text = "1";
             // 
+            // delete_card_btn
+            // 
+            delete_card_btn.BackgroundImage = Properties.Resources.delete__1_;
+            delete_card_btn.BackgroundImageLayout = ImageLayout.Center;
+            delete_card_btn.FlatStyle = FlatStyle.Flat;
+            delete_card_btn.ForeColor = SystemColors.ButtonHighlight;
+            delete_card_btn.Location = new Point(982, 63);
+            delete_card_btn.Name = "delete_card_btn";
+            delete_card_btn.Size = new Size(94, 40);
+            delete_card_btn.TabIndex = 23;
+            delete_card_btn.UseVisualStyleBackColor = true;
+            delete_card_btn.Click += delete_card_btn_Click;
+            // 
+            // highlight_1
+            // 
+            highlight_1.Dock = DockStyle.Top;
+            highlight_1.Location = new Point(0, 0);
+            highlight_1.Name = "highlight_1";
+            highlight_1.Size = new Size(1205, 19);
+            highlight_1.TabIndex = 24;
+            // 
             // Modifiable_Identification
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(69, 10, 10);
+            Controls.Add(highlight_1);
+            Controls.Add(delete_card_btn);
             Controls.Add(image_lbl);
             Controls.Add(count_lbl);
             Controls.Add(groupBox1);
@@ -158,5 +183,7 @@
         private Label image_lbl;
         private Label count_lbl;
         private Panel image_panel;
+        private Button delete_card_btn;
+        private Panel highlight_1;
     }
 }

@@ -1,4 +1,5 @@
-﻿using Quizlett_Prototype.Additional_Forms.Functions;
+﻿using Gamify__Quizzlett_Application.Additional_Forms.Functions;
+using Quizlett_Prototype.Additional_Forms.Functions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -60,8 +61,9 @@ namespace Gamify__Quizzlett_Application.Additional_Forms.Identification_Controls
 
             // Update number display
             question_number_lbl.Text = question_count.ToString();
-           
 
+            // Color Arch Call
+            ColorSchematics.ColorArch(highlight_1, this);
         }
 
         #region Skip or Next Button event 

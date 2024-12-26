@@ -1,4 +1,5 @@
-﻿using Quizlett_Prototype.Additional_Forms.Functions;
+﻿using Gamify__Quizzlett_Application.Additional_Forms.Functions;
+using Quizlett_Prototype.Additional_Forms.Functions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -68,6 +69,9 @@ namespace Gamify__Quizzlett_Application.Additional_Forms.Fill_In_the_Blanks_Cont
 
             parser();
             parse_lbl.Text = parsed;
+
+            // Call the color arch randomizer
+            ColorSchematics.ColorArch(highlight_1, this);
 
         }
 

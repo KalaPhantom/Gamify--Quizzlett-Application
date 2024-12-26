@@ -1,6 +1,6 @@
 ﻿namespace Gamify__Quizzlett_Application.Forms
 {
-    partial class Settings
+    partial class About
     {
         /// <summary>
         /// Required designer variable.

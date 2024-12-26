@@ -14,6 +14,7 @@ using System.Reflection.Emit;
 using FluentTransitions.Methods;
 using Quizlett_Prototype.Additional_Forms.Functions;
 using Gamify__Quizzlett_Application.User_Control.Quiz_cards;
+using Gamify__Quizzlett_Application.Additional_Forms.Functions;
 
 namespace Gamify__Quizzlett_Application.Forms
 {
@@ -24,7 +25,7 @@ namespace Gamify__Quizzlett_Application.Forms
         Create_Quiz create_Quiz;
         Quiz_list Quiz_list;
         Statistics statistics;
-        Settings settings;
+        About settings;
         Notes notes;
 
         // Reference Object
@@ -45,14 +46,14 @@ namespace Gamify__Quizzlett_Application.Forms
             int ql_1 = quiz_list_btn.Left;
             int ql_2 = create_quiz_btn.Top;
             int ql_3 = notes_btn.Left;
-            int ql_4 = settings_btn.Top;
+            int ql_4 = about_btn.Top;
             int ql_5 = stats_btn.Left;
 
             // Reset Random
             quiz_list_btn.Left = 200;
             create_quiz_btn.Top = 200;
             notes_btn.Left = -200;
-            settings_btn.Top = 200;
+            about_btn.Top = 200;
             stats_btn.Left = 300;
 
             main_list = MainMenu_flp;
@@ -62,11 +63,35 @@ namespace Gamify__Quizzlett_Application.Forms
                 .With(quiz_list_btn, nameof(Left), ql_1)
                 .With(create_quiz_btn, nameof(Top), ql_2)
                 .With(notes_btn, nameof(Left), ql_3)
-                .With(settings_btn, nameof(Top), ql_4)
+                .With(about_btn, nameof(Top), ql_4)
                 .With(stats_btn, nameof(Left), ql_5)
                 .EaseInEaseOut(TimeSpan.FromSeconds(1.5));
 
-           
+            //Call color schematics
+            ColorSchematics.ColorArch(deco1);
+            ColorSchematics.ColorArch(deco2);
+            ColorSchematics.ColorArch(deco3);
+
+
+            ColorSchematics.ColorArch(quiz_list_btn);
+            quiz_list_btn.ForeColor = Color.White;
+
+            ColorSchematics.ColorArch(create_quiz_btn);
+            create_quiz_btn.ForeColor = Color.White;
+
+            ColorSchematics.ColorArch(notes_btn);
+            notes_btn.ForeColor = Color.White;
+
+            ColorSchematics.ColorArch(about_btn);
+            about_btn.ForeColor = Color.White;
+
+            ColorSchematics.ColorArch(stats_btn);
+            stats_btn.ForeColor = Color.White;
+            
+
+
+
+
         }
 
 
@@ -76,7 +101,7 @@ namespace Gamify__Quizzlett_Application.Forms
         private void quiz_list_btn_Click(object sender, EventArgs e)
         {
 
-            Quiz_list = new Quiz_list();
+            Quiz_list = new Quiz_list(mdiContainer);
             Quiz_list.MdiParent = mdiContainer;
             Quiz_list.FormClosed += Quiz_list_FormClosed;
             Quiz_list.Show();
@@ -85,7 +110,8 @@ namespace Gamify__Quizzlett_Application.Forms
 
         private void Quiz_list_FormClosed(object? sender, FormClosedEventArgs e)
         {
-            Quiz_list = null;
+           
+            Quiz_list?.Dispose();   
 
 
         }
@@ -125,7 +151,7 @@ namespace Gamify__Quizzlett_Application.Forms
         // Notes button event
         private void settings_btn_Click(object sender, EventArgs e)
         {
-            settings = new Settings();
+            settings = new About();
             settings.MdiParent = mdiContainer;
             settings.FormClosed += Settings_FormClosed;
             settings.Show();
@@ -159,7 +185,7 @@ namespace Gamify__Quizzlett_Application.Forms
 
         }
 
-        #region Load Data fromo Json
+        #region Load Data from Json
         private void LoadCardsfromJson()
         {
 

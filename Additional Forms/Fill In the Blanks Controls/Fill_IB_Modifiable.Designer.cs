@@ -36,6 +36,8 @@
             questionHolder_txbx = new TextBox();
             count_lbl = new Label();
             label1 = new Label();
+            delete_card_btn = new Button();
+            highlight_1 = new Panel();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -128,11 +130,34 @@
             label1.TabIndex = 24;
             label1.Text = "Question:";
             // 
+            // delete_card_btn
+            // 
+            delete_card_btn.BackgroundImage = Properties.Resources.delete__1_;
+            delete_card_btn.BackgroundImageLayout = ImageLayout.Center;
+            delete_card_btn.FlatStyle = FlatStyle.Flat;
+            delete_card_btn.ForeColor = SystemColors.ButtonHighlight;
+            delete_card_btn.Location = new Point(973, 56);
+            delete_card_btn.Name = "delete_card_btn";
+            delete_card_btn.Size = new Size(94, 40);
+            delete_card_btn.TabIndex = 26;
+            delete_card_btn.UseVisualStyleBackColor = true;
+            delete_card_btn.Click += delete_card_btn_Click;
+            // 
+            // highlight_1
+            // 
+            highlight_1.Dock = DockStyle.Top;
+            highlight_1.Location = new Point(0, 0);
+            highlight_1.Name = "highlight_1";
+            highlight_1.Size = new Size(1205, 19);
+            highlight_1.TabIndex = 27;
+            // 
             // Fill_IB_Modifiable
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(80, 7, 36);
+            Controls.Add(highlight_1);
+            Controls.Add(delete_card_btn);
             Controls.Add(count_lbl);
             Controls.Add(label1);
             Controls.Add(image_lbl);
@@ -157,5 +182,7 @@
         private TextBox questionHolder_txbx;
         private Label count_lbl;
         private Label label1;
+        private Button delete_card_btn;
+        private Panel highlight_1;
     }
 }

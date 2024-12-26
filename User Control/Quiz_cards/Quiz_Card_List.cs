@@ -13,6 +13,7 @@ using System.Timers;
 using System.Threading;
 using System.Diagnostics.Metrics;
 using MetroFramework;
+using Gamify__Quizzlett_Application.Additional_Forms.Functions;
 
 
 
@@ -38,6 +39,8 @@ namespace Gamify__Quizzlett_Application.User_Control.Quiz_cards
             get { return subject_lbl.Text; }
             set { subject_lbl.Text = value; }
         }
+
+
         #endregion
 
 
@@ -60,6 +63,8 @@ namespace Gamify__Quizzlett_Application.User_Control.Quiz_cards
             this.menu = menu;
             this.main_panel = main_panel;
 
+            ColorSchematics.ColorArch(highlight_panel_1,highlight_panel_2, this);
+
 
         }
 
@@ -70,12 +75,11 @@ namespace Gamify__Quizzlett_Application.User_Control.Quiz_cards
         {
 
             CountDown cd = new CountDown(menu, quiz);
-            cd.MdiParent = menu;
-            cd.FormClosed += Cd_FormClosed;
-            cd.Dock = DockStyle.Fill;
-            cd.Show();
-
-
+                cd.MdiParent = menu;
+                cd.FormClosed += Cd_FormClosed;
+                cd.Dock = DockStyle.Fill;
+                cd.Show();
+            
 
 
         }
@@ -85,10 +89,6 @@ namespace Gamify__Quizzlett_Application.User_Control.Quiz_cards
             // for future functions
         }
 
-
-
-
-       
 
         private void timer_Tick(object sender, EventArgs e)
         {
@@ -108,13 +108,44 @@ namespace Gamify__Quizzlett_Application.User_Control.Quiz_cards
                 main_panel.Controls.Remove(this);
                 this.Dispose();
             }
-            else { 
-            
+            else
+            {
+
                 // Do nothing here 
                 // Implement future functionalities
             }
-          
+
         }
+        #endregion
+
+
+        #region Modify Event
+
+        // Create a hanging instance
+
+        Edit_Quiz _Edit_quiz;
+
+        private void modify_btn_Click(object sender, EventArgs e)
+        {
+            // Update current object state
+            _Edit_quiz = new Edit_Quiz(quiz, menu, main_panel, this);
+            _Edit_quiz.MdiParent = menu;
+            _Edit_quiz.FormClosed += _Edit_quiz_FormClosed;
+            _Edit_quiz.Dock = DockStyle.Fill;
+            _Edit_quiz.Show();
+
+         
+
+        }
+
+
+
+        private void _Edit_quiz_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            _Edit_quiz?.Dispose();
+        }
+
+
         #endregion
     }
 }

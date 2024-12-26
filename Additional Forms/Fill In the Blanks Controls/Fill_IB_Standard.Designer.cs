@@ -35,6 +35,7 @@
             answer_txbx = new TextBox();
             parse_lbl = new Label();
             question_txbx = new TextBox();
+            highlight_1 = new Panel();
             SuspendLayout();
             // 
             // message_lbl
@@ -116,11 +117,20 @@
             question_txbx.Size = new Size(1017, 277);
             question_txbx.TabIndex = 12;
             // 
+            // highlight_1
+            // 
+            highlight_1.Dock = DockStyle.Top;
+            highlight_1.Location = new Point(0, 0);
+            highlight_1.Name = "highlight_1";
+            highlight_1.Size = new Size(1205, 16);
+            highlight_1.TabIndex = 19;
+            // 
             // Fill_IB_Standard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 16, 101);
+            Controls.Add(highlight_1);
             Controls.Add(message_lbl);
             Controls.Add(question_number_lbl);
             Controls.Add(question_dsp_lbl);
@@ -143,5 +153,6 @@
         private TextBox answer_txbx;
         private Label parse_lbl;
         private TextBox question_txbx;
+        private Panel highlight_1;
     }
 }

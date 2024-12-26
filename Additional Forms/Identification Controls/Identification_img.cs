@@ -1,4 +1,5 @@
-﻿using Quizlett_Prototype.Additional_Forms.Functions;
+﻿using Gamify__Quizzlett_Application.Additional_Forms.Functions;
+using Quizlett_Prototype.Additional_Forms.Functions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -61,11 +62,25 @@ namespace Gamify__Quizzlett_Application.Additional_Forms.Identification_Controls
             this.Question = model.Question;
             this.correctAnswer = model.correct_Answer;
             this.question_count = model.question_number;
-            this.image = model.image;
+
+            try
+            {
+                this.image = Image.FromFile(model.ImagePath);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"The image file from {model.ImagePath} has been moved to another path or deleted \n Please modify this on the menu");
+                model.ImagePath = null;
+
+            }
 
 
             // Update number display
             question_number_lbl.Text = question_count.ToString();
+
+            // Color Arch
+            ColorSchematics.ColorArch(highlight_1, this);
         }
 
         private void skipOrNext_btn_Click(object sender, EventArgs e)

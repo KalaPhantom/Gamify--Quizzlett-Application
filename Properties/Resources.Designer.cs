@@ -93,6 +93,16 @@ namespace Gamify__Quizzlett_Application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap delete__1_ {
+            get {
+                object obj = ResourceManager.GetObject("delete (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit {
             get {
                 object obj = ResourceManager.GetObject("edit", resourceCulture);
@@ -116,6 +126,16 @@ namespace Gamify__Quizzlett_Application.Properties {
         internal static System.Drawing.Bitmap log_in__5_ {
             get {
                 object obj = ResourceManager.GetObject("log-in (5)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap log_in__5_1 {
+            get {
+                object obj = ResourceManager.GetObject("log-in (5)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +223,49 @@ namespace Gamify__Quizzlett_Application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap png_avyho {
+            get {
+                object obj = ResourceManager.GetObject("png_avyho", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap png_swhxz {
             get {
                 object obj = ResourceManager.GetObject("png_swhxz", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap puzzle {
+            get {
+                object obj = ResourceManager.GetObject("puzzle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap q_and_a {
+            get {
+                object obj = ResourceManager.GetObject("q-and-a", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap q_and_a_ezgif_com_resize__3_ {
+            get {
+                object obj = ResourceManager.GetObject("q-and-a-ezgif.com-resize (3)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -246,6 +306,16 @@ namespace Gamify__Quizzlett_Application.Properties {
         internal static System.Drawing.Bitmap Side_Border___18_pp1 {
             get {
                 object obj = ResourceManager.GetObject("Side Border - 18 pp1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Side_Border___18_pp2 {
+            get {
+                object obj = ResourceManager.GetObject("Side Border - 18 pp2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

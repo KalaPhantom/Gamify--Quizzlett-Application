@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Quizlett_Prototype.Additional_Forms.Functions;
+using Gamify__Quizzlett_Application.Additional_Forms.Functions;
 
 namespace Gamify__Quizzlett_Application.Forms
 {
@@ -48,6 +49,7 @@ namespace Gamify__Quizzlett_Application.Forms
             
             timeLimit--;
             currentTime = timeLimit;
+            ColorSchematics.ColorAcrch_Text(label2);
 
            
 
@@ -61,7 +63,6 @@ namespace Gamify__Quizzlett_Application.Forms
                 session.Dock = DockStyle.Fill;
                 session.Show();
                 timer.Stop();           
-                this.Close();
                 this.Dispose();
 
             }

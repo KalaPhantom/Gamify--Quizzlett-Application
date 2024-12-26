@@ -1,4 +1,6 @@
-﻿using Microsoft.VisualBasic;
+﻿using Gamify__Quizzlett_Application.Additional_Forms.Functions;
+using Gamify__Quizzlett_Application.User_Control.Quiz_cards;
+using Microsoft.VisualBasic;
 using Quizlett_Prototype.Additional_Forms.Functions;
 using System;
 using System.Collections.Generic;
@@ -27,6 +29,12 @@ namespace Gamify__Quizzlett_Application.Forms
         public bool isTimerenabled { get; set; }
         public bool showAnswer { get; set; }
         public Bitmap? image { get; set; }
+        public string image_path { get; set;  }
+
+        /// <summary>
+        /// Static bool variable on updating states
+        /// </summary>
+       
 
 
 
@@ -38,8 +46,6 @@ namespace Gamify__Quizzlett_Application.Forms
 
             // set the allow drop property of a panel
 
-
-
             // Pass an object reference on the local properties
             this.menu = menu;
             this.menu_panel = menu_panel;
@@ -50,6 +56,9 @@ namespace Gamify__Quizzlett_Application.Forms
             timer_lbl.Text = "false";
             showAnswer = false;
             showAnswer_lbl.Text = "false";
+
+            // Call the color Arch
+            ColorSchematics.ColorArch(highlight_1,image_holder_pn,background_1);
 
 
         }
@@ -273,7 +282,8 @@ namespace Gamify__Quizzlett_Application.Forms
                 quiz_name = this.quizName_txbx.Text,
                 Subject = this.subject_txbx.Text,
                 type = this.quizMode,
-                imageProfile = this.image,
+                //imageProfile = this.image,
+                ImagePath = this.image_path,
                 isTimerEnabled = this.isTimerenabled,
 
             };
@@ -294,18 +304,32 @@ namespace Gamify__Quizzlett_Application.Forms
         #region image drag and drop event
         private void image_holder_pn_DragDrop(object sender, DragEventArgs e)
         {
-            // Get the file(s) from the drag event
-            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+          
 
             // Load the first valid image file into the PictureBox
-            if (files.Length > 0 && IsImageFile(files[0]))
-            {
-                image_holder_pn.BackgroundImage = Image.FromFile(files[0]);
-                image = (Bitmap)panel1.BackgroundImage; // pass am image
-                plus_icon.Visible = false;
+                if (e.Data.GetData(DataFormats.FileDrop) is string[] files && files.Length > 0)
+                {
+                    string filePath = files[0];
+                    try
+                    {
+                        // Display the image
+                        image_holder_pn.BackgroundImage = Image.FromFile(files[0]);
+                        //image = (Bitmap)image_holder_pn.BackgroundImage; // pass am image
 
 
-            }
+                        // Pass the string reference
+                        image_path = filePath;
+
+                        // Update the Icon property 
+                        plus_icon.Visible = false;
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error loading image: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
         }
         
 
@@ -313,18 +337,7 @@ namespace Gamify__Quizzlett_Application.Forms
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
-                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-
-                // Validate if the file is an image
-                if (files.Length > 0 && IsImageFile(files[0]))
-                {
-                    e.Effect = DragDropEffects.Copy; // Allow drop
-                    plus_icon.Visible = false;
-                }
-                else
-                {
-                    e.Effect = DragDropEffects.None; // Deny drop
-                }
+                e.Effect = DragDropEffects.Copy;
             }
             else
             {
@@ -336,7 +349,7 @@ namespace Gamify__Quizzlett_Application.Forms
         /// <summary>
         /// Check the image format
         /// </summary>
-      
+        
         private bool IsImageFile(string filePath)
         {
             try

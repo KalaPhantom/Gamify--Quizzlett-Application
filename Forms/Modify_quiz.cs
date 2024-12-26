@@ -26,7 +26,7 @@ namespace Gamify__Quizzlett_Application.Forms
         private string? type;
         private string? quizName;
         private string? quizDescription; // unused
-        private Bitmap? image;
+        private Bitmap? image; // Unused
         private string? subject; 
 
         #region Class reference
@@ -54,7 +54,7 @@ namespace Gamify__Quizzlett_Application.Forms
             // copy attributes in this instance 
             this.type = quiz?.type;
             this.quizName = quiz?.quiz_name;
-            this.image = quiz?.imageProfile;
+            //this.image = quiz?.imageProfile;
             this.subject = quiz?.Subject;
 
 
@@ -81,8 +81,6 @@ namespace Gamify__Quizzlett_Application.Forms
         {
             
             InitializeModifiables();
-
-
         }
         #endregion
 
@@ -147,7 +145,11 @@ namespace Gamify__Quizzlett_Application.Forms
             switch (type)
             {
                 case "MC": // For multiple Choice
-                    saveAll_MC(); 
+                    saveAll_MC();
+
+                    // Debug
+                   
+
                     break;
 
 
@@ -208,10 +210,14 @@ namespace Gamify__Quizzlett_Application.Forms
                     correct_Answer = MC_Control.correct_answer,
                     question_number = MC_Control.question_number,
                     choices_Collection = MC_Control.answers,
-                    image = (Bitmap)MC_Control.image,
-                    
+                    //image = (Bitmap)MC_Control.image,
+                    ImagePath = MC_Control.image_path
+
 
                 };
+
+
+      
 
                 // Add all elements 
                 quiz.collection_Questions.AddLast(MC);
@@ -239,7 +245,8 @@ namespace Gamify__Quizzlett_Application.Forms
                     Question = MC_Control.Question,
                     correct_Answer = MC_Control.correctAnswer,
                     question_number = MC_Control.question_number,
-                    image = (Bitmap)MC_Control.image,
+                    //image = (Bitmap)MC_Control.image,
+                    ImagePath = MC_Control.image_path
 
                     // TODO: Implement Images transfer 
 
@@ -270,7 +277,8 @@ namespace Gamify__Quizzlett_Application.Forms
                     Question = MC_Control.question,
                     correct_Answer = MC_Control.correct_answer,
                     question_number = MC_Control.question_count,
-                    image = MC_Control.image,
+                    //image = MC_Control.image,
+                    ImagePath = MC_Control.image_path
 
                     // TODO: Implement Images transfer 
 

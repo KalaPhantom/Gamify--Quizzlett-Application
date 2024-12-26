@@ -1,4 +1,8 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Packaging;
+using Gamify__Quizzlett_Application.Additional_Forms.Functions;
+using Org.BouncyCastle.Asn1.Mozilla;
+using Quizlett_Prototype.Additional_Forms.Functions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,19 +23,86 @@ namespace Gamify__Quizzlett_Application.Additional_Forms.Multiple_Choice_Control
         public int question_number { get; set; }
 
         public string[]? answers = new string[4]; // answer container
+      
 
-        public Bitmap image { get; set; }
+
+        public Bitmap image {
+
+            get { return (Bitmap)panel_image_pn.BackgroundImage; }
+            set { panel_image_pn.BackgroundImage = (Bitmap)value; }
+        
+        }
+        public string  image_path {get; set;}
 
 
         #endregion
+
+
         public Modifiable_MC(int count)
+        {
+            // Intialize basic componanents and starting attributes
+            InitializeComponent();
+            question_number = count;
+            count_lbl.Text = count.ToString();
+            update_correct_Selection();
+
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
+
+            // Call the color Arch for custom modification
+            ColorSchematics.ColorArch(highlight_1,this);
+
+        }
+
+
+        QuestionModel_MultipleChoice MC; 
+        public Modifiable_MC(int count, QuestionModel_MultipleChoice MC)
         {
 
             InitializeComponent();
             question_number = count;
             count_lbl.Text = count.ToString();
             update_correct_Selection();
+
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
+
+            // Pass the local reference 
+            this.MC = MC;
+
+            InitializeComponent_Secondary(); 
+
         }
+
+        #region
+        private void InitializeComponent_Secondary() {
+
+            // Load Instances from the local instances
+            Opt_A_txbx.Text = MC.choices_Collection[0];
+            Opt_B_txbx.Text = MC.choices_Collection[1];
+            Opt_C_txbx.Text = MC.choices_Collection[2];
+            Opt_D_txbx.Text = MC.choices_Collection[3];
+
+
+            try {
+                // Load image from files and cast it onto bitmap
+                image = (Bitmap)Image.FromFile(MC.ImagePath);
+                panel_image_pn.BackgroundImageLayout = ImageLayout.Stretch;
+
+            }
+            catch(Exception ex) { 
+            
+                // Do nothing 
+            }
+           
+
+            Question_holder_txbx.Text = MC.Question;
+            update_correct_Selection();
+
+        }
+        #endregion
 
 
         #region Correct answer navigation 
@@ -127,58 +198,45 @@ namespace Gamify__Quizzlett_Application.Additional_Forms.Multiple_Choice_Control
         #region Image drag and drop event
         private void panel_image_pn_DragDrop(object sender, DragEventArgs e)
         {
-            // Get the file(s) from the drag event
-            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-
-            // Load the first valid image file into the PictureBox
-            if (files.Length > 0 && IsImageFile(files[0]))
+            if (e.Data.GetData(DataFormats.FileDrop) is string[] files && files.Length > 0)
             {
-                panel_image_pn.BackgroundImage = Image.FromFile(files[0]);
-                image = (Bitmap)panel_image_pn.BackgroundImage; // pass am image
-                panel_image_pn.BackgroundImageLayout = ImageLayout.Stretch;
+                string filePath = files[0];
+                try
+                {
+                    panel_image_pn.BackgroundImage = Image.FromFile(files[0]);
+                    //image = (Bitmap)panel_image_pn.BackgroundImage; // pass am image
+                    panel_image_pn.BackgroundImageLayout = ImageLayout.Stretch;
+                    image_path = filePath;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error loading image: {ex.Message} -- Invalid File format", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-}
+
+
+
+
+          
+        }
 
         private void panel_image_pn_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
-                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-
-                // Validate if the file is an image
-                if (files.Length > 0 && IsImageFile(files[0]))
-                {
-                    e.Effect = DragDropEffects.Copy; // Allow drop
-                }
-                else
-                {
-                    e.Effect = DragDropEffects.None; // Deny drop
-                }
+                e.Effect = DragDropEffects.Copy;
             }
             else
             {
                 e.Effect = DragDropEffects.None;
             }
         }
-
-        private bool IsImageFile(string filePath)
-        {
-            try
-            {
-                using (Image img = Image.FromFile(filePath))
-                {
-                    return true;
-                }
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-
-
-
         #endregion
+
+        private void delete_card_btn_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

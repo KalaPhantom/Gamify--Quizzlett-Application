@@ -103,7 +103,7 @@ namespace Gamify__Quizzlett_Application.Forms
                 // Otherwise, load the version of the interface where an image is supported
 
 
-                if (model.image == null)
+                if (model.ImagePath == null)
                 {
                     // Load the default interface here
                     Multiple_Choice MC = new Multiple_Choice(model, QuizCards_flp, quiz);
@@ -149,7 +149,7 @@ namespace Gamify__Quizzlett_Application.Forms
                 // TODO: Implement image sort
                 // if image is null then load the other form
 
-                if (model.image == null)
+                if (model.ImagePath == null)
                 {
                     Identification MC = new Identification(QuizCards_flp, quiz, model);
                     MC.skipOrNext_btn.Click += SkipOrNext_btn_Click;
@@ -187,7 +187,7 @@ namespace Gamify__Quizzlett_Application.Forms
             foreach (QuestionModel_FillBlanks model in quiz.collection_Questions)
             {
 
-                if (model.image == null)
+                if (model.ImagePath == null)
                 {
                     Fill_IB_Standard MC = new Fill_IB_Standard(QuizCards_flp, quiz, model);
                     MC.skipOrNext_btn.Click += SkipOrNext_btn_Click2;
@@ -265,7 +265,7 @@ namespace Gamify__Quizzlett_Application.Forms
         #region Timer Methods
 
         private int timerLimitOrg = 15; // Assign this value for reset
-        private int timerLimit = 15;
+        public static int timerLimit = 15;
 
 
         private void InitializeTimer()

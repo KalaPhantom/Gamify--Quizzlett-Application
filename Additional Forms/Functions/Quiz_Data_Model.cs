@@ -36,8 +36,7 @@ namespace Quizlett_Prototype.Additional_Forms.Functions
         public string? quiz_description { get; set; } // nullable
         public string? Subject { get; set; } // nullable
 
-        [JsonConverter(typeof(BitmapJsonConverter))]
-        public Bitmap? imageProfile { get; set; } // nullable
+        public string ImagePath { get; set;  }
         public bool isTimerEnabled { get; set; }    // nullable
 
         // Implementation of LinkList as question objects collection
@@ -58,12 +57,10 @@ namespace Quizlett_Prototype.Additional_Forms.Functions
             this.isTimerEnabled = true;
         }
 
-
-
     }
 
     #region Question Model data
-    public class QuestionModel
+    public class QuestionModel 
     {
 
         public string Question { get; set; }
@@ -71,16 +68,17 @@ namespace Quizlett_Prototype.Additional_Forms.Functions
 
         public int question_number { get; set; }
 
-        [JsonConverter(typeof(BitmapJsonConverter))]
-        public Bitmap? image { get; set; }
+       
+        public string? ImagePath { get; set; }
 
         // Default Constructor 
         public QuestionModel()
         {
             this.Question = "Oppps, Looks like we've made some mistakes!! -- Nothing to see here";
             this.correct_Answer = "None";
-
         }
+
+        
 
     }
 
@@ -94,7 +92,7 @@ namespace Quizlett_Prototype.Additional_Forms.Functions
 
     public class QuestionModel_Identification : QuestionModel
     {
-
+        // Empty for future updates
     }
 
 
@@ -102,9 +100,11 @@ namespace Quizlett_Prototype.Additional_Forms.Functions
     // This function is under the Beta Model and may not  be included as the main function
     public class QuestionModel_FillBlanks : QuestionModel
     {
-        public string a { get; set; }
-
+     
+        // Empty for future updates
     }
+
+
     #endregion
 
     #region Data Storage Ckass
@@ -128,6 +128,8 @@ namespace Quizlett_Prototype.Additional_Forms.Functions
             {
                 TypeNameHandling = TypeNameHandling.All,// Include type information
                 Formatting = Formatting.Indented,
+               
+                
                 
             });
 
@@ -144,7 +146,8 @@ namespace Quizlett_Prototype.Additional_Forms.Functions
                 Data_Storage.quiz_list  = JsonConvert.DeserializeObject<LinkedList< Quiz_Data_Model>>(jsonString, new JsonSerializerSettings
                 {
                     TypeNameHandling = TypeNameHandling.All, // Use the type information to correctly deserialize
-                    Formatting = Formatting.Indented
+                    Formatting = Formatting.Indented,
+                   
                 });
 
 
@@ -160,7 +163,8 @@ namespace Quizlett_Prototype.Additional_Forms.Functions
         }
 
 
-        // Not Implemented
+        // Not Implemented 
+        // Issue thrown: OutOfMemoryexception, Due to the large sum of memory taken by base 64 encoding
         #region Explicit castings on deserialization
 
         public static LinkedList<QuestionModel> templateCollection;
@@ -173,7 +177,9 @@ namespace Quizlett_Prototype.Additional_Forms.Functions
     #endregion
 
 
-    #region Annotation Conversion for Bitmaps
+
+    // Unused annotation for Binary and Base  64 conversion
+    #region Annotation Conversion for Bitmaps 
 
 
     /// <summary>
@@ -219,6 +225,6 @@ namespace Quizlett_Prototype.Additional_Forms.Functions
             }
         }
     }
-    #endregion
+    #endregion // Unused
 
 }

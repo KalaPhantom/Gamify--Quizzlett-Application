@@ -1,6 +1,6 @@
 ﻿namespace Gamify__Quizzlett_Application.Forms
 {
-    partial class Create_Quiz
+    partial class Edit_Quiz
     {
         /// <summary>
         /// Required designer variable.
@@ -28,24 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            return_btn = new Button();
-            background_1 = new Panel();
+            background1 = new Panel();
+            clearImg_btn = new Button();
             groupBox1 = new GroupBox();
             property_txbx = new TextBox();
             create_btn = new MaterialSkin.Controls.MaterialButton();
-            highlight_1 = new Panel();
-            showAnswer_R_btn = new Button();
+            highlight1 = new Panel();
             timer_R_btn = new Button();
-            showAnswer_L_btn = new Button();
             timer_L_btn = new Button();
-            showAnswer_lbl = new Label();
-            label9 = new Label();
             timer_lbl = new Label();
             label7 = new Label();
-            mode_arrL = new Button();
-            mode_arrR = new Button();
-            mode_lbl = new Label();
-            label4 = new Label();
             subject_txbx = new MaterialSkin.Controls.MaterialTextBox();
             label3 = new Label();
             quizName_txbx = new MaterialSkin.Controls.MaterialTextBox();
@@ -55,56 +47,58 @@
             plus_icon = new Panel();
             label2 = new Label();
             label1 = new Label();
-            materialScrollBar1 = new MaterialSkin.Controls.MaterialScrollBar();
-            background_1.SuspendLayout();
+            return_btn = new Button();
+            background1.SuspendLayout();
             groupBox1.SuspendLayout();
-            highlight_1.SuspendLayout();
+            highlight1.SuspendLayout();
             inv_groupBox.SuspendLayout();
             image_holder_pn.SuspendLayout();
             SuspendLayout();
             // 
-            // return_btn
+            // background1
             // 
-            return_btn.BackgroundImage = Properties.Resources.log_in__5_;
-            return_btn.BackgroundImageLayout = ImageLayout.Center;
-            return_btn.FlatStyle = FlatStyle.Popup;
-            return_btn.Location = new Point(12, 12);
-            return_btn.Name = "return_btn";
-            return_btn.Size = new Size(39, 40);
-            return_btn.TabIndex = 0;
-            return_btn.UseVisualStyleBackColor = true;
-            return_btn.Click += return_btn_Click;
+            background1.Anchor = AnchorStyles.None;
+            background1.BackColor = Color.FromArgb(28, 25, 23);
+            background1.Controls.Add(clearImg_btn);
+            background1.Controls.Add(groupBox1);
+            background1.Controls.Add(create_btn);
+            background1.Controls.Add(highlight1);
+            background1.Controls.Add(inv_groupBox);
+            background1.Controls.Add(label1);
+            background1.Location = new Point(290, 12);
+            background1.Name = "background1";
+            background1.Size = new Size(927, 700);
+            background1.TabIndex = 2;
             // 
-            // background_1
+            // clearImg_btn
             // 
-            background_1.Anchor = AnchorStyles.None;
-            background_1.BackColor = Color.FromArgb(120, 113, 108);
-            background_1.Controls.Add(groupBox1);
-            background_1.Controls.Add(create_btn);
-            background_1.Controls.Add(highlight_1);
-            background_1.Controls.Add(inv_groupBox);
-            background_1.Controls.Add(label1);
-            background_1.Location = new Point(345, 23);
-            background_1.Name = "background_1";
-            background_1.Size = new Size(927, 732);
-            background_1.TabIndex = 1;
+            clearImg_btn.FlatStyle = FlatStyle.Flat;
+            clearImg_btn.Font = new Font("Architects Daughter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            clearImg_btn.ForeColor = SystemColors.Control;
+            clearImg_btn.Location = new Point(60, 364);
+            clearImg_btn.Name = "clearImg_btn";
+            clearImg_btn.Size = new Size(376, 84);
+            clearImg_btn.TabIndex = 7;
+            clearImg_btn.Text = "Clear Image";
+            clearImg_btn.UseVisualStyleBackColor = true;
+            clearImg_btn.Click += clearImg_btn_Click;
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(property_txbx);
-            groupBox1.Location = new Point(60, 370);
+            groupBox1.Location = new Point(60, 454);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(376, 246);
+            groupBox1.Size = new Size(376, 162);
             groupBox1.TabIndex = 6;
             groupBox1.TabStop = false;
             // 
             // property_txbx
             // 
-            property_txbx.Location = new Point(0, 11);
+            property_txbx.Location = new Point(0, 0);
             property_txbx.Multiline = true;
             property_txbx.Name = "property_txbx";
             property_txbx.ReadOnly = true;
-            property_txbx.Size = new Size(376, 235);
+            property_txbx.Size = new Size(376, 177);
             property_txbx.TabIndex = 0;
             // 
             // create_btn
@@ -114,118 +108,64 @@
             create_btn.Depth = 0;
             create_btn.HighEmphasis = true;
             create_btn.Icon = null;
-            create_btn.Location = new Point(66, 636);
+            create_btn.Location = new Point(439, 644);
             create_btn.Margin = new Padding(4, 6, 4, 6);
             create_btn.MouseState = MaterialSkin.MouseState.HOVER;
             create_btn.Name = "create_btn";
             create_btn.NoAccentTextColor = Color.Empty;
-            create_btn.Size = new Size(76, 36);
+            create_btn.Size = new Size(86, 36);
             create_btn.TabIndex = 6;
-            create_btn.Text = "Create";
+            create_btn.Text = "Proceed";
             create_btn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             create_btn.UseAccentColor = false;
             create_btn.UseVisualStyleBackColor = true;
             create_btn.Click += create_btn_Click;
             // 
-            // highlight_1
+            // highlight1
             // 
-            highlight_1.BackColor = Color.FromArgb(28, 25, 23);
-            highlight_1.Controls.Add(showAnswer_R_btn);
-            highlight_1.Controls.Add(timer_R_btn);
-            highlight_1.Controls.Add(showAnswer_L_btn);
-            highlight_1.Controls.Add(timer_L_btn);
-            highlight_1.Controls.Add(showAnswer_lbl);
-            highlight_1.Controls.Add(label9);
-            highlight_1.Controls.Add(timer_lbl);
-            highlight_1.Controls.Add(label7);
-            highlight_1.Controls.Add(mode_arrL);
-            highlight_1.Controls.Add(mode_arrR);
-            highlight_1.Controls.Add(mode_lbl);
-            highlight_1.Controls.Add(label4);
-            highlight_1.Controls.Add(subject_txbx);
-            highlight_1.Controls.Add(label3);
-            highlight_1.Controls.Add(quizName_txbx);
-            highlight_1.Controls.Add(quiz_name_lbl);
-            highlight_1.Location = new Point(452, 86);
-            highlight_1.Name = "highlight_1";
-            highlight_1.Size = new Size(438, 575);
-            highlight_1.TabIndex = 5;
-            // 
-            // showAnswer_R_btn
-            // 
-            showAnswer_R_btn.BackgroundImage = Properties.Resources.png_3qy3mj;
-            showAnswer_R_btn.BackgroundImageLayout = ImageLayout.Center;
-            showAnswer_R_btn.FlatStyle = FlatStyle.Flat;
-            showAnswer_R_btn.Location = new Point(316, 457);
-            showAnswer_R_btn.Name = "showAnswer_R_btn";
-            showAnswer_R_btn.Size = new Size(94, 29);
-            showAnswer_R_btn.TabIndex = 20;
-            showAnswer_R_btn.UseVisualStyleBackColor = true;
-            showAnswer_R_btn.Click += showAnswer_R_btn_Click;
+            highlight1.BackColor = Color.FromArgb(41, 37, 36);
+            highlight1.Controls.Add(timer_R_btn);
+            highlight1.Controls.Add(timer_L_btn);
+            highlight1.Controls.Add(timer_lbl);
+            highlight1.Controls.Add(label7);
+            highlight1.Controls.Add(subject_txbx);
+            highlight1.Controls.Add(label3);
+            highlight1.Controls.Add(quizName_txbx);
+            highlight1.Controls.Add(quiz_name_lbl);
+            highlight1.Location = new Point(452, 86);
+            highlight1.Name = "highlight1";
+            highlight1.Size = new Size(438, 530);
+            highlight1.TabIndex = 5;
             // 
             // timer_R_btn
             // 
             timer_R_btn.BackgroundImage = Properties.Resources.png_3qy3mj;
             timer_R_btn.BackgroundImageLayout = ImageLayout.Center;
             timer_R_btn.FlatStyle = FlatStyle.Flat;
-            timer_R_btn.Location = new Point(316, 368);
+            timer_R_btn.Location = new Point(316, 281);
             timer_R_btn.Name = "timer_R_btn";
             timer_R_btn.Size = new Size(94, 29);
             timer_R_btn.TabIndex = 19;
             timer_R_btn.UseVisualStyleBackColor = true;
             timer_R_btn.Click += timer_R_btn_Click;
             // 
-            // showAnswer_L_btn
-            // 
-            showAnswer_L_btn.BackgroundImage = Properties.Resources.png_0q6s6;
-            showAnswer_L_btn.BackgroundImageLayout = ImageLayout.Center;
-            showAnswer_L_btn.FlatStyle = FlatStyle.Flat;
-            showAnswer_L_btn.Location = new Point(18, 457);
-            showAnswer_L_btn.Name = "showAnswer_L_btn";
-            showAnswer_L_btn.Size = new Size(94, 29);
-            showAnswer_L_btn.TabIndex = 18;
-            showAnswer_L_btn.UseVisualStyleBackColor = true;
-            showAnswer_L_btn.Click += showAnswer_L_btn_Click;
-            // 
             // timer_L_btn
             // 
             timer_L_btn.BackgroundImage = Properties.Resources.png_0q6s6;
             timer_L_btn.BackgroundImageLayout = ImageLayout.Center;
             timer_L_btn.FlatStyle = FlatStyle.Flat;
-            timer_L_btn.Location = new Point(18, 368);
+            timer_L_btn.Location = new Point(18, 281);
             timer_L_btn.Name = "timer_L_btn";
             timer_L_btn.Size = new Size(94, 29);
             timer_L_btn.TabIndex = 17;
             timer_L_btn.UseVisualStyleBackColor = true;
             timer_L_btn.Click += timer_L_btn_Click;
             // 
-            // showAnswer_lbl
-            // 
-            showAnswer_lbl.Font = new Font("Architects Daughter", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            showAnswer_lbl.ForeColor = SystemColors.ButtonHighlight;
-            showAnswer_lbl.Location = new Point(118, 457);
-            showAnswer_lbl.Name = "showAnswer_lbl";
-            showAnswer_lbl.Size = new Size(192, 29);
-            showAnswer_lbl.TabIndex = 16;
-            showAnswer_lbl.Text = "Mode";
-            showAnswer_lbl.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Architects Daughter", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.ForeColor = SystemColors.ButtonHighlight;
-            label9.Location = new Point(18, 418);
-            label9.Name = "label9";
-            label9.Size = new Size(160, 29);
-            label9.TabIndex = 15;
-            label9.Text = "Show Answer?";
-            // 
             // timer_lbl
             // 
             timer_lbl.Font = new Font("Architects Daughter", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             timer_lbl.ForeColor = SystemColors.ButtonHighlight;
-            timer_lbl.Location = new Point(118, 368);
+            timer_lbl.Location = new Point(118, 281);
             timer_lbl.Name = "timer_lbl";
             timer_lbl.Size = new Size(192, 29);
             timer_lbl.TabIndex = 12;
@@ -237,57 +177,11 @@
             label7.AutoSize = true;
             label7.Font = new Font("Architects Daughter", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = SystemColors.ButtonHighlight;
-            label7.Location = new Point(18, 329);
+            label7.Location = new Point(18, 242);
             label7.Name = "label7";
             label7.Size = new Size(154, 29);
             label7.TabIndex = 11;
             label7.Text = "Enable Timer?";
-            // 
-            // mode_arrL
-            // 
-            mode_arrL.BackgroundImage = Properties.Resources.png_0q6s6;
-            mode_arrL.BackgroundImageLayout = ImageLayout.Center;
-            mode_arrL.FlatStyle = FlatStyle.Flat;
-            mode_arrL.Location = new Point(18, 286);
-            mode_arrL.Name = "mode_arrL";
-            mode_arrL.Size = new Size(94, 29);
-            mode_arrL.TabIndex = 10;
-            mode_arrL.UseVisualStyleBackColor = true;
-            mode_arrL.Click += mode_arrL_Click;
-            // 
-            // mode_arrR
-            // 
-            mode_arrR.BackgroundImage = Properties.Resources.png_3qy3mj;
-            mode_arrR.BackgroundImageLayout = ImageLayout.Center;
-            mode_arrR.FlatStyle = FlatStyle.Flat;
-            mode_arrR.Location = new Point(316, 286);
-            mode_arrR.Name = "mode_arrR";
-            mode_arrR.Size = new Size(94, 29);
-            mode_arrR.TabIndex = 9;
-            mode_arrR.UseVisualStyleBackColor = true;
-            mode_arrR.Click += mode_arrR_Click;
-            // 
-            // mode_lbl
-            // 
-            mode_lbl.Font = new Font("Architects Daughter", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            mode_lbl.ForeColor = SystemColors.ButtonHighlight;
-            mode_lbl.Location = new Point(107, 284);
-            mode_lbl.Name = "mode_lbl";
-            mode_lbl.Size = new Size(203, 29);
-            mode_lbl.TabIndex = 8;
-            mode_lbl.Text = "Mode";
-            mode_lbl.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Architects Daughter", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = SystemColors.ButtonHighlight;
-            label4.Location = new Point(18, 247);
-            label4.Name = "label4";
-            label4.Size = new Size(67, 29);
-            label4.TabIndex = 7;
-            label4.Text = "Mode";
             // 
             // subject_txbx
             // 
@@ -308,6 +202,7 @@
             subject_txbx.TabIndex = 5;
             subject_txbx.Text = "";
             subject_txbx.TrailingIcon = null;
+            subject_txbx.TextChanged += subject_txbx_TextChanged;
             // 
             // label3
             // 
@@ -339,6 +234,7 @@
             quizName_txbx.TabIndex = 0;
             quizName_txbx.Text = "";
             quizName_txbx.TrailingIcon = null;
+            quizName_txbx.TextChanged += quizName_txbx_TextChanged;
             // 
             // quiz_name_lbl
             // 
@@ -355,17 +251,16 @@
             // 
             inv_groupBox.Controls.Add(image_holder_pn);
             inv_groupBox.Controls.Add(label2);
-            inv_groupBox.Location = new Point(60, 86);
+            inv_groupBox.Location = new Point(60, 79);
             inv_groupBox.Name = "inv_groupBox";
             inv_groupBox.Size = new Size(376, 278);
             inv_groupBox.TabIndex = 3;
             inv_groupBox.TabStop = false;
-            inv_groupBox.MouseHover += inv_groupBox_MouseHover;
             // 
             // image_holder_pn
             // 
             image_holder_pn.AllowDrop = true;
-            image_holder_pn.BackColor = Color.FromArgb(120, 113, 108);
+            image_holder_pn.BackColor = Color.FromArgb(28, 25, 23);
             image_holder_pn.BackgroundImageLayout = ImageLayout.Stretch;
             image_holder_pn.Controls.Add(plus_icon);
             image_holder_pn.Location = new Point(6, 28);
@@ -390,11 +285,11 @@
             label2.AutoSize = true;
             label2.Font = new Font("Architects Daughter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonFace;
-            label2.Location = new Point(81, 250);
+            label2.Location = new Point(61, 247);
             label2.Name = "label2";
-            label2.Size = new Size(221, 25);
+            label2.Size = new Size(266, 25);
             label2.TabIndex = 5;
-            label2.Text = "Add Picture Quiz Profile";
+            label2.Text = "Drag and Drop an Image here";
             // 
             // label1
             // 
@@ -403,40 +298,39 @@
             label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Location = new Point(28, 18);
             label1.Name = "label1";
-            label1.Size = new Size(114, 38);
+            label1.Size = new Size(139, 38);
             label1.TabIndex = 1;
-            label1.Text = "Create";
+            label1.Text = "Edit Quiz";
             // 
-            // materialScrollBar1
+            // return_btn
             // 
-            materialScrollBar1.Depth = 0;
-            materialScrollBar1.Location = new Point(1971, 121);
-            materialScrollBar1.MouseState = MaterialSkin.MouseState.HOVER;
-            materialScrollBar1.Name = "materialScrollBar1";
-            materialScrollBar1.Orientation = MaterialSkin.Controls.MaterialScrollOrientation.Vertical;
-            materialScrollBar1.ScrollbarSize = 12;
-            materialScrollBar1.Size = new Size(12, 732);
-            materialScrollBar1.TabIndex = 3;
-            materialScrollBar1.Text = "materialScrollBar1";
+            return_btn.BackgroundImage = Properties.Resources.log_in__5_;
+            return_btn.BackgroundImageLayout = ImageLayout.Center;
+            return_btn.FlatStyle = FlatStyle.Popup;
+            return_btn.Location = new Point(12, 12);
+            return_btn.Name = "return_btn";
+            return_btn.Size = new Size(39, 40);
+            return_btn.TabIndex = 3;
+            return_btn.UseVisualStyleBackColor = true;
+            return_btn.Click += return_btn_Click;
             // 
-            // Create_Quiz
+            // Edit_Quiz
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(41, 37, 36);
-            ClientSize = new Size(1564, 804);
-            Controls.Add(background_1);
-            Controls.Add(materialScrollBar1);
+            BackColor = Color.FromArgb(12, 10, 9);
+            ClientSize = new Size(1501, 724);
             Controls.Add(return_btn);
+            Controls.Add(background1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Create_Quiz";
-            Text = "Create Quiz";
-            background_1.ResumeLayout(false);
-            background_1.PerformLayout();
+            Name = "Edit_Quiz";
+            Text = "Edit_Quiz";
+            background1.ResumeLayout(false);
+            background1.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            highlight_1.ResumeLayout(false);
-            highlight_1.PerformLayout();
+            highlight1.ResumeLayout(false);
+            highlight1.PerformLayout();
             inv_groupBox.ResumeLayout(false);
             inv_groupBox.PerformLayout();
             image_holder_pn.ResumeLayout(false);
@@ -445,33 +339,25 @@
 
         #endregion
 
-        private Button return_btn;
-        private Panel background_1;
-        private MaterialSkin.Controls.MaterialScrollBar materialScrollBar1;
-        private Label label1;
+        private Panel background1;
+        private GroupBox groupBox1;
+        private TextBox property_txbx;
+        private MaterialSkin.Controls.MaterialButton create_btn;
+        private Panel highlight1;
+        private Button timer_R_btn;
+        private Button timer_L_btn;
+        private Label timer_lbl;
+        private Label label7;
+        private MaterialSkin.Controls.MaterialTextBox subject_txbx;
+        private Label label3;
         private MaterialSkin.Controls.MaterialTextBox quizName_txbx;
         private Label quiz_name_lbl;
         private GroupBox inv_groupBox;
-        private Label label2;
-        private Panel highlight_1;
-        private MaterialSkin.Controls.MaterialButton create_btn;
-        private MaterialSkin.Controls.MaterialTextBox subject_txbx;
-        private Label label3;
-        private Label mode_lbl;
-        private Label label4;
-        private Button mode_arrL;
-        private Button mode_arrR;
-        private GroupBox groupBox1;
-        private TextBox property_txbx;
-        private Label label9;
-        private Label timer_lbl;
-        private Label label7;
-        private Button showAnswer_L_btn;
-        private Button timer_L_btn;
-        private Label showAnswer_lbl;
-        private Button showAnswer_R_btn;
-        private Button timer_R_btn;
         private Panel image_holder_pn;
         private Panel plus_icon;
+        private Label label2;
+        private Label label1;
+        private Button return_btn;
+        private Button clearImg_btn;
     }
 }

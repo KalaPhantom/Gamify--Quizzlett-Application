@@ -1,4 +1,5 @@
-﻿using Quizlett_Prototype.Additional_Forms.Functions;
+﻿using Gamify__Quizzlett_Application.Additional_Forms.Functions;
+using Quizlett_Prototype.Additional_Forms.Functions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -63,7 +64,10 @@ namespace Gamify__Quizzlett_Application.Additional_Forms
             Option_B_btn.Text = answer_multiple[1];
             Option_C_btn.Text = answer_multiple[2];
             Option_D_btn.Text = answer_multiple[3];
-            this.card_container = card_container;   
+            this.card_container = card_container;
+
+            // Call the color arch Random Color generator
+            ColorSchematics.ColorArch(hightlight_1, this);
         }
 
 
