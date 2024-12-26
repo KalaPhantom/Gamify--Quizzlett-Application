@@ -39,6 +39,7 @@
             MainMenu_flp = new FlowLayoutPanel();
             deco4 = new Panel();
             panel1 = new Panel();
+            about_lbl = new Label();
             pictureBox2 = new PictureBox();
             panel2 = new Panel();
             deco3 = new Panel();
@@ -98,7 +99,7 @@
             about_btn.Name = "about_btn";
             about_btn.Size = new Size(230, 105);
             about_btn.TabIndex = 3;
-            about_btn.Text = "SETTINGS";
+            about_btn.Text = "ABOUT";
             about_btn.UseVisualStyleBackColor = true;
             about_btn.Click += settings_btn_Click;
             // 
@@ -157,6 +158,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(about_lbl);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(stats_btn);
             panel1.Controls.Add(quiz_list_btn);
@@ -169,6 +171,19 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(652, 717);
             panel1.TabIndex = 11;
+            // 
+            // about_lbl
+            // 
+            about_lbl.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            about_lbl.AutoSize = true;
+            about_lbl.Font = new Font("Architects Daughter", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            about_lbl.ForeColor = SystemColors.ButtonHighlight;
+            about_lbl.Location = new Point(186, 592);
+            about_lbl.Name = "about_lbl";
+            about_lbl.Size = new Size(257, 66);
+            about_lbl.TabIndex = 12;
+            about_lbl.Text = "CREATED BY GROUP 2\r\nA. B.  2024 VERSION 1. 02 BETA \r\nBUILD VERSION 1. 00";
+            about_lbl.TextAlign = ContentAlignment.TopCenter;
             // 
             // pictureBox2
             // 
@@ -283,5 +298,6 @@
         private Panel deco3;
         private Panel deco2;
         private PictureBox pictureBox2;
+        private Label about_lbl;
     }
 }

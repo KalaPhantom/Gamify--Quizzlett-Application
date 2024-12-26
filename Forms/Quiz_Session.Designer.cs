@@ -39,6 +39,8 @@
             // 
             // Center_panel
             // 
+            Center_panel.BackgroundImage = Properties.Resources.BG_13;
+            Center_panel.BackgroundImageLayout = ImageLayout.Stretch;
             Center_panel.Controls.Add(return_btn);
             Center_panel.Controls.Add(Timer_Progress);
             Center_panel.Controls.Add(QuizCards_flp);

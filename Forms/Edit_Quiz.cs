@@ -110,6 +110,7 @@ namespace Gamify__Quizzlett_Application.Forms
         private void clearImg_btn_Click(object sender, EventArgs e)
         {
             image = null;
+            quiz.ImagePath = null; 
             plus_icon.Visible = true;
         }
         #endregion

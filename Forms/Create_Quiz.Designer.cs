@@ -424,10 +424,13 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(41, 37, 36);
+            BackgroundImage = Properties.Resources.BG_11;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1564, 804);
             Controls.Add(background_1);
             Controls.Add(materialScrollBar1);
             Controls.Add(return_btn);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Name = "Create_Quiz";
             Text = "Create Quiz";
