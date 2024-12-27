@@ -50,19 +50,22 @@
             // main_card_container
             // 
             main_card_container.Anchor = AnchorStyles.None;
+            main_card_container.AutoScroll = true;
             main_card_container.BackColor = Color.FromArgb(41, 37, 36);
             main_card_container.Controls.Add(highlight_panel);
-            main_card_container.Location = new Point(93, 96);
+            main_card_container.FlowDirection = FlowDirection.TopDown;
+            main_card_container.Location = new Point(83, 96);
             main_card_container.Name = "main_card_container";
-            main_card_container.Size = new Size(1378, 678);
+            main_card_container.Size = new Size(1408, 678);
             main_card_container.TabIndex = 1;
+            main_card_container.WrapContents = false;
             // 
             // highlight_panel
             // 
             highlight_panel.Dock = DockStyle.Top;
             highlight_panel.Location = new Point(3, 3);
             highlight_panel.Name = "highlight_panel";
-            highlight_panel.Size = new Size(1375, 41);
+            highlight_panel.Size = new Size(0, 41);
             highlight_panel.TabIndex = 0;
             // 
             // label1

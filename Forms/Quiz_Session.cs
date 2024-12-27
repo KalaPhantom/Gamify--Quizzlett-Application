@@ -32,6 +32,7 @@ namespace Gamify__Quizzlett_Application.Forms
 
         #region timer Property
         public int currentTime = 0;
+        public int previousScore;
         #endregion
 
         public Quiz_Session(Main_Menu menu, Quiz_Data_Model quiz)
@@ -41,6 +42,9 @@ namespace Gamify__Quizzlett_Application.Forms
             // Pass reference
             this.menu = menu;
             this.quiz = quiz;
+
+            // Pass ref previous score
+            previousScore = (int)quiz.score;
 
             loadQuestion_data(); // Load all instance of the question 
             InitializeTimer(); // Load the timer 
@@ -234,12 +238,7 @@ namespace Gamify__Quizzlett_Application.Forms
         {
             if (QuizCards_flp.Controls.Count == 0)
             {
-                // Show the score dialogue
-                scoreStats = new ScoreStats(quiz, menu);
-                scoreStats.FormClosed += ScoreStats_FormClosed;
-                scoreStats.MdiParent = menu;
-                scoreStats.Show();
-                scoreStats.Dock = DockStyle.Fill;
+
 
                 // Stop the timer from executing
 
@@ -250,8 +249,17 @@ namespace Gamify__Quizzlett_Application.Forms
                 // Pass additional data here 
                 try // Catch a null exception 
                 {
+                   
+                    if (quiz.score != previousScore && quiz.Scores_collection.Count != 0) {
+                        RemoveTrailing();
+                    }
+
+                    //MessageBox.Show(quiz.Scores_collection.Count.ToString());
                     quiz.Scores_collection.Add((int)quiz.score);
                     quiz.Time_collection.Enqueue(this.currentTime, this.currentTime);
+
+                   
+
 
                 }
                 catch (Exception ex)
@@ -260,6 +268,12 @@ namespace Gamify__Quizzlett_Application.Forms
                     // Do nothing when a null reference exception in thrown =
                 }
 
+                // Show the score dialogue
+                scoreStats = new ScoreStats(quiz, menu);
+                scoreStats.FormClosed += ScoreStats_FormClosed;
+                scoreStats.MdiParent = menu;
+                scoreStats.Show();
+                scoreStats.Dock = DockStyle.Fill;
 
 
                 Close();
@@ -268,6 +282,21 @@ namespace Gamify__Quizzlett_Application.Forms
             }
 
         }
+
+        #region remove trailing from the hashset
+        private void RemoveTrailing()
+        {
+
+            List<int> a = new List<int>(quiz.Scores_collection);
+            a.RemoveAt(0);
+
+            HashSet<int> b = new HashSet<int>(a);
+
+            quiz.Scores_collection = b;
+
+
+        }
+        #endregion
 
         private void ScoreStats_FormClosed(object? sender, FormClosedEventArgs e)
         {

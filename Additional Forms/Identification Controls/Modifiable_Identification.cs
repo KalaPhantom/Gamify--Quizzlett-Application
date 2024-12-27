@@ -114,7 +114,7 @@ namespace Gamify__Quizzlett_Application.Additional_Forms.Identification_Controls
         private void answerHolder_txbx_TextChanged(object sender, EventArgs e)
         {
             // Avoid having string mismatch by comparing both strings (correct answer and the user answer) into both lower cases
-            correctAnswer = answerHolder_txbx.Text.ToLower();
+            correctAnswer = answerHolder_txbx.Text.ToLower().Trim();
         }
 
         #endregion
@@ -153,23 +153,6 @@ namespace Gamify__Quizzlett_Application.Additional_Forms.Identification_Controls
                 e.Effect = DragDropEffects.None;
             }
         }
-
-        private bool IsImageFile(string filePath)
-        {
-            try
-            {
-                using (Image img = Image.FromFile(filePath))
-                {
-                    return true;
-                }
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-
 
 
         #endregion

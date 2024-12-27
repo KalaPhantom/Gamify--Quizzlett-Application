@@ -320,9 +320,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(12, 10, 9);
             BackgroundImage = Properties.Resources.BG_12;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1501, 724);
             Controls.Add(return_btn);
             Controls.Add(background1);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Name = "Edit_Quiz";
             Text = "Edit_Quiz";

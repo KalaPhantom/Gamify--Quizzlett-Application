@@ -34,7 +34,6 @@
             lef_margin_panel = new Panel();
             lower_margin_panel = new Panel();
             Center_panel = new Panel();
-            score_system_panel = new Panel();
             internal_panel_lDock = new Panel();
             ratio_lbl = new Label();
             lbl1 = new Label();
@@ -90,7 +89,6 @@
             // 
             // Center_panel
             // 
-            Center_panel.Controls.Add(score_system_panel);
             Center_panel.Controls.Add(internal_panel_lDock);
             Center_panel.Dock = DockStyle.Fill;
             Center_panel.Location = new Point(64, 49);
@@ -98,31 +96,24 @@
             Center_panel.Size = new Size(1394, 665);
             Center_panel.TabIndex = 4;
             // 
-            // score_system_panel
-            // 
-            score_system_panel.Dock = DockStyle.Fill;
-            score_system_panel.Location = new Point(439, 0);
-            score_system_panel.Name = "score_system_panel";
-            score_system_panel.Size = new Size(955, 665);
-            score_system_panel.TabIndex = 1;
-            // 
             // internal_panel_lDock
             // 
             internal_panel_lDock.Controls.Add(ratio_lbl);
             internal_panel_lDock.Controls.Add(lbl1);
-            internal_panel_lDock.Dock = DockStyle.Left;
+            internal_panel_lDock.Dock = DockStyle.Fill;
             internal_panel_lDock.Location = new Point(0, 0);
             internal_panel_lDock.Name = "internal_panel_lDock";
-            internal_panel_lDock.Size = new Size(439, 665);
+            internal_panel_lDock.Size = new Size(1394, 665);
             internal_panel_lDock.TabIndex = 0;
             // 
             // ratio_lbl
             // 
+            ratio_lbl.Anchor = AnchorStyles.None;
             ratio_lbl.AutoSize = true;
             ratio_lbl.BackColor = Color.Transparent;
             ratio_lbl.Font = new Font("Architects Daughter", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ratio_lbl.ForeColor = Color.Transparent;
-            ratio_lbl.Location = new Point(167, 99);
+            ratio_lbl.Location = new Point(667, 287);
             ratio_lbl.Name = "ratio_lbl";
             ratio_lbl.Size = new Size(63, 65);
             ratio_lbl.TabIndex = 1;
@@ -130,10 +121,11 @@
             // 
             // lbl1
             // 
+            lbl1.Anchor = AnchorStyles.None;
             lbl1.AutoSize = true;
             lbl1.Font = new Font("Architects Daughter", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbl1.ForeColor = SystemColors.ButtonHighlight;
-            lbl1.Location = new Point(15, 21);
+            lbl1.Location = new Point(660, 227);
             lbl1.Name = "lbl1";
             lbl1.Size = new Size(70, 28);
             lbl1.TabIndex = 0;
@@ -167,7 +159,6 @@
         private Panel lef_margin_panel;
         private Panel lower_margin_panel;
         private Panel Center_panel;
-        private Panel score_system_panel;
         private Panel internal_panel_lDock;
         private Label ratio_lbl;
         private Label lbl1;

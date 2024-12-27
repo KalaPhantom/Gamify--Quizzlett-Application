@@ -102,7 +102,7 @@ namespace Gamify__Quizzlett_Application.Additional_Forms.Fill_In_the_Blanks_Cont
 
         private void answerHolder_txbx_TextChanged(object sender, EventArgs e)
         {
-            correct_answer = answerHolder_txbx.Text;
+            correct_answer = answerHolder_txbx.Text.Trim();
         }
         #endregion
 
@@ -142,21 +142,6 @@ namespace Gamify__Quizzlett_Application.Additional_Forms.Fill_In_the_Blanks_Cont
             }
         }
 
-
-        private bool IsImageFile(string filePath)
-        {
-            try
-            {
-                using (Image img = Image.FromFile(filePath))
-                {
-                    return true;
-                }
-            }
-            catch
-            {
-                return false;
-            }
-        }
 
         #endregion
 

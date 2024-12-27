@@ -46,6 +46,8 @@ namespace Gamify__Quizzlett_Application.Forms
         {
 
             ratio_lbl.Text = quiz.score + " /" + quiz.collection_Questions.Count.ToString();
+            quiz.recentScore = quiz.score;
+            quiz.score = 0;
         }
         #endregion
 
@@ -56,8 +58,8 @@ namespace Gamify__Quizzlett_Application.Forms
         private void return_btn_Click(object sender, EventArgs e)
         {
             // reset the score count
-            quiz.score = 0;
-
+           
+            
 
             this.Close();
             Dispose();  

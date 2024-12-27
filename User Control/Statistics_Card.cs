@@ -66,10 +66,16 @@ namespace Gamify__Quizzlett_Application.User_Control
         private void InitializeSecondaryComponent() {
             this.title = quiz.quiz_name;
             InterpretScore();
+
             AverageTimeinSeconds = ComputeAverage_Time();
             AverageScore = Average_Total_Score();
 
             ColorSchematics.ColorArch(upper_panel_1,this);
+
+            Average_score_lbl.Text = AverageScore.ToString();
+
+            // Remove trailing data from the hashset
+
 
             // Trim collections
             quiz.Scores_collection = StatisticModel.TrimExcessData(quiz.Scores_collection);
@@ -77,6 +83,8 @@ namespace Gamify__Quizzlett_Application.User_Control
         
         }
         #endregion
+
+       
 
 
         #region Math Average Methods
@@ -97,22 +105,42 @@ namespace Gamify__Quizzlett_Application.User_Control
                 totalScore += a;
             }
 
-            return totalScore / 5;
+            try
+            {
+                totalScore = totalScore/tempList.Count;
+            }
+            catch (Exception ex) { 
+            
+            }
+
+            return totalScore;
         
         }
 
         private int Average_Total_Score() {
-            int totalScore = 0;
+            double totalScore = 0;
+            double AVG = 0;
+
+            List<int> collection1 = new List<int>(quiz.Scores_collection);
+
+            for (int i = 0; i < collection1.Count; i++) {
+                totalScore +=collection1[i];
+            }
+
             try
             {
-               totalScore = (int)quiz.Scores_collection.Average()/ quiz.collection_Questions.Count;
+                AVG = totalScore / collection1.Count ;
+                totalScore = AVG/ quiz.collection_Questions.Count ;
+               
+
             }
             catch (Exception ex)
             {
                 // Do nthing
             }
-           
-            return totalScore * 100;
+
+            double result = totalScore * 100;
+            return (int) result;
        
         }
 

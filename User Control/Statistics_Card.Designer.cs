@@ -36,6 +36,7 @@
             average_time_lbl = new Label();
             GB3 = new GroupBox();
             Average_score_lbl = new Label();
+            label1 = new Label();
             upper_panel_1.SuspendLayout();
             GB1.SuspendLayout();
             GB2.SuspendLayout();
@@ -115,15 +116,16 @@
             // GB3
             // 
             GB3.BackgroundImageLayout = ImageLayout.None;
+            GB3.Controls.Add(label1);
             GB3.Controls.Add(Average_score_lbl);
-            GB3.Font = new Font("Architects Daughter", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            GB3.Font = new Font("Architects Daughter", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             GB3.ForeColor = SystemColors.ButtonHighlight;
             GB3.Location = new Point(587, 91);
             GB3.Name = "GB3";
             GB3.Size = new Size(250, 170);
             GB3.TabIndex = 4;
             GB3.TabStop = false;
-            GB3.Text = "Average Score";
+            GB3.Text = " Score Percentage Average";
             // 
             // Average_score_lbl
             // 
@@ -136,6 +138,17 @@
             Average_score_lbl.TabIndex = 1;
             Average_score_lbl.Text = "A";
             Average_score_lbl.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Architects Daughter", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Location = new Point(76, 124);
+            label1.Name = "label1";
+            label1.Size = new Size(95, 29);
+            label1.TabIndex = 1;
+            label1.Text = "Percent";
             // 
             // Statistics_Card
             // 
@@ -154,6 +167,7 @@
             GB1.PerformLayout();
             GB2.ResumeLayout(false);
             GB3.ResumeLayout(false);
+            GB3.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -167,5 +181,6 @@
         private Label average_time_lbl;
         private GroupBox GB3;
         private Label Average_score_lbl;
+        private Label label1;
     }
 }

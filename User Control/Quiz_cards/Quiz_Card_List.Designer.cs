@@ -47,7 +47,7 @@
             title_lbl.ForeColor = SystemColors.ButtonHighlight;
             title_lbl.Location = new Point(38, 14);
             title_lbl.Name = "title_lbl";
-            title_lbl.Size = new Size(294, 38);
+            title_lbl.Size = new Size(314, 38);
             title_lbl.TabIndex = 0;
             title_lbl.Text = "title";
             // 
@@ -56,7 +56,7 @@
             subject_lbl.ForeColor = SystemColors.ButtonHighlight;
             subject_lbl.Location = new Point(38, 51);
             subject_lbl.Name = "subject_lbl";
-            subject_lbl.Size = new Size(294, 20);
+            subject_lbl.Size = new Size(314, 20);
             subject_lbl.TabIndex = 1;
             subject_lbl.Text = "subject";
             // 

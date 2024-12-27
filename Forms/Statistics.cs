@@ -40,10 +40,10 @@ namespace Gamify__Quizzlett_Application.Forms
             foreach (Quiz_Data_Model a in Data_Storage.quiz_list)
             {
 
-
-
                 Statistics_Card stats_card = new Statistics_Card(a);
                 control_flp.Controls.Add(stats_card);
+
+            
             }
 
         }
@@ -71,10 +71,11 @@ namespace Gamify__Quizzlett_Application.Forms
             }
 
             // Arithmetic operation
+          
 
             try
             {
-                AVG_SCORE = (control_flp.Controls.Count / total_score) * 100;
+                AVG_SCORE = (total_score/ control_flp.Controls.Count );
                 AVG_TIME = total_time / control_flp.Controls.Count;
 
             }
@@ -82,13 +83,17 @@ namespace Gamify__Quizzlett_Application.Forms
             
             
             }
-           
+
+            //MessageBox.Show(total_score.ToString());
+            //MessageBox.Show(total_time.ToString());
+
+            rate = AVG_SCORE;
 
             // Update Controls
             time_avg_lbl.Text = "Average Time " + AVG_TIME;
-            rate_lbl.Text = "Correct Answer Rate: " + AVG_TIME;
+            rate_lbl.Text = "Correct Answer Rate: " + rate + "%";
 
-            rate = AVG_SCORE*100;
+           
 
             InterpretDatarate();
 

@@ -83,6 +83,7 @@ namespace Gamify__Quizzlett_Application.User_Control.Quiz_cards
             subject = quiz.Subject;
             type_display = quiz.type == "MC" ? "Multiple Choice" : quiz.type == "ID" ? "Identification" : quiz.type == "FB" ? "Fill in the blanks" : "Not Set";
             this.type = quiz.type;
+          
 
             try
             {
@@ -97,6 +98,7 @@ namespace Gamify__Quizzlett_Application.User_Control.Quiz_cards
             
             this.timer_enabled = "Timer: " + quiz.isTimerEnabled;
             this.last_score_lbl.Text = $"Recent Score: " + quiz.score;
+            this.last_score = "Last Score: " + quiz.recentScore.ToString();
 
             // Call ColorArch
             ColorSchematics.ColorArch_BuildUp(image_panel, this, panel2, panel3, play_btn);

@@ -46,6 +46,7 @@ namespace Quizlett_Prototype.Additional_Forms.Functions
 
         // Base score property 
         public double? score = 0;
+        public double? recentScore = 0;
 
         // Data to display how long did the player take to finish all the questions in the quiz
         public int? finalTime { get; set;  }
@@ -203,6 +204,8 @@ namespace Quizlett_Prototype.Additional_Forms.Functions
         public static HashSet<int> TrimExcessData(HashSet<int> a)
         {
             List<int> b = new List<int>(a);
+
+           
             
             while (b.Count > 5)
             {

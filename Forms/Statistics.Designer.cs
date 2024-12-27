@@ -93,18 +93,21 @@
             main_frame.Anchor = AnchorStyles.None;
             main_frame.Controls.Add(control_flp);
             main_frame.Controls.Add(left_main_panel);
-            main_frame.Location = new Point(141, 122);
+            main_frame.Location = new Point(120, 122);
             main_frame.Name = "main_frame";
-            main_frame.Size = new Size(1273, 635);
+            main_frame.Size = new Size(1331, 635);
             main_frame.TabIndex = 2;
             // 
             // control_flp
             // 
+            control_flp.AutoScroll = true;
             control_flp.Dock = DockStyle.Fill;
+            control_flp.FlowDirection = FlowDirection.TopDown;
             control_flp.Location = new Point(350, 0);
             control_flp.Name = "control_flp";
-            control_flp.Size = new Size(923, 635);
+            control_flp.Size = new Size(981, 635);
             control_flp.TabIndex = 1;
+            control_flp.WrapContents = false;
             // 
             // left_main_panel
             // 
@@ -117,7 +120,6 @@
             left_main_panel.Name = "left_main_panel";
             left_main_panel.Size = new Size(350, 635);
             left_main_panel.TabIndex = 0;
-            
             // 
             // rate_lbl
             // 
@@ -168,9 +170,9 @@
             // panel_top
             // 
             panel_top.Anchor = AnchorStyles.None;
-            panel_top.Location = new Point(141, 92);
+            panel_top.Location = new Point(120, 92);
             panel_top.Name = "panel_top";
-            panel_top.Size = new Size(1273, 31);
+            panel_top.Size = new Size(1328, 31);
             panel_top.TabIndex = 3;
             // 
             // Statistics
