@@ -48,10 +48,16 @@ namespace Quizlett_Prototype.Additional_Forms.Functions
         public double? score = 0;
 
         // Data to display how long did the player take to finish all the questions in the quiz
-        public int? finalTime { get; set;  } 
+        public int? finalTime { get; set;  }
+
 
         // Implement a priority Queue to sort and display scores
-        public PriorityQueue<string, int> bestTime = new PriorityQueue<string, int>();
+        public  PriorityQueue<int, int> Time_collection = new PriorityQueue<int, int>();
+
+        // Hashset
+        public  HashSet<int> Scores_collection = new HashSet<int>();
+
+
 
         #endregion
 
@@ -182,7 +188,37 @@ namespace Quizlett_Prototype.Additional_Forms.Functions
     }
     #endregion
 
+    #region StatisticsDataModel
 
+    public class StatisticModel() {
+
+        // Trim excess methods
+        public static void TrimExcessData(PriorityQueue<int, int> a ) {
+
+            while (a.Count > 5) { 
+                a.Dequeue();
+            }
+        }
+
+        public static HashSet<int> TrimExcessData(HashSet<int> a)
+        {
+            List<int> b = new List<int>(a);
+            
+            while (b.Count > 5)
+            {
+                b.RemoveAt(0);
+            }
+
+             HashSet<int> c = new HashSet<int>(b);
+
+            return c;
+        }
+
+
+    }
+
+    
+    #endregion
 
     // Unused annotation for Binary and Base  64 conversion
     #region Annotation Conversion for Bitmaps 

@@ -83,10 +83,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(10, 10, 10);
             BackgroundImage = Properties.Resources.BG_131;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1564, 804);
             Controls.Add(label1);
             Controls.Add(main_card_container);
             Controls.Add(return_btn);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Name = "Quiz_list";
             Text = "Quiz_list";

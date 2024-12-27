@@ -15,6 +15,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gamify__Quizzlett_Application.Additional_Forms.Functions;
 
 namespace Gamify__Quizzlett_Application.Forms
 {
@@ -29,13 +30,20 @@ namespace Gamify__Quizzlett_Application.Forms
         ScoreStats scoreStats;
         #endregion
 
+        #region timer Property
+        public int currentTime = 0;
+        #endregion
+
         public Quiz_Session(Main_Menu menu, Quiz_Data_Model quiz)
         {
             InitializeComponent();
+
+            // Pass reference
             this.menu = menu;
             this.quiz = quiz;
-           
-            loadQuestion_data();
+
+            loadQuestion_data(); // Load all instance of the question 
+            InitializeTimer(); // Load the timer 
         }
 
 
@@ -45,7 +53,7 @@ namespace Gamify__Quizzlett_Application.Forms
         ///  The code blocks under the hover event will show a hidden control in the active form
         /// </summary>
 
-  
+
 
 
 
@@ -130,7 +138,7 @@ namespace Gamify__Quizzlett_Application.Forms
 
         private void NextOrSkip_button_Click(object? sender, EventArgs e)
         {
-            CheckCount(); 
+            CheckCount();
         }
 
 
@@ -142,7 +150,7 @@ namespace Gamify__Quizzlett_Application.Forms
         {
 
 
-           
+
 
             foreach (QuestionModel_Identification model in quiz.collection_Questions)
             {
@@ -166,7 +174,7 @@ namespace Gamify__Quizzlett_Application.Forms
 
         private void SkipOrNext_btn_Click1(object? sender, EventArgs e)
         {
-            CheckCount(); 
+            CheckCount();
         }
 
         private void SkipOrNext_btn_Click(object? sender, EventArgs e)
@@ -181,12 +189,9 @@ namespace Gamify__Quizzlett_Application.Forms
         private void Serialize_FB()
         {
 
-
-
             // Serialize all fill in the blanks data here
             foreach (QuestionModel_FillBlanks model in quiz.collection_Questions)
             {
-
                 if (model.ImagePath == null)
                 {
                     Fill_IB_Standard MC = new Fill_IB_Standard(QuizCards_flp, quiz, model);
@@ -201,17 +206,16 @@ namespace Gamify__Quizzlett_Application.Forms
                 }
 
             }
-
         }
 
         private void SkipOrNext_btn_Click3(object? sender, EventArgs e)
         {
-            CheckCount(); 
+            CheckCount();
         }
 
         private void SkipOrNext_btn_Click2(object? sender, EventArgs e)
         {
-            CheckCount(); 
+            CheckCount();
         }
 
 
@@ -236,6 +240,26 @@ namespace Gamify__Quizzlett_Application.Forms
                 scoreStats.MdiParent = menu;
                 scoreStats.Show();
                 scoreStats.Dock = DockStyle.Fill;
+
+                // Stop the timer from executing
+
+                if (quiz.isTimerEnabled != false) {
+                    quiz_timer.Stop();
+                }
+               
+                // Pass additional data here 
+                try // Catch a null exception 
+                {
+                    quiz.Scores_collection.Add((int)quiz.score);
+                    quiz.Time_collection.Enqueue(this.currentTime, this.currentTime);
+
+                }
+                catch (Exception ex)
+                {
+
+                    // Do nothing when a null reference exception in thrown =
+                }
+
 
 
                 Close();
@@ -264,31 +288,29 @@ namespace Gamify__Quizzlett_Application.Forms
 
         #region Timer Methods
 
-        private int timerLimitOrg = 15; // Assign this value for reset
-        public static int timerLimit = 15;
 
 
         private void InitializeTimer()
         {
-
-          
-            quiz_timer.Interval = 1000;// 1000 ms or 1 second interval
-            
-            quiz_timer.Start();
-
-        }
-
-        private void ShowCountDown() { 
-        
-            
-        }
-
-        private void CountDown_Transition() {
-
+            if (quiz.isTimerEnabled != false)
+            {
+                quiz_timer.Interval = 1000;// 1000 ms or 1 second interval
+                quiz_timer.Start();
+            }
            
 
         }
 
+
+        private void quiz_timer_Tick(object sender, EventArgs e)
+        {
+            currentTime++;
+            timer_lbl.Text = currentTime.ToString();
+            ColorSchematics.ColorAcrch_Text(timer_lbl);
+        }
+
         #endregion
+
+
     }
 }

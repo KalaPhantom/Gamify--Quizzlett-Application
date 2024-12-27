@@ -23,13 +23,16 @@ namespace Gamify__Quizzlett_Application.Additional_Forms.Fill_In_the_Blanks_Cont
         {
             get { return int.Parse(count_lbl.Text); }
             set { count_lbl.Text = value.ToString(); }
-
         }
-        public Bitmap? image { get; set; }
+        public Bitmap? image
+        {
+
+            get { return (Bitmap)image_panel.BackgroundImage; }
+            set { image_panel.BackgroundImage = (Bitmap)value; }
+        }
         public string image_path { get; set; }
 
         #endregion
-
 
         public Fill_IB_Modifiable(int count)
         {

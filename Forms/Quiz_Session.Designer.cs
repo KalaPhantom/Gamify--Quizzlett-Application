@@ -30,6 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             Center_panel = new Panel();
+            timer_lbl = new Label();
+            label1 = new Label();
             return_btn = new Button();
             Timer_Progress = new MaterialSkin.Controls.MaterialProgressBar();
             QuizCards_flp = new FlowLayoutPanel();
@@ -41,6 +43,8 @@
             // 
             Center_panel.BackgroundImage = Properties.Resources.BG_13;
             Center_panel.BackgroundImageLayout = ImageLayout.Stretch;
+            Center_panel.Controls.Add(timer_lbl);
+            Center_panel.Controls.Add(label1);
             Center_panel.Controls.Add(return_btn);
             Center_panel.Controls.Add(Timer_Progress);
             Center_panel.Controls.Add(QuizCards_flp);
@@ -49,6 +53,30 @@
             Center_panel.Name = "Center_panel";
             Center_panel.Size = new Size(1501, 724);
             Center_panel.TabIndex = 4;
+            // 
+            // timer_lbl
+            // 
+            timer_lbl.Anchor = AnchorStyles.None;
+            timer_lbl.Font = new Font("Architects Daughter", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            timer_lbl.ForeColor = SystemColors.ButtonHighlight;
+            timer_lbl.Location = new Point(35, 344);
+            timer_lbl.Name = "timer_lbl";
+            timer_lbl.Size = new Size(98, 28);
+            timer_lbl.TabIndex = 8;
+            timer_lbl.Text = "Disabled";
+            timer_lbl.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.None;
+            label1.AutoSize = true;
+            label1.Font = new Font("Architects Daughter", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Location = new Point(43, 316);
+            label1.Name = "label1";
+            label1.Size = new Size(85, 28);
+            label1.TabIndex = 7;
+            label1.Text = "Ellapsed";
             // 
             // return_btn
             // 
@@ -81,6 +109,10 @@
             QuizCards_flp.Size = new Size(1205, 663);
             QuizCards_flp.TabIndex = 4;
             // 
+            // quiz_timer
+            // 
+            quiz_timer.Tick += quiz_timer_Tick;
+            // 
             // Quiz_Session
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -92,6 +124,7 @@
             Name = "Quiz_Session";
             Text = "Quiz_Session";
             Center_panel.ResumeLayout(false);
+            Center_panel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -101,5 +134,7 @@
         private MaterialSkin.Controls.MaterialProgressBar Timer_Progress;
         private FlowLayoutPanel QuizCards_flp;
         private System.Windows.Forms.Timer quiz_timer;
+        private Label label1;
+        private Label timer_lbl;
     }
 }
