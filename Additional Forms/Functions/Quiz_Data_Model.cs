@@ -36,16 +36,24 @@ namespace Quizlett_Prototype.Additional_Forms.Functions
         public string? quiz_description { get; set; } // nullable
         public string? Subject { get; set; } // nullable
 
-        public string ImagePath { get; set;  }
+        public string ImagePath { get; set;  } 
         public bool isTimerEnabled { get; set; }    // nullable
 
+
+        #region Score and Timer Statistics
         // Implementation of LinkList as question objects collection
         public LinkedList<QuestionModel> collection_Questions = new LinkedList<QuestionModel>();
 
         // Base score property 
         public double? score = 0;
 
+        // Data to display how long did the player take to finish all the questions in the quiz
+        public int? finalTime { get; set;  } 
 
+        // Implement a priority Queue to sort and display scores
+        public PriorityQueue<string, int> bestTime = new PriorityQueue<string, int>();
+
+        #endregion
 
         // Constructor
         public Quiz_Data_Model()
@@ -77,8 +85,6 @@ namespace Quizlett_Prototype.Additional_Forms.Functions
             this.Question = "Oppps, Looks like we've made some mistakes!! -- Nothing to see here";
             this.correct_Answer = "None";
         }
-
-        
 
     }
 

@@ -133,6 +133,9 @@
   <data name="plus-small1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Materials\PNG\plus-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="png_0q6s6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Materials\PNG\png_0q6s6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="log-in (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Materials\PNG\log-in (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -187,6 +190,9 @@
   <data name="delete (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Materials\PNG\delete (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BG_131" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Materials\PNG\BG_13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Side_Border_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Materials\PNG\Side_Border_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -202,9 +208,6 @@
   <data name="png_3qy3mj" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Materials\PNG\png_3qy3mj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="return" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Materials\PNG\return.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="log-in (5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Materials\PNG\log-in (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -217,10 +220,10 @@
   <data name="q-and-a-ezgif.com-resize (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Materials\Animatons\q-and-a-ezgif.com-resize (3).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="png_0q6s6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Materials\PNG\png_0q6s6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="return" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Materials\PNG\return.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BG_131" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Materials\PNG\BG_13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="log-in (5)2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Materials\PNG\log-in (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
