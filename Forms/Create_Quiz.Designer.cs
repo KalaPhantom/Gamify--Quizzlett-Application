@@ -34,12 +34,8 @@
             property_txbx = new TextBox();
             create_btn = new MaterialSkin.Controls.MaterialButton();
             highlight_1 = new Panel();
-            showAnswer_R_btn = new Button();
             timer_R_btn = new Button();
-            showAnswer_L_btn = new Button();
             timer_L_btn = new Button();
-            showAnswer_lbl = new Label();
-            label9 = new Label();
             timer_lbl = new Label();
             label7 = new Label();
             mode_arrL = new Button();
@@ -130,12 +126,8 @@
             // highlight_1
             // 
             highlight_1.BackColor = Color.FromArgb(28, 25, 23);
-            highlight_1.Controls.Add(showAnswer_R_btn);
             highlight_1.Controls.Add(timer_R_btn);
-            highlight_1.Controls.Add(showAnswer_L_btn);
             highlight_1.Controls.Add(timer_L_btn);
-            highlight_1.Controls.Add(showAnswer_lbl);
-            highlight_1.Controls.Add(label9);
             highlight_1.Controls.Add(timer_lbl);
             highlight_1.Controls.Add(label7);
             highlight_1.Controls.Add(mode_arrL);
@@ -151,18 +143,6 @@
             highlight_1.Size = new Size(438, 575);
             highlight_1.TabIndex = 5;
             // 
-            // showAnswer_R_btn
-            // 
-            showAnswer_R_btn.BackgroundImage = Properties.Resources.png_3qy3mj;
-            showAnswer_R_btn.BackgroundImageLayout = ImageLayout.Center;
-            showAnswer_R_btn.FlatStyle = FlatStyle.Flat;
-            showAnswer_R_btn.Location = new Point(316, 457);
-            showAnswer_R_btn.Name = "showAnswer_R_btn";
-            showAnswer_R_btn.Size = new Size(94, 29);
-            showAnswer_R_btn.TabIndex = 20;
-            showAnswer_R_btn.UseVisualStyleBackColor = true;
-            showAnswer_R_btn.Click += showAnswer_R_btn_Click;
-            // 
             // timer_R_btn
             // 
             timer_R_btn.BackgroundImage = Properties.Resources.png_3qy3mj;
@@ -175,18 +155,6 @@
             timer_R_btn.UseVisualStyleBackColor = true;
             timer_R_btn.Click += timer_R_btn_Click;
             // 
-            // showAnswer_L_btn
-            // 
-            showAnswer_L_btn.BackgroundImage = Properties.Resources.png_0q6s6;
-            showAnswer_L_btn.BackgroundImageLayout = ImageLayout.Center;
-            showAnswer_L_btn.FlatStyle = FlatStyle.Flat;
-            showAnswer_L_btn.Location = new Point(18, 457);
-            showAnswer_L_btn.Name = "showAnswer_L_btn";
-            showAnswer_L_btn.Size = new Size(94, 29);
-            showAnswer_L_btn.TabIndex = 18;
-            showAnswer_L_btn.UseVisualStyleBackColor = true;
-            showAnswer_L_btn.Click += showAnswer_L_btn_Click;
-            // 
             // timer_L_btn
             // 
             timer_L_btn.BackgroundImage = Properties.Resources.png_0q6s6;
@@ -198,28 +166,6 @@
             timer_L_btn.TabIndex = 17;
             timer_L_btn.UseVisualStyleBackColor = true;
             timer_L_btn.Click += timer_L_btn_Click;
-            // 
-            // showAnswer_lbl
-            // 
-            showAnswer_lbl.Font = new Font("Architects Daughter", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            showAnswer_lbl.ForeColor = SystemColors.ButtonHighlight;
-            showAnswer_lbl.Location = new Point(118, 457);
-            showAnswer_lbl.Name = "showAnswer_lbl";
-            showAnswer_lbl.Size = new Size(192, 29);
-            showAnswer_lbl.TabIndex = 16;
-            showAnswer_lbl.Text = "Mode";
-            showAnswer_lbl.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Architects Daughter", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.ForeColor = SystemColors.ButtonHighlight;
-            label9.Location = new Point(18, 418);
-            label9.Name = "label9";
-            label9.Size = new Size(160, 29);
-            label9.TabIndex = 15;
-            label9.Text = "Show Answer?";
             // 
             // timer_lbl
             // 
@@ -466,13 +412,9 @@
         private Button mode_arrR;
         private GroupBox groupBox1;
         private TextBox property_txbx;
-        private Label label9;
         private Label timer_lbl;
         private Label label7;
-        private Button showAnswer_L_btn;
         private Button timer_L_btn;
-        private Label showAnswer_lbl;
-        private Button showAnswer_R_btn;
         private Button timer_R_btn;
         private Panel image_holder_pn;
         private Panel plus_icon;

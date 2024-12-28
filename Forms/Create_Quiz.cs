@@ -55,7 +55,7 @@ namespace Gamify__Quizzlett_Application.Forms
             isTimerenabled = false;
             timer_lbl.Text = "false";
             showAnswer = false;
-            showAnswer_lbl.Text = "false";
+            //showAnswer_lbl.Text = "false";
 
             // Call the color Arch
             ColorSchematics.ColorArch(highlight_1,image_holder_pn,background_1);
@@ -214,11 +214,11 @@ namespace Gamify__Quizzlett_Application.Forms
         {
             if (showAnswer == true)
             {
-                showAnswer_lbl.Text = "True";
+                //showAnswer_lbl.Text = "True";
             }
             else
             {
-                showAnswer_lbl.Text = "False";
+                //showAnswer_lbl.Text = "False";
             }
         }
 
